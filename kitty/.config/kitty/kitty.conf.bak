@@ -1,0 +1,61 @@
+# BEGIN_KITTY_THEME
+# Catppuccin-Frappe
+include current-theme.conf
+# END_KITTY_THEME
+
+
+# keymap
+map ctrl+shift+k load_config_file
+
+map ctrl+/ send_text all \x1f
+
+map alt+1 goto_tab 1
+map alt+2 goto_tab 2
+map alt+3 goto_tab 3
+
+map alt+left resize_window narrower
+map alt+right resize_window wider
+map alt+up resize_window taller
+map alt+down resize_window shorter 3
+map alt+0 resize_window reset
+
+map ctrl+shift+- launch --location=split
+map ctrl+shift+\ launch --location=neighbor
+
+
+# font 
+font_size 14
+font_family      Hack Nerd Font Mono Regular
+bold_font        Hack Nerd Font Mono Bold
+italic_font      Hack Nerd Font Mono Italic
+bold_italic_font Hack Nerd Font Mono Bold Italic
+
+
+# ========== window ========== 
+hide_window_decorations    titlebar_only
+# window_padding_width       15
+# background_opacity         0.8
+# backgreund_blur            30
+remember_window_size       yes
+enabled_layouts grid
+
+# ┌─────────┬──────────┬─────────┐
+# │         │          │         │
+# │         │          │         │
+# │         │          │         │
+# │         │          │         │
+# ├─────────┼──────────┼─────────┤
+# │         │          │         │
+# │         │          │         │
+# │         │          │         │
+# │         │          │         │
+# └─────────┴──────────┴─────────┘
+#
+
+# tab bar
+tab_bar_edge               top
+# tab_bar_edge               bottom
+tab_fade 0.2 0.4 0.6 1
+# tab_bar_style              powerline
+# tab_powerline_style        slanted
+

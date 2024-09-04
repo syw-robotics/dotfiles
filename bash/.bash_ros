@@ -1,0 +1,57 @@
+####################  ROS Config --- START ---  ####################
+
+########## ros1 noetic ##########
+alias ssb='source ./devel/setup.bash'
+# alias ssb-walkerS='source ~/toolkits/ros_related/walkerS/walkerS_710_ws/devel/setup.bash'
+alias ssb-ocs2='source ~/toolkits/ros_related/ocs2_ws/devel/setup.bash ; export ROS_PACKAGE_PATH=$/home/syw/toolkits/ros_related/ocs2_ws'
+alias hunter='cd ~/toolkits/ros_related/hunter_ws/src/hunter_bipedal_control/'
+# alias hunter_descriptioin='cd ~/toolkits/ros_related/hunter_ws/src/hunter_bipedal_control/legged_examples/legged_hunter/legged_hunter_description/'
+alias hunter-clean='cd ~/toolkits/ros_related/hunter_clean_ws/src/hunter_bipedal_control/'
+alias walkerS='cd ~/toolkits/ros_related/walkerS_ws/'
+alias g1='cd ~/toolkits/ros_related/legged_g1_bipedal_control_ws/src/legged_g1_bipedal_control/'
+alias h1='cd ~/toolkits/ros_related/legged_h1_bipedal_control_ws/src/legged_h1_bipedal_control/'
+alias walkerS_rl='cd ~/toolkits/ros_related/walkerS_rl_ws/'
+alias loong='cd ~/toolkits/ros_related/loong_81_ws/src/OGHR_wholeBody_control/'
+alias ocs2='cd ~/toolkits/ros_related/ocs2_ws/'
+alias ros_related='cd ~/toolkits/ros_related/'
+alias legged='cd ~/toolkits/ros_related/legged_control_ws/'
+alias rosrun_teleop_twist_keyboard='rosrun teleop_twist_keyboard teleop_twist_keyboard.py'
+export ROS_HOSTNAME=localhost
+export ROS_MASTER_URI=http://localhost:11311
+export QT_AUTO_SCREEN_SCALE_FACTOR=0
+export QT_SCREEN_SCALE_FACTORS=[1.0]
+
+# source ~/toolkits/ros_related/ocs2_ws/devel/setup.bash
+# source ~/toolkits/ros_related/legged_control_ws/devel/setup.bash
+source /opt/ros/noetic/setup.bash
+
+#export TURTLEBOT3_MODEL=burger
+#source ~/ros_ws/catkin_turtlebot3/devel/setup.bash
+
+
+########## ros2 humble ##########
+
+
+########## ros2 foxy ##########
+# source /opt/ros/foxy/setup.bash
+#source ~/ros_ws/colcon_ws/install/setup.bash
+#source ~/ros_ws/my_nav_simulator/install/setup.bash
+#source ~/ros_ws/ros2_learning_ws/install/setup.bash
+#source ~/yolobot/install/setup.sh
+#source ~/dual_cobot_ws2/install/setup.bash
+# ------------------------------ 
+#source /usr/share/colcon_cd/function/colcon_cd.sh
+#export _colcon_cd_root=/opt/ros/foxy/
+#source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash
+
+
+#export ROS_PACKAGE_PATH=~/catkin_ws:${ROS_PACKAGE_PATH}
+#export GAZEBO_PLUGIN_PATH=~/catkin_ws/devel/lib:${GAZEBO_PLUGIN_PATH}
+#export LD_LIBRARY_PATH=~/catkin_ws/devel/lib:${LD_LIBRARY_PATH}
+
+#export TURTLEBOT3_MODEL=burge
+
+####################  ROS Config --- END ---  ####################
+
+
+

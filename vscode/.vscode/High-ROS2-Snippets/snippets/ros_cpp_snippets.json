@@ -1,0 +1,204 @@
+{
+  "rosnodeTemplateSimple": {
+    "prefix": "rosNodeSimple",
+    "body": [
+      "#include <ros/ros.h>\n",
+      "int main(int argc, char* argv[])",
+      "{",
+      "\tros::init(argc, argv, \"${1:/*node_name*/}\");",
+      "\tros::NodeHandle nh;",
+      "\t${0}",
+      "}"
+    ],
+    "description": "ROS node template"
+  },
+  "rosClassTemplateSimple": {
+    "prefix": "rosClassTemplate",
+    "body": [
+      "class ${1:class_name}",
+      "{",
+      "public:",
+      "\t${1}(ros::NodeHandle &nh)",
+      "\t{",
+      "\t\t${0}",
+      "\t}\n",
+      "private:\n",
+      "};"
+    ],
+    "description": "ROS node template"
+  },
+  "ros::init": {
+    "prefix": "rosinit",
+    "body": "ros::init(argc, argv, \"${1:/*node_name*/}\");\nros::NodeHandle n;\n$0",
+    "description": "ros::init()"
+  },
+  "ros::Publisher": {
+    "prefix": "rosPublisher",
+    "body": [
+      "ros::Publisher ${1:/*pub_name*/};",
+      "${1} = nh.advertise<${2: /*msg_type*/}>(\"${3:/*topic_name*/}\", ${5:10});\n$0"
+    ],
+    "description": "ros::Publisher"
+  },
+  "ros::Subscriber": {
+    "prefix": "rosSubcriber",
+    "body": [
+      "ros::Subscriber ${1:/*sub_name*/};",
+      "${1} = nh.subscribe<${2:/*msg_type*/}>(\"${3:/*topic_name*/}\", ${4:10}, ${5:/*subscribe_callback_name*/});",
+      "$0"
+    ],
+    "description": "ros::Subscriber"
+  },
+  "ros::Subscriber callback": {
+    "prefix": "rosSubscriberCallback",
+    "body": [
+      "void ${1:/*subscribe_callback_name*/}(const ${2:/*msg_type*/} &msg)",
+      "{",
+      "\t${0}",
+      "}"
+    ],
+    "description": "ros::Subscriber callback"
+  },
+  "ros::ServiceServer": {
+    "prefix": "rosServiceServer",
+    "body": [
+      "ros::ServiceServer ${1:/*service_server_object*/};",
+      "${1} = nh.advertiseService(\"${2:/*service_name*/}\", ${3:/*service_callback_func*/});",
+      "$0"
+    ],
+    "description": "ros::ServiceServer"
+  },
+  "ros::ServiceServer callback": {
+    "prefix": "rosServiceCallback",
+    "body": [
+      "bool ${1:/*service_callback_func*/}(${2:/*service_type*/}::Request &req, ${2}::Response &res)",
+      "{",
+      "\t${0}",
+      "\treturn true;",
+      "}"
+    ],
+    "description": "ros::ServiceServer callback"
+  },
+  "ros::ServiceClient": {
+    "prefix": "rosServiceClient",
+    "body": [
+      "ros::ServiceClient ${1:/*service_client_object*/};",
+      "${1} = nh.serviceClient<${2:/*service_type*/}>(\"${3:/*service_name*/}\");",
+      "$0"
+    ],
+    "description": "ros::ServiceClient"
+  },
+  "ros::ActionClient": {
+    "prefix": "rosActionClient",
+    "body": [
+      "ros::SimpleActionClient<${1:/*action_type*/}> ${2:/*action_client_object*/}(${3:/*action_name*/});",
+      "$0"
+    ],
+    "description": "ros::ActionClient"
+  },
+  "ros rate while": {
+    "prefix": "rosRateWhile",
+    "body": [
+      "ros::Rate loop_rate(${1:10});",
+      "while (ros::ok())",
+      "{",
+      "\t${0:/* code for loop body */}\n",
+      "\tros::spinOnce();",
+      "\tloop_rate.sleep();",
+      "}"
+    ],
+    "description": "ros::Rate … while"
+  },
+  "ros error": {
+    "prefix": "roserr",
+    "body": "ROS_ERROR_STREAM(${1});\n$0",
+    "description": "ros error"
+  },
+  "ros info": {
+    "prefix": "rosInfo",
+    "body": "ROS_INFO(\"%s\", ${0});\n",
+    "description": "ros warn"
+  },
+  "ros warn": {
+    "prefix": "rosWarn",
+    "body": "ROS_WARN(\"%s\", ${0});\n",
+    "description": "ros info"
+  },
+  "ros debug": {
+    "prefix": "rosdbg",
+    "body": "ROS_DEBUG_STREAM(${1});\n$0",
+    "description": "ros debug"
+  },
+  "ros debug var": {
+    "prefix": "rosdbgvar",
+    "body": "ROS_DEBUG_STREAM(\"${1:} = \" << ${2:$1});\n$0"
+  },
+  "ros assert": {
+    "prefix": "rosass",
+    "body": "ROS_ASSERT(${1:});\n$0"
+  },
+  "ros get param": {
+    "prefix": "rosparam_get",
+    "body": "if (!n.getParam(\"$1\", ${1:name}))\n\t{ ROS_ERROR(\"No $1 param\"); }\n$0"
+  },
+  "rosParam": {
+    "prefix": "rosParam",
+    "body": [
+      "_nh.param<${1:/*data_type*/}>(${2:param_name}, ${3:param_val}, ${4:default_val});",
+      "$0"
+    ],
+    "description": "ros param"
+  },
+  "ros Simple Talker Code": {
+    "prefix": "rosSimpleTalker",
+    "body": [
+      "#include \"ros/ros.h\"",
+      "#include \"std_msgs/String.h\"",
+      "",
+      "int main(int argc, char *argv[]) {",
+      "  ros::init(argc, argv, \"publisher_node\");",
+      "  ros::NodeHandle nh;",
+      "",
+      "  ros::Publisher pub = nh.advertise<std_msgs::String>(\"talker_msgs\", 10);",
+      "",
+      "  ros::Rate loop_rate(1);",
+      "  int i{0};",
+      "  while (ros::ok()) {",
+      "    std_msgs::String msg;",
+      "    msg.data = \"Hello world! \" + std::to_string(i);",
+      "",
+      "    pub.publish(msg);",
+      "",
+      "    ROS_INFO(\"%s\", msg.data.c_str());",
+      "",
+      "    ros::spinOnce();",
+      "    loop_rate.sleep();",
+      "",
+      "    i += 1;",
+      "  }",
+      "}"
+    ],
+    "description": "A simple ROS publisher node."
+  },
+  "ros Simple Listener Code": {
+    "prefix": "rosSimpleListener",
+    "body": [
+      "#include \"ros/ros.h\"",
+      "#include \"std_msgs/String.h\"",
+      "",
+      "void listener_cb(const std_msgs::String::ConstPtr &msg) {",
+      "  ROS_INFO(\"I heard: [%s]\", msg->data.c_str());",
+      "}",
+      "",
+      "int main(int argc, char *argv[]) {",
+      "  ros::init(argc, argv, \"subscriber_node\");",
+      "  ros::NodeHandle nh;",
+      "",
+      "  ros::Subscriber sub = nh.subscribe<std_msgs::String>(\"talker_msgs\", 10, listener_cb);",
+      "",
+      "  ros::spin();",
+      "}"
+    ],
+    "description": "A simple ROS subscriber node."
+  }
+}

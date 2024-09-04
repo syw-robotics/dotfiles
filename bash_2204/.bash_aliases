@@ -1,0 +1,272 @@
+##################### user alias -- START -- ####################
+alias sb="clear; source ~/.bashrc"
+alias sz="clear; source ~/.zshrc"
+alias na='nautilus .'
+alias ra='ranger'
+alias dotf='cd ~/.dotfiles/'
+# alias pv='xdg-open'
+alias pdf='zathura'
+alias cl='clear'
+alias sdn='shutdown now'
+alias vba='nv ~/.bash_aliases'
+alias vza='nv ~/.zsh_aliases'
+alias Lab433-server='ssh Lab433-server-admin'
+alias Lab433-server-frp='ssh -p 6000 hx@47.236.28.111'
+alias Singapore-server='ssh Singapore-server'
+alias lg='ls | grep'
+alias psa='ps -aux'
+alias c.='code . ; exit'
+alias nabopointfoot='cd ~/Desktop/nabo_pointfoot_related/Nabo_Pointfoot_Bipedal_Robot_Github/'
+alias ppt='code ~/Desktop/nabo_pointfoot_related/nabopointfootnewestversion/MyResources/ppt/ ; exit'
+alias claude="edge https://claude.ai/ ; exit"
+alias qwen="edge https://tongyi.aliyun.com/qianwen/   ; exit"
+alias msfy="edge https://cn.bing.com/translator/  ; exit"
+alias simpletex="edge https://simpletex.cn/ai/latex_ocr ; exit"
+alias canva="edge https://www.canva.cn/ ; exit"
+alias blbl="edge www.bilibili.com ; exit"
+alias github="edge https://github.com/ ; exit"
+alias zo='/opt/Zotero_linux-x86_64/zotero'
+alias vv='vi ~/.vim/highvim/local-version/.vimrc'
+alias nv='nvim'
+alias neovide='/home/siyuanwang/.config/nvim/neovide.AppImage'
+alias vide='/home/siyuanwang/.config/nvim/neovide.AppImage'
+alias nvk='nv  ~/.config/nvim/lua/core/keymaps.lua'
+alias nvo='nv  ~/.config/nvim/lua/core/options.lua'
+alias nvp='cd  ~/.config/nvim/lua/plugins'
+alias nvc='cd  ~/.config/nvim/lua/core'
+alias my_config='cd ~/toolkits/my_config_files_on_ubuntu'
+alias my_config_push='bash /home/siyuanwang/toolkits/my_config_files_on_ubuntu/update_config_push.sh'
+alias my_config_status='bash /home/siyuanwang/toolkits/my_config_files_on_ubuntu/update_config_status.sh'
+alias vim-snippets='cd /home/siyuanwang/.vim/snippets'
+alias highvim='cd ~/.vim/'
+alias highnvim='cd ~/.config/nvim/'
+alias highbash='nv ~/.oh-my-bash/themes/mytheme/mytheme.theme.sh'    
+alias highrossnippets='cd ~/.vscode/High-ROS-Snippets/snippets/'
+alias edge='microsoft-edge'
+alias ..='cd ..'
+alias ..2='cd ../..'
+alias ..3='cd ../../..'
+alias refresh_fonts='sudo fc-cache -f -v'
+alias inkscape='/home/siyuanwang/.inkscape/Inkscape-091e20e-x86_64.AppImage'
+alias desktops='cd ~/.local/share/applications'
+alias 2204='/media/siyuanwang/d2c7c14a-8f0b-45f4-8458-b3100767f4f8/home/siyuanwang'
+alias chugao='zathura /home/siyuanwang/Desktop/nabo_pointfoot_related/nabopointfootnewestversion/MyResources/chugao.pdf'
+alias wifi='nmtui-connect'
+alias change_default_terminal='sudo update-alternatives --config x-terminal-emulator'
+alias unitree='cd /home/siyuanwang/toolkits/unitree_related'
+alias skillsheet='nv /home/siyuanwang/toolkits/my_scripts/MySkillSheets.md'
+alias mouse='cd ~/Desktop/little_mouse/'
+alias cmake_export_cimpile_commands="cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1"
+alias clang-format-generate-config-file="clang-format --style Google --dump-config > .clang-format"
+alias kitty_config='nv ~/.config/kitty/kitty.conf'
+alias kitty_themes='kitty +kitten themes'
+alias gt='gnome-terminal &; exit; exit'
+alias yz="yazi" 
+export EDITOR=nvim
+alias isaac='cd ~/toolkits/isaac_related/'
+alias ns='nvidia-smi'
+alias r2='source ~/.zsh_ros'
+alias ta='cd ~/Desktop/TA_career/'
+alias lg='lazygit'
+#################### user alias -- END -- ####################
+
+
+#################### diy terminal config -- START -- ####################
+export LS_COLORS=$LS_COLORS:'di=35:' 
+# 30是黑色，31是红色，32 是绿色，33是黄色, 34是蓝色, 35是洋红，36是青色，37是白色
+#################### dit terminal config -- END -- ####################
+
+
+################### cpp -- START -- ####################
+alias cmm="cmake .. && make -j8"
+#################### cpp -- START -- ####################
+
+
+#################### conda&python -- START -- ####################
+alias uc='. ~/toolkits/miniconda3/bin/activate'
+alias py="python3"
+alias wp='which python3'
+alias pv='python3 --version'
+alias pi='pip3 install'
+alias pui='pip3 uninstall'
+alias qc='conda deactivate'
+alias ca='conda activate'
+alias cel='conda env list'
+#################### conda&python -- END -- ####################
+
+
+#################### Clash For Windows -- START -- ####################
+alias cfw='~/toolkits/Clash/cfw &'
+#################### Clash For Windows -- END -- ####################
+
+
+#################### git related -- START -- ####################
+alias gs='git status'
+alias gro='git remote show origin'
+alias ga='git add'
+alias gb='git branch'
+alias gcm='git commit --message'
+alias gl='git log'
+#################### git related -- END -- ####################
+
+
+#################### kill gazebo client -- START -- ####################
+alias kgz='pkill -f gzclient ; pkill -f gzclient'
+#################### kill gazebo client -- END -- ####################
+
+
+#################### my python&bash scripts -- START -- ####################
+  #################### LLM API -- START -- ####################
+  alias glm='python3 ~/toolkits/my_scripts/python_scripts/chatglm_script.py'
+  alias gpt='python3 ~/toolkits/my_scripts/python_scripts/chatgpt_script.py'
+  alias spark='python3 ~/toolkits/my_scripts/python_scripts/spark_script.py'
+  alias kimi='python3 ~/toolkits/my_scripts/python_scripts/kimi_script.py'
+  #################### LLM API -- END -- ####################
+alias myscripts='cd ~/toolkits/my_scripts'
+alias calculator="python3 ~/toolkits/my_scripts/python_scripts/calculator.py"
+alias push="python3 ~/toolkits/my_scripts/python_scripts/quick_git_push.py"
+alias git_clone_folder="python3 ~/toolkits/my_scripts/python_scripts/clone_git_folder.py"
+alias uz1='bash ~/toolkits/my_scripts/bash_scripts/unzip.sh'
+#################### my python&bash scripts -- END -- ####################
+
+
+#################### pycharm & clion -- START -- ####################
+export PATH=/opt/pycharm-2023.3.3/bin/:$PATH
+export PATH=/opt/clion-2023.2.2/bin/:$PATH
+#################### pycharm & clion -- END -- ####################
+
+
+#################### webots -- START -- ####################
+export WEBOTS_HOME=/usr/local/webots
+#################### webots -- END -- ####################
+
+
+#################### coppeliasim -- START -- ####################
+export COPPELIASIM_HOME=/usr/local/CoppeliaSim_Edu_V4_6_0
+alias coppeliasim="/usr/local/CoppeliaSim_Edu_V4_6_0/coppeliaSim.sh"
+#################### coppeliasim -- END -- ####################
+
+
+#################### thefuck configuration -- START -- ####################
+eval $(thefuck --alias)
+# You can use whatever you want as an alias, like for Mondays:
+eval $(thefuck --alias FUCK)
+#################### thefuck configuration -- END -- ####################
+
+
+#################### apt -- START -- ####################
+alias aud='sudo apt update'
+alias aug='sudo apt upgrade'
+alias alu='apt list --upgradable'
+alias aar="sudo apt autoremove"
+#################### apt -- END -- ####################
+
+
+#################### MuJoCo -- START -- ####################
+alias mjc="uc ; conda activate mjc"
+alias mjviewer="~/toolkits/mujoco-3.1.5/bin/simulate"
+  #################### MuJoCo210 -- START -- ####################
+  # export LD_LIBRARY_PATH=~/.mujoco/mujoco210/bin
+  # export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/nvidia
+  #################### MuJoCo210 -- END -- ####################
+#################### MuJoCo -- END -- ####################
+
+
+#################### translation-shell -- START -- ####################
+alias fy='trans :zh'
+#################### translation-shell -- END -- ####################
+
+
+####################  Pinocchio Config --- START ---  ####################
+# export PATH=/opt/openrobots/bin:$PATH
+# export PKG_CONFIG_PATH=/opt/openrobots/lib/pkgconfig:$PKG_CONFIG_PATH
+# export LD_LIBRARY_PATH=/opt/openrobots/lib:$LD_LIBRARY_PATH
+# export ROS_PACKAGE_PATH=/opt/openrobots/share
+# export PYTHONPATH=$PYTHONPATH:/opt/openrobots/lib/python3.8/site-packages
+####################  Pinocchio Config --- END ---  ####################
+
+
+####################  PythonUserPath Config --- START ---  ####################
+# export PYTHONPATH=$PYTHONPATH:/home/siyuanwang/toolkits/python_user_path
+####################  PythonUserPath Config --- END ---  ####################
+
+
+####################  RBDL Config --- START ---  ####################
+# export PYTHONPATH=$PYTHONPATH:/home/siyuanwang/toolkits/rbdl/build/python
+####################  RBDL Config --- START ---  ####################
+
+
+####################  Drake Config --- START ---  ####################
+# export PYTHONPATH=/opt/drake/lib/python3.8/site-packages:${PYTHONPATH}
+####################  Drake Config --- END ---  ####################
+
+
+####################  raisim Config --- START ---  ####################
+# export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/siyuanwang/toolkits/raisim_related/raisimLib/raisim/linux/lib
+# export PYTHONPATH=$PYTHONPATH:/home/siyuanwang/toolkits/raisim_related/raisimLib/raisim/linux/lib
+####################  raisim Config --- END ---  ####################
+
+
+####################  Latex&markdown alias --- START ---  ####################
+create_latex_folder() {
+    read -p "Input Project Name: " latex_folder_name
+    if [ -z "$latex_folder_name"]; then
+        echo "Input can not be empty!"
+        return 1
+    fi
+    mkdir -p "$latex_folder_name"
+    cd "$latex_folder_name"
+}
+alias latex_template_HW='create_latex_folder()' 
+# ; cd $cp /home/siyuanwang/toolkits/latex\&md_related/Latex-Templates/HomeWork/* ./'
+alias latex_template_English='cp /home/siyuanwang/toolkits/latex\&md_related/Latex-Templates/EnglishWriting/* ./'
+alias latex_template_Slide='cp -r /home/siyuanwang/toolkits/latex\&md_related/Latex-Templates/SUSTech-Beamer-Theme/* ./'
+alias slidev-remote='slidev slides.md --remote'
+alias slidev_template='cp /home/siyuanwang/toolkits/latex&md_related/slidev/slidev-my-template/slides.md ./'
+alias marp-server='marp -p -s .'
+alias marp_acdemic_theme_1='cp -r /home/siyuanwang/toolkits/latex\&md_related/marp/marp-theme-academic-sustech/template_1/* ./'
+alias marp_acdemic_theme_2='cp -r /home/siyuanwang/toolkits/latex\&md_related/marp/marp-theme-academic-sustech/template_2/* ./'
+
+alias latex-clean='bash ~/toolkits/my_scripts/bash_scripts/latex_clean.sh'
+alias latex-vi='vi *.tex'
+alias mdlatex2png="python3 ~/toolkits/my_scripts/python_scripts/mdLatex2png.py" 
+alias md2pdf='python ~/toolkits/my_scripts/python_scripts/md2pdf_via_pandoc.py'
+####################  Latex alias --- END ---  ####################
+
+
+####################  nvm config --- START ---  ####################
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm              
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+####################  nvm config --- END ---  ####################
+
+
+####################  docker config --- START ---  ####################
+alias ros_start_container='docker container start ros-noetic'
+alias ros_stop_container='docker container stop ros-noetic'
+alias ros-noetic="docker exec --user syw -it ros-noetic /usr/bin/zsh"
+# == examoles == #
+# alias ros2_start_container='docker container start docker-ros2'
+# alias ros2_stop_container='docker container stop docker-ros2'
+# alias ros2="docker exec --user siyuanwang -it docker-ros2 /bin/bash"
+# alias 24.04_start_container='docker container start ubuntu24.04'
+# alias 24.04_stop_container='docker container stop ubuntu24.04'
+# alias 24.04="docker exec --user siyuanwang -it ubuntu24.04 /bin/bash"
+####################  docker config --- END ---  ####################
+
+
+####################  Colorize Man Page --- START ---  ####################
+export LESS=-R
+export LESS_TERMCAP_mb=$'\e[1;34m'
+export LESS_TERMCAP_md=$'\e[1;34m'
+export LESS_TERMCAP_me=$'\e[0m'
+export LESS_TERMCAP_se=$'\e[0m'
+export LESS_TERMCAP_so=$'\e[01;44;33m'
+export LESS_TERMCAP_ue=$'\e[0m'
+export LESS_TERMCAP_us=$'\e[1;4;32m'
+####################  Colorize Man Page --- START ---  ####################
+
+
+####################  nvim path --- START ---  ####################
+export PATH="$HOME/.config/nvim/nvim-linux64/bin:$PATH"
+####################  nvim path --- END ---  ####################
