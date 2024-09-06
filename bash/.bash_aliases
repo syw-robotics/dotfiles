@@ -20,7 +20,7 @@ alias nabopointfoot='cd ~/Desktop/nabo_pointfoot_related/Nabo_Pointfoot_Bipedal_
 alias ppt='code ~/Desktop/nabo_pointfoot_related/nabopointfootnewestversion/MyResources/ppt/ ; exit'
 alias claude="edge https://claude.ai/ ; exit"
 alias qwen="edge https://tongyi.aliyun.com/qianwen/   ; exit"
-alias msfy="edge https://cn.bing.com/translator/  ; exit"
+alias fy="edge https://cn.bing.com/translator/"
 alias simpletex="edge https://simpletex.cn/ai/latex_ocr ; exit"
 alias canva="edge https://www.canva.cn/ ; exit"
 alias bili="edge www.bilibili.com"
@@ -69,6 +69,7 @@ alias sdm='cd ~/Desktop/sdm_project/project1_state_estimation'
 alias ta='cd ~/Desktop/TA_career/'
 alias lg='lazygit'
 alias docker_start='sudo systemctl start docker.service'
+alias mx='tmux'
 #################### user alias -- END -- ####################
 
 
@@ -175,7 +176,7 @@ alias mjviewer="~/toolkits/mujoco-3.1.5/bin/simulate"
 
 
 #################### translation-shell -- START -- ####################
-alias fy='trans :zh'
+# alias fy='trans :zh'
 #################### translation-shell -- END -- ####################
 
 

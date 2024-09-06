@@ -5,11 +5,22 @@
   title_receive_bg_color = "#8FBCBB"
   title_inactive_fg_color = "#D8DEE9"
   title_inactive_bg_color = "#4C566A"
+  suppress_multiple_term_dialog = True
   title_use_system_font = False
   title_font = Hack Nerd Font Mono Italic 8
 [keybindings]
-  split_horiz = <Primary><Shift>h
-  split_vert = <Primary><Shift>v
+  go_next = <Primary><Shift>Right
+  go_prev = <Primary><Shift>Left
+  go_up = <Primary><Shift>k
+  go_down = <Primary><Shift>j
+  go_left = <Primary><Shift>h
+  go_right = <Primary><Shift>l
+  split_horiz = <Alt>minus
+  split_vert = <Alt>backslash
+  resize_up = <Alt>Up
+  resize_down = <Alt>Down
+  resize_left = <Alt>Left
+  resize_right = <Alt>Right
   switch_to_tab_1 = <Alt>1
   switch_to_tab_2 = <Alt>2
   switch_to_tab_3 = <Alt>3
@@ -40,4 +51,5 @@
     [[[child1]]]
       type = Terminal
       parent = window0
+      profile = default
 [plugins]
