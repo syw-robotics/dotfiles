@@ -25,7 +25,9 @@ alias simpletex="edge https://simpletex.cn/ai/latex_ocr ; exit"
 alias canva="edge https://www.canva.cn/ ; exit"
 alias bili="edge www.bilibili.com"
 alias github="edge https://github.com/ ; exit"
+alias bianqian="edge https://yun.smartisan.com/#/notes"
 alias zhihu="edge https://zhihu.com/ ; exit"
+alias email="edge https://exmail.qq.com/"
 alias ob='/home/syw/Documents/Obsidian/resources/Obsidian-1.5.12.AppImage ; exit'
 alias zo='/opt/Zotero_linux-x86_64/zotero'
 alias vv='vi ~/.vim/highvim/local-version/.vimrc'
@@ -55,6 +57,8 @@ alias chugao='zathura /home/syw/Desktop/nabo_pointfoot_related/nabopointfootnewe
 alias wifi='nmtui-connect'
 alias change_default_terminal='sudo update-alternatives --config x-terminal-emulator'
 alias unitree='cd /home/syw/toolkits/unitree_related'
+alias ros_related='cd /home/syw/toolkits/ros_related/'
+alias limx='cd /home/syw/toolkits/ros_related/limx_ws/'
 alias skillsheet='nv /home/syw/toolkits/my_scripts/MySkillSheets.md'
 alias mouse='cd ~/Desktop/little_mouse/'
 alias cmake_export_cimpile_commands="cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 "
@@ -67,6 +71,7 @@ alias cb='colcon build --cmake-arg -DCMAKE_EXPORT_COMPILE_COMMANDS=ON'
 alias rl='cd ~/toolkits/RL/'
 alias sdm='cd ~/Desktop/sdm_project/project1_state_estimation'
 alias ta='cd ~/Desktop/TA_career/'
+alias 24fall='cd ~/Desktop/24Fall/'
 alias lg='lazygit'
 alias docker_start='sudo systemctl start docker.service'
 alias mx='tmux'
@@ -245,12 +250,16 @@ export NVM_DIR="$HOME/.nvm"
 
 
 ####################  docker config --- START ---  ####################
-alias ros2_start_container='sudo systemctl start docker.service ; docker container start docker-ros2'
+alias docker_start='sudo systemctl start docker.service'
+alias ros2_start_container='docker container start docker-ros2'
 alias ros2_stop_container='docker container stop docker-ros2'
 alias ros2="docker exec --user syw -it docker-ros2 /usr/bin/zsh"
 alias 24.04_start_container='docker container start ubuntu24.04'
 alias 24.04_stop_container='docker container stop ubuntu24.04'
 alias 24.04="docker exec --user syw -it ubuntu24.04 /bin/bash"
+alias melodic_start_container='docker container start docker-ros-melodic'
+alias melodic_stop_container='docker container stop docker-ros-melodic'
+alias melodic="docker exec --user syw -it docker-ros-melodic /usr/bin/zsh"
 ####################  docker config --- END ---  ####################
 
 

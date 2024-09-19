@@ -2,6 +2,7 @@ alias -s {yml,yaml}=nvim
 alias -s {python}=nvim
 alias -s {txt}=nvim
 alias -s {json}=nvim
+alias ll='l'
 alias wsb='web_search baidu'
 alias cb='colcon build --cmake-arg -DCMAKE_EXPORT_COMPILE_COMMANDS=ON'
 alias eth='cd ~/toolkits/ros_related/ETH_ROS_ws/'
