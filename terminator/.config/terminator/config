@@ -30,7 +30,6 @@
   switch_to_tab_7 = <Alt>7
   switch_to_tab_8 = <Alt>8
   switch_to_tab_9 = <Alt>9
-  layout_launcher = <Primary><Shift>l
 [profiles]
   [[default]]
     icon_bell = False
