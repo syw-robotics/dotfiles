@@ -6,6 +6,7 @@ alias ra='ranger'
 alias dotf='cd ~/.dotfiles/'
 # alias pv='xdg-open'
 alias pdf='zathura'
+alias za='zathura'
 alias cl='clear'
 alias sdn='shutdown now'
 alias vba='nv ~/.bash_aliases'
@@ -251,12 +252,24 @@ export NVM_DIR="$HOME/.nvm"
 
 ####################  docker config --- START ---  ####################
 alias docker_start='sudo systemctl start docker.service'
+
 alias ros2_start_container='docker container start docker-ros2'
 alias ros2_stop_container='docker container stop docker-ros2'
 alias ros2="docker exec --user syw -it docker-ros2 /usr/bin/zsh"
+alias ros2_one_start="docker_start ; ros2_start_container ; ros2"
+
+alias ros2_start_container='docker container start docker-ros2'
+alias ros2_stop_container='docker container stop docker-ros2'
+alias ros2="docker exec --user syw -it docker-ros2 /usr/bin/zsh"
+
+alias ros2-ee211_start_container='docker container start ros2-ee211'
+alias ros2-ee211_stop_container='docker container stop ros2-ee211'
+alias ros2-ee211="docker exec --user syw -it ros2-ee211 /bin/bash"
+
 alias 24.04_start_container='docker container start ubuntu24.04'
 alias 24.04_stop_container='docker container stop ubuntu24.04'
 alias 24.04="docker exec --user syw -it ubuntu24.04 /bin/bash"
+
 alias melodic_start_container='docker container start docker-ros-melodic'
 alias melodic_stop_container='docker container stop docker-ros-melodic'
 alias melodic="docker exec --user syw -it docker-ros-melodic /usr/bin/zsh"

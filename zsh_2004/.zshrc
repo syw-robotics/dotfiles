@@ -73,7 +73,6 @@ ZSH_THEME="my"
 # Add wisely, as too many plugins slow down shell startup.
 
 
-source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
@@ -125,5 +124,6 @@ export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 source ~/.bash_aliases
 source ~/.zsh_ros
 source ~/.zsh_aliases
-#
+source $ZSH/oh-my-zsh.sh
+
 # ========== My zsh Configuration ========== #
