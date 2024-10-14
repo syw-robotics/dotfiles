@@ -14,7 +14,8 @@ alias vza='nv ~/.zsh_aliases'
 alias Lab433-server='ssh Lab433-server-admin'
 alias Lab433-server-frp='ssh -p 6000 hx@47.236.28.111'
 alias Singapore-server='ssh Singapore-server'
-alias g='ls | grep'
+alias lsg='ls | grep'
+alias llg='ll | grep'
 alias psa='ps -aux'
 alias c.='code . ; exit'
 alias nabopointfoot='cd ~/Desktop/nabo_pointfoot_related/Nabo_Pointfoot_Bipedal_Robot_Github/'
@@ -91,7 +92,23 @@ alias cmm="cmake .. && make -j8"
 
 
 #################### conda&python -- START -- ####################
-alias uc='. ~/toolkits/miniconda3/bin/activate'
+conda_initialize(){
+    __conda_setup="$('/home/syw/toolkits/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+    if [ $? -eq 0 ]; then
+        eval "$__conda_setup"
+    else
+        if [ -f "/home/syw/toolkits/miniconda3/etc/profile.d/conda.sh" ]; then
+            . "/home/syw/toolkits/miniconda3/etc/profile.d/conda.sh"
+        else
+            export PATH="/home/syw/toolkits/miniconda3/bin:$PATH"
+        fi
+    fi
+    unset __conda_setup
+    # source zsh conda completion script
+    source ~/.gitrepos/conda-zsh-completion/conda-zsh-completion.plugin.zsh
+}
+# alias uc='. ~/toolkits/miniconda3/bin/activate'
+alias uc='conda_initialize'
 alias py="python3"
 alias wp='which python3'
 alias pv='python3 --version'
@@ -135,6 +152,7 @@ alias myscripts='cd ~/toolkits/my_scripts'
 alias calculator="python3 ~/toolkits/my_scripts/python_scripts/calculator.py"
 alias push="python3 ~/toolkits/my_scripts/python_scripts/quick_git_push.py"
 alias git_clone_folder="python3 ~/toolkits/my_scripts/python_scripts/clone_git_folder.py"
+alias pic_export_as_bw="python3 ~/toolkits/my_scripts/python_scripts/pic_export_as_bw.py"
 alias uz1='bash ~/toolkits/my_scripts/bash_scripts/unzip.sh'
 #################### my python&bash scripts -- END -- ####################
 
