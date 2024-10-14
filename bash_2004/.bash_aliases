@@ -104,7 +104,7 @@ conda_initialize(){
         fi
     fi
     unset __conda_setup
-    # source zsh conda completion script
+    # source zsh conda completion script: git clone https://github.com/conda-incubator/conda-zsh-completion.git
     source ~/.gitrepos/conda-zsh-completion/conda-zsh-completion.plugin.zsh
 }
 # alias uc='. ~/toolkits/miniconda3/bin/activate'
