@@ -54,6 +54,7 @@ alias cb='colcon build --cmake-arg -DCMAKE_EXPORT_COMPILE_COMMANDS=ON'
 alias lg='lazygit'
 alias docker_start='sudo systemctl start docker.service'
 alias mx='tmux'
+alias octave-gui='octave --gui'
 ########## Folers ##########
 alias 24fall='cd ~/Desktop/24Fall/'
 alias vim-snippets='cd /home/syw/.vim/snippets'

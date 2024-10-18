@@ -125,5 +125,6 @@ source ~/.bash_aliases
 source ~/.zsh_ros
 source ~/.zsh_aliases
 source $ZSH/oh-my-zsh.sh
+source ~/.llm_api_keys
 
 # ========== My zsh Configuration ========== #
