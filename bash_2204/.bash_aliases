@@ -48,11 +48,13 @@ alias cmake_export_cimpile_commands="cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 "
 alias kitty_config='nv ~/.config/kitty/kitty.conf'
 alias kitty_themes='kitty +kitten themes'
 alias gt='gnome-terminal &; exit; exit'
+alias yazi="/home/syw/.config/yazi/yazi-x86_64-unknown-linux-musl/yazi" 
 alias yz="yazi" 
 export EDITOR=nvim
 alias lg='lazygit'
 alias docker_start='sudo systemctl start docker.service'
 alias mx='tmux'
+alias ns='nvidia-smi'
 ########## Folers ##########
 alias 24fall='cd ~/Desktop/24Fall/'
 alias vim-snippets='cd /home/syw/.vim/snippets'
