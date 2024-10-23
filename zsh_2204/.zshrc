@@ -125,5 +125,9 @@ source ~/.bash_aliases
 source ~/.zsh_ros2
 source ~/.zsh_aliases
 source $ZSH/oh-my-zsh.sh
+source ~/.llm_api_keys
+eval "$(register-python-argcomplete3 ros2)"
+eval "$(register-python-argcomplete3 colcon)"
 
+source ~/.rvm/scripts/rvm
 # ========== My zsh Configuration ========== #

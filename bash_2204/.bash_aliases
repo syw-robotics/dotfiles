@@ -16,7 +16,7 @@ alias psa='ps -aux'
 alias c.='code . ; exit'
 alias ppt='code ~/Desktop/nabo_pointfoot_related/nabopointfootnewestversion/MyResources/ppt/ ; exit'
 alias claude="edge https://claude.ai/ ; exit"
-alias qwen="edge https://tongyi.aliyun.com/qianwen/   ; exit"
+alias qwen="edge https://tongyi.aliyun.com/qianwen/"
 alias fy="edge https://cn.bing.com/translator/"
 alias simpletex="edge https://simpletex.cn/ai/latex_ocr ; exit"
 alias canva="edge https://www.canva.cn/ ; exit"
@@ -74,12 +74,13 @@ alias nvc='cd  ~/.config/nvim/lua/core'
 alias my_config='cd ~/toolkits/my_config_files_on_ubuntu'
 alias dotf='cd ~/.dotfiles/'
 alias nabopointfoot='cd ~/Desktop/nabo_pointfoot_related/Nabo_Pointfoot_Bipedal_Robot_Github/'
+alias isaac_related='cd ~/toolkits/isaac_related/'
+alias isaacsim='cd ~/toolkits/isaac_related/isaac_sim/'
 ########## Folers ##########
 ########## SSH ##########
 alias Lab433-server='ssh Lab433-server-admin'
 alias Lab433-server-frp='ssh -p 6000 hx@47.236.28.111'
 alias Singapore-server='ssh Singapore-server'
-alias ros2-ee211-ssh='ssh -p 8080 syw@172.17.0.1'
 ########## SSH ##########
 #################### user alias -- END -- ####################
 
@@ -114,6 +115,7 @@ conda_initialize(){
 # alias uc='. ~/toolkits/miniconda3/bin/activate'
 alias uc='conda_initialize'
 alias py="python3"
+alias python="python3"
 alias wp='which python3'
 alias pv='python3 --version'
 alias pi='pip3 install'
@@ -121,7 +123,9 @@ alias pui='pip3 uninstall'
 alias qc='conda deactivate'
 alias ca='conda activate'
 alias cel='conda env list'
-alias motion_imitation='uc ; ca rlexample ; cd ~/.gitrepos/motion_imitation/'
+alias motion_imitation='uc ; ca motion_imitation ; cd ~/.gitrepos/motion_imitation/'
+alias tensorboard="python3 -m tensorboard.main"
+alias tensorboard-logdir="python3 -m tensorboard.main --logdir"
 #################### conda&python -- END -- ####################
 
 
@@ -272,31 +276,6 @@ export NVM_DIR="$HOME/.nvm"
 ####################  docker config --- START ---  ####################
 alias docker_start='sudo systemctl start docker.service'
 
-alias ros2_start_container='docker container start docker-ros2'
-alias ros2_stop_container='docker container stop docker-ros2'
-alias ros2="docker exec --user syw -it docker-ros2 /usr/bin/zsh"
-alias ros2_one_start="docker_start ; ros2_start_container ; ros2"
-
-alias ros2_start_container='docker container start docker-ros2'
-alias ros2_stop_container='docker container stop docker-ros2'
-alias ros2="docker exec --user syw -it docker-ros2 /usr/bin/zsh"
-
-alias ros2-ee211_start_container='docker container start ros2-ee211'
-alias ros2-ee211_stop_container='docker container stop ros2-ee211'
-alias ros2-ee211="docker exec --user syw -it ros2-ee211 /bin/bash"
-alias ros2-ee211-root="docker exec -it ros2-ee211 /bin/bash"
-
-alias 2404_start_container='docker container start ubuntu24.04'
-alias 2404_stop_container='docker container stop ubuntu24.04'
-alias 2404="docker exec --user syw -it ubuntu24.04 /bin/bash"
-
-alias melodic_start_container='docker container start docker-ros-melodic'
-alias melodic_stop_container='docker container stop docker-ros-melodic'
-alias melodic="docker exec --user syw -it docker-ros-melodic /usr/bin/zsh"
-
-alias 2204-arm_start_container='docker container start ubuntu22-arm'
-alias 2204-arm_stop_container='docker container stop ubuntu22-arm'
-alias 2204-arm="docker exec -it ubuntu22-arm /bin/bash"
 ####################  docker config --- END ---  ####################
 
 
@@ -315,3 +294,24 @@ export LESS_TERMCAP_us=$'\e[1;4;32m'
 ####################  nvim path --- START ---  ####################
 export PATH="$HOME/.config/nvim/nvim-linux64/bin:$PATH"
 ####################  nvim path --- END ---  ####################
+
+####################  cuda path --- START ---  ####################
+export PATH=/usr/local/cuda-12.4/bin:$PATH  
+export LD_LIBRARY_PATH=/usr/local/cuda-12.4/lib64:$LD_LIBRARY_PATH
+export CUDA_HOME=/usr/local/cuda
+####################  cuda path --- END ---  ####################
+
+
+####################  isaac-sim --- START ---  ####################
+# Isaac Sim root directory
+export ISAACSIM_PATH="${HOME}/.local/share/ov/pkg/isaac-sim-4.2.0"
+# Isaac Sim python executable
+export ISAACSIM_PYTHON_EXE="${ISAACSIM_PATH}/python.sh"
+alias omniverse-launcher='/home/syw/toolkits/isaac_related/isaac_sim/omniverse-launcher-linux.AppImage &'
+alias isaacsim-app='${ISAACSIM_PATH}/isaac-sim.sh'
+alias isaacsim-python='${ISAACSIM_PYTHON_EXE}'
+alias isaaclab='cd ~/toolkits/isaac_related/IsaacLab/'
+alias ispy='isaacsim-python'
+alias islab-sh='./isaaclab.sh'
+alias islab-sh-python='./isaaclab.sh -p'
+####################  isaac-sim --- END ---  ####################
