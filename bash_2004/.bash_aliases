@@ -122,6 +122,9 @@ alias qc='conda deactivate'
 alias ca='conda activate'
 alias cel='conda env list'
 alias motion_imitation='uc ; ca rlexample ; cd ~/.gitrepos/motion_imitation/'
+alias spinningup='uc ; ca spinningup ; cd ~/.gitrepos/spinningup/ ; export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/syw/.mujoco/mujoco210/bin'
+alias spinningup-conda='uc ; ca spinningup ; export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/syw/.mujoco/mujoco210/bin'
+alias mjc="uc ; conda activate mjc ; export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/syw/.mujoco/mujoco210/bin"
 #################### conda&python -- END -- ####################
 
 
@@ -163,19 +166,19 @@ alias uz1='bash ~/toolkits/my_scripts/bash_scripts/unzip.sh'
 
 
 #################### pycharm & clion -- START -- ####################
-export PATH=/opt/pycharm-2023.3.3/bin/:$PATH
-export PATH=/opt/clion-2023.2.2/bin/:$PATH
+# export PATH=/opt/pycharm-2023.3.3/bin/:$PATH
+# export PATH=/opt/clion-2023.2.2/bin/:$PATH
 #################### pycharm & clion -- END -- ####################
 
 
 #################### webots -- START -- ####################
-export WEBOTS_HOME=/usr/local/webots
+# export WEBOTS_HOME=/usr/local/webots
 #################### webots -- END -- ####################
 
 
 #################### coppeliasim -- START -- ####################
-export COPPELIASIM_HOME=/usr/local/CoppeliaSim_Edu_V4_6_0
-alias coppeliasim="/usr/local/CoppeliaSim_Edu_V4_6_0/coppeliaSim.sh"
+# export COPPELIASIM_HOME=/usr/local/CoppeliaSim_Edu_V4_6_0
+# alias coppeliasim="/usr/local/CoppeliaSim_Edu_V4_6_0/coppeliaSim.sh"
 #################### coppeliasim -- END -- ####################
 
 
@@ -195,7 +198,6 @@ alias aar="sudo apt autoremove"
 
 
 #################### MuJoCo -- START -- ####################
-alias mjc="uc ; conda activate mjc"
 alias mjviewer="~/toolkits/mujoco-3.1.5/bin/simulate"
   #################### MuJoCo210 -- START -- ####################
   # export LD_LIBRARY_PATH=~/.mujoco/mujoco210/bin
@@ -285,6 +287,10 @@ alias ros2-ee211_start_container='docker container start ros2-ee211'
 alias ros2-ee211_stop_container='docker container stop ros2-ee211'
 alias ros2-ee211="docker exec --user syw -it ros2-ee211 /bin/bash"
 alias ros2-ee211-root="docker exec -it ros2-ee211 /bin/bash"
+
+alias ros2-ee211-camera_start_container='docker container start ros2-ee211-camera'
+alias ros2-ee211-camera_stop_container='docker container stop ros2-ee211-camera'
+alias ros2-ee211-camera="docker exec --user syw -it ros2-ee211-camera /bin/bash"
 
 alias 2404_start_container='docker container start ubuntu24.04'
 alias 2404_stop_container='docker container stop ubuntu24.04'
