@@ -124,6 +124,7 @@ alias qc='conda deactivate'
 alias ca='conda activate'
 alias cel='conda env list'
 alias motion_imitation='uc ; ca motion_imitation ; cd ~/.gitrepos/motion_imitation/'
+alias amp='uc ; ca amp_hw ; cd ~/.gitrepos/AMP_A1/'
 alias tensorboard="python3 -m tensorboard.main"
 alias tensorboard-logdir="python3 -m tensorboard.main --logdir"
 #################### conda&python -- END -- ####################
