@@ -76,6 +76,7 @@ alias dotf='cd ~/.dotfiles/'
 alias nabopointfoot='cd ~/Desktop/nabo_pointfoot_related/Nabo_Pointfoot_Bipedal_Robot_Github/'
 alias isaac_related='cd ~/toolkits/isaac_related/'
 alias isaacsim='cd ~/toolkits/isaac_related/isaac_sim/'
+alias raisim='cd ~/toolkits/raisim_related/raisimLib/'
 ########## Folers ##########
 ########## SSH ##########
 alias Lab433-server='ssh Lab433-server-admin'
@@ -124,9 +125,15 @@ alias qc='conda deactivate'
 alias ca='conda activate'
 alias cel='conda env list'
 alias motion_imitation='uc ; ca motion_imitation ; cd ~/.gitrepos/motion_imitation/'
+alias spinningup='uc ; ca spinningup ; cd ~/.gitrepos/spinningup/ ; export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/syw/.mujoco/mujoco210/bin ; export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/nvidia ; '
+# alias spinningup='uc ; ca spinningup ; cd ~/.gitrepos/spinningup/ ; export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/syw/.mujoco/mjpro150/bin ; export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libGLEW.so'
 alias amp='uc ; ca amp_hw ; cd ~/.gitrepos/AMP_A1/'
 alias tensorboard="python3 -m tensorboard.main"
 alias tensorboard-logdir="python3 -m tensorboard.main --logdir"
+alias sync_papers_to_xiaoxin='rsync -avz -e ssh /home/syw/Documents/RL-Papers-2024 xiaoxin:/home/syw/Documents/'
+alias sync_papers_to_xiaoxin_423='rsync -avz -e ssh /home/syw/Documents/RL-Papers-2024 xiaoxin_423:/home/syw/Documents/'
+alias sync_24fall_to_yilong='rsync -avz -e ssh /home/syw/Desktop/24Fall xiaoxin:/home/syw/Desktop/'
+alias sync_24fall_to_yilong_423='rsync -avz -e ssh /home/syw/Documents/24Fall xiaoxin_423:/home/syw/Desktop/'
 #################### conda&python -- END -- ####################
 
 
@@ -152,10 +159,11 @@ alias kgz='pkill -f gzclient ; pkill -f gzclient'
 
 #################### my python&bash scripts -- START -- ####################
   #################### LLM API -- START -- ####################
-  alias glm='python3 ~/toolkits/my_scripts/python_scripts/chatglm_script.py'
-  alias gpt='python3 ~/toolkits/my_scripts/python_scripts/chatgpt_script.py'
+  alias glm='python3 ~/toolkits/my_scripts/python_scripts/glm_script.py'
+  alias gpt='python3 ~/toolkits/my_scripts/python_scripts/github_model_script.py'
   alias spark='python3 ~/toolkits/my_scripts/python_scripts/spark_script.py'
   alias kimi='python3 ~/toolkits/my_scripts/python_scripts/kimi_script.py'
+  alias grok='python3 ~/toolkits/my_scripts/python_scripts/grok_script.py'
   #################### LLM API -- END -- ####################
 alias mypythonscripts='cd ~/toolkits/my_scripts/python_scripts/'
 alias myscripts='cd ~/toolkits/my_scripts'
@@ -276,6 +284,9 @@ export NVM_DIR="$HOME/.nvm"
 
 ####################  docker config --- START ---  ####################
 alias docker_start='sudo systemctl start docker.service'
+alias noetic_start_container='docker container start docker-ros'
+alias noetic_stop_container='docker container stop docker-ros'
+alias noetic="docker exec --user syw -it docker-ros /bin/bash"
 
 ####################  docker config --- END ---  ####################
 
@@ -315,4 +326,5 @@ alias isaaclab='cd ~/toolkits/isaac_related/IsaacLab/'
 alias ispy='isaacsim-python'
 alias islab-sh='./isaaclab.sh'
 alias islab-sh-python='./isaaclab.sh -p'
+alias isaacgym='cd ~/toolkits/isaac_related/isaacgym'
 ####################  isaac-sim --- END ---  ####################
