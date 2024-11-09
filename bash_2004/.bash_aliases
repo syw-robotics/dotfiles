@@ -16,7 +16,7 @@ alias psa='ps -aux'
 alias c.='code . ; exit'
 alias ppt='code ~/Desktop/nabo_pointfoot_related/nabopointfootnewestversion/MyResources/ppt/ ; exit'
 alias claude="edge https://claude.ai/ ; exit"
-alias qwen="edge https://tongyi.aliyun.com/qianwen/   ; exit"
+alias qwen="edge https://tongyi.aliyun.com/qianwen/  & ; exit"
 alias fy="edge https://cn.bing.com/translator/"
 alias simpletex="edge https://simpletex.cn/ai/latex_ocr ; exit"
 alias canva="edge https://www.canva.cn/ ; exit"
@@ -55,6 +55,10 @@ alias lg='lazygit'
 alias docker_start='sudo systemctl start docker.service'
 alias mx='tmux'
 alias octave-gui='octave --gui'
+alias sync_papers_to_yilong='rsync -avz -e ssh /home/syw/Documents/RL-Papers-2024 yilong:/home/syw/Documents/'
+alias sync_papers_to_yilong_423='rsync -avz -e ssh /home/syw/Documents/RL-Papers-2024 yilong_423:/home/syw/Documents/'
+alias sync_24fall_to_yilong='rsync -avz -e ssh /home/syw/Desktop/24Fall yilong:/home/syw/Desktop/'
+alias sync_24fall_to_yilong_423='rsync -avz -e ssh /home/syw/Documents/24Fall yilong_423:/home/syw/Desktop/'
 ########## Folers ##########
 alias 24fall='cd ~/Desktop/24Fall/'
 alias vim-snippets='cd /home/syw/.vim/snippets'
@@ -73,7 +77,9 @@ alias nvp='cd  ~/.config/nvim/lua/plugins'
 alias nvc='cd  ~/.config/nvim/lua/core'
 alias my_config='cd ~/toolkits/my_config_files_on_ubuntu'
 alias dotf='cd ~/.dotfiles/'
+alias grepos='cd ~/.gitrepos/'
 alias nabopointfoot='cd ~/Desktop/nabo_pointfoot_related/Nabo_Pointfoot_Bipedal_Robot_Github/'
+alias tensorboard-logdir='python3 -m tensorboard.main --logdir'
 ########## Folers ##########
 ########## SSH ##########
 alias Lab433-server='ssh Lab433-server-admin'
