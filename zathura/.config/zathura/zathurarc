@@ -54,8 +54,10 @@ set window-width 1160
 #set pages-per-row 1
 
 #key map
-map e scroll half-up
-map w scroll half-down
+map u scroll half-up
+map d scroll half-down
+map a scroll half-up
+map z scroll half-down
 
 #Color
 set notification-error-bg       "#282828" # bg
