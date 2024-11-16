@@ -116,7 +116,8 @@ plugins=(
 )
 
 # setopt CORRECT_ALL
-
+# 支持通配符, 如*
+setopt nonomatch
 # <Ctrl+/> 接受 auto-suggestion 的补全建议
 bindkey '^_' autosuggest-accept
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
@@ -126,5 +127,4 @@ source ~/.zsh_ros
 source ~/.zsh_aliases
 source $ZSH/oh-my-zsh.sh
 source ~/.llm_api_keys
-
 # ========== My zsh Configuration ========== #
