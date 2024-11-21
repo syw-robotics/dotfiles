@@ -111,28 +111,50 @@ plugins=(
     git
     zsh-autosuggestions
     # zsh-syntax-highlighting
-    z
+    # z
+    zsh-z
     web-search
+    # zsh-vi-mode  # git clone https://github.com/jeffreytse/zsh-vi-mode $ZSH_CUSTOM/plugins/zsh-vi-mode
 )
 
 # setopt CORRECT_ALL
 
-# <Ctrl+/> 接受 auto-suggestion 的补全建议
-bindkey '^_' autosuggest-accept
+# 支持通配符, 如*
+setopt nonomatch
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
+# zsh-vi-mode keybind for Escape
+# ZVM_VI_INSERT_ESCAPE_BINDKEY=jf
+
 source ~/.bash_aliases
-source ~/.zsh_ros2
+# source ~/.zsh_ros2
 source ~/.zsh_aliases
 source $ZSH/oh-my-zsh.sh
 source ~/.llm_api_keys
-eval "$(register-python-argcomplete3 ros2)"
-eval "$(register-python-argcomplete3 colcon)"
 
+# ===== misc ===== #
+# eval "$(zoxide init zsh)" # not using native zoxide, instead using zsh zoxide plugin
 source ~/.rvm/scripts/rvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# ===== misc ===== #
 
 # ===== cuda ===== #
-export PATH=/usr/local/cuda-12.6/bin${PATH:+:${PATH}}
-export LD_LIBRARY_PATH=/usr/local/cuda-12.6/lib64\ ${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+# export PATH=/usr/local/cuda-12.6/bin${PATH:+:${PATH}}
+# export LD_LIBRARY_PATH=/usr/local/cuda-12.6/lib64\ ${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 # ===== cuda ===== #
 # ========== My zsh Configuration ========== #
+
+# ========== My bindkey Configuration ========== #
+bindkey '^_'      autosuggest-accept
+bindkey '\'       autosuggest-accept
+bindkey '^[b'     backward-word        # Alt + b
+bindkey '^[w'     forward-word         # Alt + w
+bindkey '^[i'     redo                 # Alt + i  # Alt + r is taken to resize window size
+bindkey '^[u'     undo                 # Alt + u
+bindkey '^[d'     delete-word          # Alt + d
+bindkey '^[x'     delete-char          # Alt + x
+# Ctrl + w    backward-delete-word 
+# Ctrl + k    delete to the end of line
+# ========== My bindkey Configuration ========== #

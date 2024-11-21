@@ -116,11 +116,20 @@ plugins=(
 )
 
 # setopt CORRECT_ALL
+
 # 支持通配符, 如*
 setopt nonomatch
+
 # <Ctrl+/> 接受 auto-suggestion 的补全建议
 bindkey '^_' autosuggest-accept
+bindkey '\' autosuggest-accept
+
+# ctrl + [ ctrl + ] 映射方向键上下键
+bindkey '^]' down-line-or-history
+bindkey '^[' up-line-or-history
+
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+
 
 source ~/.bash_aliases
 source ~/.zsh_ros

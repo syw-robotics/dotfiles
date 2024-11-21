@@ -6,6 +6,30 @@ module completions {
     --help(-h)                # Print help
   ]
 
+  # Emit a command to be executed by the current instance
+  export extern "ya emit" [
+    name: string              # The name of the command
+    ...args: string           # The arguments of the command
+    --help(-h)                # Print help
+  ]
+
+  # Emit a command to be executed by the specified instance
+  export extern "ya emit-to" [
+    receiver: string          # The receiver ID
+    name: string              # The name of the command
+    ...args: string           # The arguments of the command
+    --help(-h)                # Print help
+  ]
+
+  # Manage packages
+  export extern "ya pack" [
+    --add(-a): string         # Add a package
+    --install(-i)             # Install all packages
+    --list(-l)                # List all packages
+    --upgrade(-u)             # Upgrade all packages
+    --help(-h)                # Print help
+  ]
+
   # Publish a message to the current instance
   export extern "ya pub" [
     kind: string              # The kind of message
@@ -31,17 +55,20 @@ module completions {
     --help(-h)                # Print help
   ]
 
-  # Manage packages
-  export extern "ya pack" [
-    --add(-a): string         # Add a package
-    --install(-i)             # Install all packages
-    --list(-l)                # List all packages
-    --upgrade(-u)             # Upgrade all packages
-    --help(-h)                # Print help
-  ]
-
   # Print this message or the help of the given subcommand(s)
   export extern "ya help" [
+  ]
+
+  # Emit a command to be executed by the current instance
+  export extern "ya help emit" [
+  ]
+
+  # Emit a command to be executed by the specified instance
+  export extern "ya help emit-to" [
+  ]
+
+  # Manage packages
+  export extern "ya help pack" [
   ]
 
   # Publish a message to the current instance
@@ -54,10 +81,6 @@ module completions {
 
   # Subscribe to messages from all remote instances
   export extern "ya help sub" [
-  ]
-
-  # Manage packages
-  export extern "ya help pack" [
   ]
 
   # Print this message or the help of the given subcommand(s)

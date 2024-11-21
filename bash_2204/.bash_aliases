@@ -13,22 +13,25 @@ alias vza='nv ~/.zsh_aliases'
 alias lsg='ls | grep'
 alias llg='ll | grep'
 alias psa='ps -aux'
-alias c.='code . ; exit'
-alias ppt='code ~/Desktop/nabo_pointfoot_related/nabopointfootnewestversion/MyResources/ppt/ ; exit'
-alias claude="edge https://claude.ai/ ; exit"
+alias c.='code . '
+alias ppt='code ~/Desktop/nabo_pointfoot_related/nabopointfootnewestversion/MyResources/ppt/ '
+alias claude="edge https://claude.ai/ "
 alias qwen="edge https://tongyi.aliyun.com/qianwen/"
 alias fy="edge https://cn.bing.com/translator/"
-alias simpletex="edge https://simpletex.cn/ai/latex_ocr ; exit"
-alias canva="edge https://www.canva.cn/ ; exit"
+alias simpletex="edge https://simpletex.cn/ai/latex_ocr "
+alias canva="edge https://www.canva.cn/ "
 alias bili="edge www.bilibili.com"
-alias github="edge https://github.com/ ; exit"
+alias github="edge https://github.com/ "
 alias bianqian="edge https://yun.smartisan.com/#/notes"
-alias zhihu="edge https://zhihu.com/ ; exit"
+alias zhihu="edge https://zhihu.com/ "
+alias flowus="edge https://flowus.cn/"
 alias email="edge https://exmail.qq.com/"
-alias ob='/home/syw/Documents/Obsidian/resources/Obsidian-1.5.12.AppImage ; exit'
+alias ob='/home/syw/Documents/Obsidian/resources/Obsidian-1.5.12.AppImage '
 alias zo='/opt/Zotero_linux-x86_64/zotero'
 alias vv='vi ~/.vim/highvim/local-version/.vimrc'
 alias nv='nvim'
+alias n='nvim'
+alias v='nvim'
 alias neovide='/home/syw/.config/nvim/neovide.AppImage'
 alias vide='/home/syw/.config/nvim/neovide.AppImage'
 alias nvk='nv  ~/.config/nvim/lua/core/keymaps.lua'
@@ -37,21 +40,25 @@ alias nvllm='cd ~/.local/state/nvim/llm-history/'
 alias my_config_push='bash /home/syw/toolkits/my_config_files_on_ubuntu/update_config_push.sh'
 alias my_config_status='bash /home/syw/toolkits/my_config_files_on_ubuntu/update_config_status.sh'
 alias edge='microsoft-edge'
+# alias b="batcat"
+# alias bat="batcat" # do `ln -s /usr/bin/batcat ~/.local/bin/bat`
 alias ..='cd ..'
 alias ..2='cd ../..'
 alias ..3='cd ../../..'
 alias refresh_fonts='sudo fc-cache -f -v'
 alias inkscape='/home/syw/.inkscape/Inkscape-091e20e-x86_64.AppImage'
-alias 2204='/media/syw/d2c7c14a-8f0b-45f4-8458-b3100767f4f8/home/syw'
 alias change_default_terminal='sudo update-alternatives --config x-terminal-emulator'
 alias skillsheet='nv /home/syw/toolkits/my_scripts/MySkillSheets.md'
 alias cmake_export_cimpile_commands="cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 "
 alias kitty_config='nv ~/.config/kitty/kitty.conf'
 alias kitty_themes='kitty +kitten themes'
-alias gt='gnome-terminal &; exit; exit'
-alias yazi="/home/syw/.config/yazi/yazi-x86_64-unknown-linux-musl/yazi" 
-alias yz="yazi" 
+alias gt='gnome-terminal &'
+# alias yazi="/home/syw/.config/yazi/yazi-x86_64-unknown-linux-musl/yazi"
+# alias ya="/home/syw/.config/yazi/yazi-x86_64-unknown-linux-musl/ya"
+# alias yz="yazi"
 export EDITOR=nvim
+export GIT_EDITOR=nvim
+export VISUAL=nvim
 alias lg='lazygit'
 alias docker_start='sudo systemctl start docker.service'
 alias mx='tmux'
@@ -63,6 +70,7 @@ alias highvim='cd ~/.vim/'
 alias highnvim='cd ~/.config/nvim/'
 alias highros-snippets='cd ~/.vscode/High-ROS-Snippets/snippets/'
 alias highros2-snippets='cd ~/.vscode/High-ROS2-Snippets/snippets/'
+alias papers="cd ~/Documents/RL-Papers-2024/"
 alias ta='cd ~/Desktop/TA_career/'
 alias rl='cd ~/toolkits/RL/'
 alias desktops='cd ~/.local/share/applications'
@@ -81,9 +89,30 @@ alias raisim='cd ~/toolkits/raisim_related/raisimLib/'
 ########## Folers ##########
 ########## SSH ##########
 alias Lab433-server='ssh Lab433-server-admin'
-alias Lab433-server-frp='ssh -p 6000 hx@47.236.28.111'
-alias Singapore-server='ssh Singapore-server'
+alias Lab433-server-frp-auth-connect='/home/syw/toolkits/auth-guest_linux_amd64-18854248.auth-guest_linux_amd64-18854248 ; ssh Lab433-server-admin-frp'
 ########## SSH ##########
+source ~/.frpc_aliases
+alias fzfcd='cd_fzf'
+alias fzfbat='bat_fzf'
+alias fzfnvim='nv_fzf'
+cd_fzf() {
+    cd "$(dirname "$(fzf)")"
+}
+bat_fzf() {
+    batcat "$(fzf)"
+}
+nv_fzf() {
+    nv "$(fzf)"
+}
+# yazi: press y to start yazi, and change directory when quit yazi
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
 #################### user alias -- END -- ####################
 
 
@@ -131,10 +160,21 @@ alias spinningup='uc ; ca spinningup ; cd ~/.gitrepos/spinningup/ ; export LD_LI
 alias amp='uc ; ca amp_hw ; cd ~/.gitrepos/AMP_A1/'
 alias tensorboard="python3 -m tensorboard.main"
 alias tensorboard-logdir="python3 -m tensorboard.main --logdir"
-alias sync_papers_to_xiaoxin='rsync -avz -e ssh /home/syw/Documents/RL-Papers-2024 xiaoxin:/home/syw/Documents/'
-alias sync_papers_to_xiaoxin_423='rsync -avz -e ssh /home/syw/Documents/RL-Papers-2024 xiaoxin_423:/home/syw/Documents/'
-alias sync_24fall_to_yilong='rsync -avz -e ssh /home/syw/Desktop/24Fall xiaoxin:/home/syw/Desktop/'
-alias sync_24fall_to_yilong_423='rsync -avz -e ssh /home/syw/Documents/24Fall xiaoxin_423:/home/syw/Desktop/'
+alias sync_to_xiaoxin='sync_folder_through_ssh Papers /home/syw/Documents/RL-Papers-2024 xiaoxin /home/syw/Documents/;
+                      sync_folder_through_ssh 24Fall /home/syw/Desktop/24Fall xiaoxin /home/syw/Desktop/;
+                      sync_folder_through_ssh Others /home/syw/toolkits/mujoco_related xiaoxin /home/syw/toolkits/; '
+alias sync_to_xiaoxin_423='sync_folder_through_ssh Papers /home/syw/Documents/RL-Papers-2024 xiaoxin_423 /home/syw/Documents/;
+                      sync_folder_through_ssh 24Fall /home/syw/Desktop/24Fall xiaoxin_423 /home/syw/Desktop;
+                      sync_folder_through_ssh Others /home/syw/toolkits/mujoco_related xiaoxin_423 /home/syw/toolkits/; '
+sync_folder_through_ssh() {
+    if [ "$#" -ne 4 ]; then
+        echo "Usage: sync_folder_through_ssh <description> <source_path> <user@host> <target_path>"
+        return 1
+    fi
+    echo -e "\033[32mSyncing $1......\033[0m" 
+    rsync -avz -e ssh "$2" "$3:$4"
+    echo -e "\033[32mSync $1 Done!\033[0m\n\n"
+}
 #################### conda&python -- END -- ####################
 
 
@@ -205,6 +245,8 @@ alias aud='sudo apt update'
 alias aug='sudo apt upgrade'
 alias alu='apt list --upgradable'
 alias aar="sudo apt autoremove"
+alias ais="sudo apt install"
+alias dpkgi="sudo dpkg -i"
 #################### apt -- END -- ####################
 
 
@@ -285,10 +327,12 @@ export NVM_DIR="$HOME/.nvm"
 
 ####################  docker config --- START ---  ####################
 alias docker_start='sudo systemctl start docker.service'
-alias noetic_start_container='docker container start docker-ros'
-alias noetic_stop_container='docker container stop docker-ros'
-alias noetic="docker exec --user syw -it docker-ros /bin/bash"
-
+alias docker_restart='sudo systemctl restart docker'
+alias noetic_start_container='docker container start docker-noetic'
+alias noetic_stop_container='docker container stop docker-noetic'
+# alias noetic="docker exec --user syw -it docker-noetic /usr/bin/zsh"
+alias noetic="docker exec -it docker-noetic /usr/bin/zsh" # 直接exec指定进入syw用户打不开gazebo，在root用户可以，先进入root然后su syw实测可以正常运行gazebo
+alias noetic_one_start="noetic_start_container; noetic"
 ####################  docker config --- END ---  ####################
 
 
@@ -329,3 +373,10 @@ alias islab-sh='./isaaclab.sh'
 alias islab-sh-python='./isaaclab.sh -p'
 alias isaacgym='cd ~/toolkits/isaac_related/isaacgym'
 ####################  isaac-sim --- END ---  ####################
+
+
+####################  tmuxifier --- START ---  ####################
+export PATH="$HOME/.tmuxifier/bin:$PATH"
+eval "$(tmuxifier init -)"
+alias mxf='tmuxifier'
+####################  tmuxifier --- END ---  ####################

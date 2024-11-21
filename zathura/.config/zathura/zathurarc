@@ -26,7 +26,8 @@
 set adjust-open "width"
 
 #字体与字号
-set font "Noto Sans CJK SC Regular 9"
+# set font "Noto Sans CJK SC Regular 9"
+set font "MiSans Regular 9"
 
 #GUI相关，留空可隐藏底部statusbar
 #set guioptions ""

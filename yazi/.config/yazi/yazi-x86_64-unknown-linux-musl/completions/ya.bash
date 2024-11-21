@@ -12,6 +12,12 @@ _ya() {
             ",$1")
                 cmd="ya"
                 ;;
+            ya,emit)
+                cmd="ya__emit"
+                ;;
+            ya,emit-to)
+                cmd="ya__emit__to"
+                ;;
             ya,help)
                 cmd="ya__help"
                 ;;
@@ -26,6 +32,12 @@ _ya() {
                 ;;
             ya,sub)
                 cmd="ya__sub"
+                ;;
+            ya__help,emit)
+                cmd="ya__help__emit"
+                ;;
+            ya__help,emit-to)
+                cmd="ya__help__emit__to"
                 ;;
             ya__help,help)
                 cmd="ya__help__help"
@@ -49,7 +61,7 @@ _ya() {
 
     case "${cmd}" in
         ya)
-            opts="-V -h --version --help pub pub-to sub pack help"
+            opts="-V -h --version --help emit emit-to pack pub pub-to sub help"
             if [[ ${cur} == -* || ${COMP_CWORD} -eq 1 ]] ; then
                 COMPREPLY=( $(compgen -W "${opts}" -- "${cur}") )
                 return 0
@@ -62,9 +74,65 @@ _ya() {
             COMPREPLY=( $(compgen -W "${opts}" -- "${cur}") )
             return 0
             ;;
-        ya__help)
-            opts="pub pub-to sub pack help"
+        ya__emit)
+            opts="-h --help <NAME> [ARGS]..."
             if [[ ${cur} == -* || ${COMP_CWORD} -eq 2 ]] ; then
+                COMPREPLY=( $(compgen -W "${opts}" -- "${cur}") )
+                return 0
+            fi
+            case "${prev}" in
+                *)
+                    COMPREPLY=()
+                    ;;
+            esac
+            COMPREPLY=( $(compgen -W "${opts}" -- "${cur}") )
+            return 0
+            ;;
+        ya__emit__to)
+            opts="-h --help <RECEIVER> <NAME> [ARGS]..."
+            if [[ ${cur} == -* || ${COMP_CWORD} -eq 2 ]] ; then
+                COMPREPLY=( $(compgen -W "${opts}" -- "${cur}") )
+                return 0
+            fi
+            case "${prev}" in
+                *)
+                    COMPREPLY=()
+                    ;;
+            esac
+            COMPREPLY=( $(compgen -W "${opts}" -- "${cur}") )
+            return 0
+            ;;
+        ya__help)
+            opts="emit emit-to pack pub pub-to sub help"
+            if [[ ${cur} == -* || ${COMP_CWORD} -eq 2 ]] ; then
+                COMPREPLY=( $(compgen -W "${opts}" -- "${cur}") )
+                return 0
+            fi
+            case "${prev}" in
+                *)
+                    COMPREPLY=()
+                    ;;
+            esac
+            COMPREPLY=( $(compgen -W "${opts}" -- "${cur}") )
+            return 0
+            ;;
+        ya__help__emit)
+            opts=""
+            if [[ ${cur} == -* || ${COMP_CWORD} -eq 3 ]] ; then
+                COMPREPLY=( $(compgen -W "${opts}" -- "${cur}") )
+                return 0
+            fi
+            case "${prev}" in
+                *)
+                    COMPREPLY=()
+                    ;;
+            esac
+            COMPREPLY=( $(compgen -W "${opts}" -- "${cur}") )
+            return 0
+            ;;
+        ya__help__emit__to)
+            opts=""
+            if [[ ${cur} == -* || ${COMP_CWORD} -eq 3 ]] ; then
                 COMPREPLY=( $(compgen -W "${opts}" -- "${cur}") )
                 return 0
             fi

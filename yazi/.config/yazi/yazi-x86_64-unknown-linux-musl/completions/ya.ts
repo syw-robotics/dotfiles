@@ -3,6 +3,80 @@ const completion: Fig.Spec = {
   description: "Yazi command-line interface",
   subcommands: [
     {
+      name: "emit",
+      description: "Emit a command to be executed by the current instance",
+      options: [
+        {
+          name: ["-h", "--help"],
+          description: "Print help",
+        },
+      ],
+      args: [
+        {
+          name: "name",
+        },
+        {
+          name: "args",
+          isVariadic: true,
+          isOptional: true,
+        },
+      ]
+    },
+    {
+      name: "emit-to",
+      description: "Emit a command to be executed by the specified instance",
+      options: [
+        {
+          name: ["-h", "--help"],
+          description: "Print help",
+        },
+      ],
+      args: [
+        {
+          name: "receiver",
+        },
+        {
+          name: "name",
+        },
+        {
+          name: "args",
+          isVariadic: true,
+          isOptional: true,
+        },
+      ]
+    },
+    {
+      name: "pack",
+      description: "Manage packages",
+      options: [
+        {
+          name: ["-a", "--add"],
+          description: "Add a package",
+          isRepeatable: true,
+          args: {
+            name: "add",
+            isOptional: true,
+          },
+        },
+        {
+          name: ["-i", "--install"],
+          description: "Install all packages",
+        },
+        {
+          name: ["-l", "--list"],
+          description: "List all packages",
+        },
+        {
+          name: ["-u", "--upgrade"],
+          description: "Upgrade all packages",
+        },
+        {
+          name: ["-h", "--help"],
+          description: "Print help",
+        },
+      ],
+    },
+    {
       name: "pub",
       description: "Publish a message to the current instance",
       options: [
@@ -103,40 +177,21 @@ const completion: Fig.Spec = {
       },
     },
     {
-      name: "pack",
-      description: "Manage packages",
-      options: [
-        {
-          name: ["-a", "--add"],
-          description: "Add a package",
-          isRepeatable: true,
-          args: {
-            name: "add",
-            isOptional: true,
-          },
-        },
-        {
-          name: ["-i", "--install"],
-          description: "Install all packages",
-        },
-        {
-          name: ["-l", "--list"],
-          description: "List all packages",
-        },
-        {
-          name: ["-u", "--upgrade"],
-          description: "Upgrade all packages",
-        },
-        {
-          name: ["-h", "--help"],
-          description: "Print help",
-        },
-      ],
-    },
-    {
       name: "help",
       description: "Print this message or the help of the given subcommand(s)",
       subcommands: [
+        {
+          name: "emit",
+          description: "Emit a command to be executed by the current instance",
+        },
+        {
+          name: "emit-to",
+          description: "Emit a command to be executed by the specified instance",
+        },
+        {
+          name: "pack",
+          description: "Manage packages",
+        },
         {
           name: "pub",
           description: "Publish a message to the current instance",
@@ -148,10 +203,6 @@ const completion: Fig.Spec = {
         {
           name: "sub",
           description: "Subscribe to messages from all remote instances",
-        },
-        {
-          name: "pack",
-          description: "Manage packages",
         },
         {
           name: "help",

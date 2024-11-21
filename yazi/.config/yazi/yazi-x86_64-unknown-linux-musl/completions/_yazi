@@ -17,9 +17,9 @@ _yazi() {
     _arguments "${_arguments_options[@]}" : \
 '--cwd-file=[Write the cwd on exit to this file]:CWD_FILE:_files' \
 '--chooser-file=[Write the selected files to this file on open fired]:CHOOSER_FILE:_files' \
-'--client-id=[Use the specified client ID, must be a globally unique number]:CLIENT_ID: ' \
-'--local-events=[Report the specified local events to stdout]:LOCAL_EVENTS: ' \
-'--remote-events=[Report the specified remote events to stdout]:REMOTE_EVENTS: ' \
+'--client-id=[Use the specified client ID, must be a globally unique number]:CLIENT_ID:_default' \
+'--local-events=[Report the specified local events to stdout]:LOCAL_EVENTS:_default' \
+'--remote-events=[Report the specified remote events to stdout]:REMOTE_EVENTS:_default' \
 '--clear-cache[Clear the cache directory]' \
 '--debug[Print debug information]' \
 '-V[Print version]' \

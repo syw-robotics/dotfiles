@@ -1,0 +1,43 @@
+git:
+  paging:
+    colorArg: always
+    pager: delta --dark --paging=never
+
+os:
+  edit: "nvim {{filename}}"
+  editCommand: 'nvim'
+  editCommandTemplate: '{{editor}} --server /tmp/nvim-server.pipe --remote-tab "$(pwd)/{{filename}}"'
+  editPreset: 'nvim'
+
+
+keybinding:
+  universal:
+    openFile: e
+    edit: o
+
+promptToReturnFromSubprocess: false
+
+gui:
+  theme:
+    activeBorderColor:
+      - '#f2cdcd'
+      - bold
+    inactiveBorderColor:
+      - '#a6adc8'
+    optionsTextColor:
+      - '#89b4fa'
+    selectedLineBgColor:
+      - '#313244'
+    cherryPickedCommitBgColor:
+      - '#45475a'
+    cherryPickedCommitFgColor:
+      - '#f2cdcd'
+    unstagedChangesColor:
+      - '#f38ba8'
+    defaultFgColor:
+      - '#cdd6f4'
+    searchingActiveBorderColor:
+      - '#f9e2af'
+
+  authorColors:
+    '*': '#b4befe'

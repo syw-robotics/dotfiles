@@ -29,29 +29,10 @@ source /opt/ros/noetic/setup.zsh
 
 #export TURTLEBOT3_MODEL=burger
 #source ~/ros_ws/catkin_turtlebot3/devel/setup.zsh
+export Torch_DIR=~/toolkits/libtorch
 
 
-########## ros2 humble ##########
 
-
-########## ros2 foxy ##########
-# source /opt/ros/foxy/setup.zsh
-#source ~/ros_ws/colcon_ws/install/setup.zsh
-#source ~/ros_ws/my_nav_simulator/install/setup.zsh
-#source ~/ros_ws/ros2_learning_ws/install/setup.zsh
-#source ~/yolobot/install/setup.sh
-#source ~/dual_cobot_ws2/install/setup.zsh
-# ------------------------------ 
-#source /usr/share/colcon_cd/function/colcon_cd.sh
-#export _colcon_cd_root=/opt/ros/foxy/
-#source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.zsh
-
-
-#export ROS_PACKAGE_PATH=~/catkin_ws:${ROS_PACKAGE_PATH}
-#export GAZEBO_PLUGIN_PATH=~/catkin_ws/devel/lib:${GAZEBO_PLUGIN_PATH}
-#export LD_LIBRARY_PATH=~/catkin_ws/devel/lib:${LD_LIBRARY_PATH}
-
-#export TURTLEBOT3_MODEL=burge
 
 ####################  ROS Config --- END ---  ####################
 

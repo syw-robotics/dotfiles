@@ -36,6 +36,7 @@ alias nvo='nv  ~/.config/nvim/lua/core/options.lua'
 alias my_config_push='bash /home/syw/toolkits/my_config_files_on_ubuntu/update_config_push.sh'
 alias my_config_status='bash /home/syw/toolkits/my_config_files_on_ubuntu/update_config_status.sh'
 alias edge='microsoft-edge'
+alias b="batcat"
 alias ..='cd ..'
 alias ..2='cd ../..'
 alias ..3='cd ../../..'
@@ -50,26 +51,36 @@ alias kitty_themes='kitty +kitten themes'
 alias gt='gnome-terminal &; exit; exit'
 alias yz="yazi" 
 export EDITOR=nvim
-alias cb='colcon build --cmake-arg -DCMAKE_EXPORT_COMPILE_COMMANDS=ON'
+alias cb='catkin build'
 alias lg='lazygit'
 alias docker_start='sudo systemctl start docker.service'
 alias mx='tmux'
 alias octave-gui='octave --gui'
-alias sync_to_yilong='sync_folder_through_ssh Papers /home/syw/Documents/RL-Papers-2024/ yilong /home/syw/Documents/;
-                      sync_folder_through_ssh 24Fall /home/syw/Desktop/24Fall/ yilong /home/syw/Desktop/;
-                      sync_folder_through_ssh Others /home/syw/toolkits/mujoco_related/ yilong /home/syw/toolkits/; '
-alias sync_to_yilong_423='sync_folder_through_ssh Papers /home/syw/Documents/RL-Papers-2024/ yilong /home/syw/Documents/;
-                      sync_folder_through_ssh 24Fall /home/syw/Desktop/24Fall/ yilong /home/syw/Desktop/;
-                      sync_folder_through_ssh Others /home/syw/toolkits/mujoco_related/ yilong /home/syw/toolkits/; '
+alias ollama-qwen2.5-code='ollama run qwen2.5-coder:3b'
+alias sync_to_yilong='sync_folder_through_ssh Papers /home/syw/Documents/RL-Papers-2024 yilong /home/syw/Documents/;
+                      sync_folder_through_ssh benzi /home/syw/Documents/benzi yilong /home/syw/Documents/;
+                      sync_folder_through_ssh 24Fall /home/syw/Desktop/24Fall yilong /home/syw/Desktop/;
+                      sync_folder_through_ssh Others /home/syw/toolkits/mujoco_related yilong /home/syw/toolkits/; '
+alias sync_to_yilong_423='sync_folder_through_ssh Papers /home/syw/Documents/RL-Papers-2024 yilong_423 /home/syw/Documents/;
+                      sync_folder_through_ssh benzi /home/syw/Documents/benzi yilong_423 /home/syw/Documents/;
+                      sync_folder_through_ssh 24Fall /home/syw/Desktop/24Fall yilong_423 /home/syw/Desktop;
+                      sync_folder_through_ssh Others /home/syw/toolkits/mujoco_related yilong_423 /home/syw/toolkits/; '
 sync_folder_through_ssh() {
     if [ "$#" -ne 4 ]; then
         echo "Usage: sync_folder_through_ssh <description> <source_path> <user@host> <target_path>"
         return 1
     fi
-    echo -e "\033[32mSyncing $1......\033[0m\n" 
+    echo -e "\033[32mSyncing $1......\033[0m" 
     rsync -avz -e ssh "$2" "$3:$4"
-    echo -e "\033[32mSync $1 Done!\033[0m\n"
+    echo -e "\033[32mSync $1 Done!\033[0m\n\n"
 }
+alias fzfcd='cd_fzf'
+alias fzfbat='bat_fzf'
+alias fzfnvim='nv_fzf'
+cd_fzf() {
+    cd "$(dirname "$(fzf)")"
+}
+source ~/.frpc
 ########## Folers ##########
 alias 24fall='cd ~/Desktop/24Fall/'
 alias vim-snippets='cd /home/syw/.vim/snippets'
@@ -94,10 +105,32 @@ alias papers='cd ~/Documents/RL-Papers-2024'
 ########## Folers ##########
 ########## SSH ##########
 alias Lab433-server='ssh Lab433-server-admin'
-alias Lab433-server-frp='ssh -p 6000 hx@47.236.28.111'
+alias Lab433-server-frp-auth-connect='/home/syw/toolkits/auth-guest_linux_amd64-18854248.auth-guest_linux_amd64-18854248 ; ssh Lab433-server-admin-frp'
+alias yilong-frp-auth-connect='/home/syw/toolkits/auth-guest_linux_amd64-18847899.auth-guest_linux_amd64-18847899 ; ssh yilong_frp'
 alias Singapore-server='ssh Singapore-server'
 alias ros2-ee211-ssh='ssh -p 8080 syw@172.17.0.1'
+alias scp_to_Lab433-server="scp_upload Lab433-server-admin:/home/hx/"
+alias scp_to_yilong_423="scp_upload yilong_423:/home/syw/"
+alias scp_to_yilong="scp_upload yilong:/home/syw/"
+function scp_upload() {
+    if [ "$#" -ne 2 ]; then
+       echo "Usage: scp_upload <user@ip:/path><file>"
+       return 1
+    fi
+    local destination=$1
+    local file=$2
+    scp "$file" "$destination"
+}
 ########## SSH ##########
+# yazi: press y to start yazi, and change directory when quit yazi
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
 #################### user alias -- END -- ####################
 
 
@@ -213,6 +246,7 @@ alias aud='sudo apt update'
 alias aug='sudo apt upgrade'
 alias alu='apt list --upgradable'
 alias aar="sudo apt autoremove"
+alias ai="sudo apt install"
 #################### apt -- END -- ####################
 
 
@@ -351,3 +385,11 @@ export PATH="$HOME/.tmuxifier/bin:$PATH"
 eval "$(tmuxifier init -)"
 alias mxf='tmuxifier'
 ####################  tmuxifier --- END ---  ####################
+
+
+####################  acados --- START ---  ####################
+# export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:"/home/syw/.gitrepos/Quadruped-PyMPC/quadruped_pympc/acados/lib"
+# export ACADOS_SOURCE_DIR="/home/syw/.gitrepos/Quadruped-PyMPC/quadruped_pympc/acados/"
+####################  acados --- END ---  ####################
+
+
