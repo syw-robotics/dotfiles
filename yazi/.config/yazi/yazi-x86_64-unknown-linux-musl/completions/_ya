@@ -47,8 +47,10 @@ _arguments "${_arguments_options[@]}" : \
 ;;
 (pack)
 _arguments "${_arguments_options[@]}" : \
-'-a+[Add a package]:ADD:_default' \
-'--add=[Add a package]:ADD:_default' \
+'*-a+[Add packages]:ADD:_default' \
+'*--add=[Add packages]:ADD:_default' \
+'*-d+[Delete packages]:DELETE:_default' \
+'*--delete=[Delete packages]:DELETE:_default' \
 '-i[Install all packages]' \
 '--install[Install all packages]' \
 '-l[List all packages]' \
@@ -63,7 +65,7 @@ _arguments "${_arguments_options[@]}" : \
 _arguments "${_arguments_options[@]}" : \
 '--str=[Send the message with a string body]:STR:_default' \
 '--json=[Send the message with a JSON body]:JSON:_default' \
-'*--list=[Send the message as string of list]' \
+'*--list=[Send the message as a list of strings]' \
 '-h[Print help]' \
 '--help[Print help]' \
 ':kind -- The kind of message:_default' \
@@ -73,7 +75,7 @@ _arguments "${_arguments_options[@]}" : \
 _arguments "${_arguments_options[@]}" : \
 '--str=[Send the message with a string body]:STR:_default' \
 '--json=[Send the message with a JSON body]:JSON:_default' \
-'*--list=[Send the message as string of list]' \
+'*--list=[Send the message as a list of strings]' \
 '-h[Print help]' \
 '--help[Print help]' \
 ':receiver -- The receiver ID:_default' \

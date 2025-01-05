@@ -51,10 +51,21 @@ const completion: Fig.Spec = {
       options: [
         {
           name: ["-a", "--add"],
-          description: "Add a package",
+          description: "Add packages",
           isRepeatable: true,
           args: {
             name: "add",
+            isVariadic: true,
+            isOptional: true,
+          },
+        },
+        {
+          name: ["-d", "--delete"],
+          description: "Delete packages",
+          isRepeatable: true,
+          args: {
+            name: "delete",
+            isVariadic: true,
             isOptional: true,
           },
         },
@@ -100,7 +111,7 @@ const completion: Fig.Spec = {
         },
         {
           name: "--list",
-          description: "Send the message as string of list",
+          description: "Send the message as a list of strings",
           isRepeatable: true,
           args: {
             name: "list",
@@ -141,7 +152,7 @@ const completion: Fig.Spec = {
         },
         {
           name: "--list",
-          description: "Send the message as string of list",
+          description: "Send the message as a list of strings",
           isRepeatable: true,
           args: {
             name: "list",

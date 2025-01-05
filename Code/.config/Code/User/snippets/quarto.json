@@ -1,0 +1,759 @@
+{
+	// Place your snippets for quarto here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"revealjs-incremental": {
+		"prefix": "incremental",
+		"body": [
+			"::: {.incremental}",
+			"$0",
+			":::"
+		],
+		"description": "incremental tag for revealjs"
+	},
+	"revealjs-aside": {
+		"prefix": "aside",
+		"body": [
+			"::: aside",
+			"$0",
+			":::"
+		],
+		"description": "footnote tag for revealjs"
+	},
+	"revealjs-pause": {
+		"prefix": "pause",
+		"body": [
+			"",
+			". . .",
+			""
+		],
+		"description": "pause slides for revealjs"
+	},
+	"revealjs-footnote": {
+		"prefix": "footnote",
+		"body": [
+			"^[${0:footnote}]"
+		],
+		"description": "footnote tag for revealjs"
+	},
+	"revealjs-nofooter": {
+		"prefix": "nofooter",
+		"body": [
+			"{footer=false}"
+		],
+		"description": "nofooter tag for revealjs"
+	},
+	"revealjs-footer-custom": {
+		"prefix": "footer-custom",
+		"body": [
+			"::: footer",
+			"$0",
+			":::"
+		],
+		"description": "footer-custom tag for revealjs"
+	},
+	"revealjs-column": {
+		"prefix": "column",
+		"body": [
+			"::: {.column width=\"50%\"}",
+			"$0",
+			":::"
+		],
+		"description": "column tag for revealjs"
+	},
+	"revealjs-scrollable": {
+		"prefix": "scrollable",
+		"body": [
+			"::: {.scrollable}",
+			"$0",
+			":::"
+		],
+		"description": "scrollable tag for revealjs"
+	},
+	"revealjs-smaller": {
+		"prefix": "smaller",
+		"body": [
+			"{.smaller}"
+		],
+		"description": "smaller tag for revealjs"
+	},
+	"revealjs-notes": {
+		"prefix": "notes",
+		"body": [
+			"::: {.notes}",
+			"$0",
+			":::"
+		],
+		"description": "speaker's notes tag for revealjs"
+	},
+	"revealjs-cite": {
+		"prefix": "cite",
+		"body": [
+			"[@${0:cite}]"
+		],
+		"description": "citation tag for revealjs"
+	},
+	"revealjs-references": {
+		"prefix": "references",
+		"body": [
+			"::: {#references}",
+			":::"
+		],
+		"description": "ref tag for revealjs"
+	},
+	"revealjs-tabsets": {
+		"prefix": "tabsets",
+		"body": [
+			"::: {.panel-tabset}",
+			"",
+			"### Tab A",
+			"",
+			"Content for `Tab A`",
+			"",
+			"### Tab B",
+			"",
+			"Content for `Tab B`",
+			":::"
+		],
+		"description": "tabsets tag for revealjs"
+	},
+	"revealjs-mermaid-code": {
+		"prefix": "mermaid",
+		"body": [
+			"```{mermaid}",
+			"${0:mermaid_code}",
+			"```"
+		],
+		"description": "Code Block for revealjs"
+	},
+	"revealjs-code-block": {
+		"prefix": "code_block",
+		"body": [
+			"```{.python}",
+			"${0:code}",
+			"```"
+		],
+		"description": "Code Block for revealjs"
+	},
+	"revealjs-code-block-highlight": {
+		"prefix": "code_block_highlight",
+		"body": [
+			"```{.python code-line-numbers=\"6-8\"or\"6,8\"}",
+			"${0:code}",
+			"```"
+		],
+		"description": "Code Block for revealjs"
+	},
+	"revealjs-code-block-executable": {
+		"prefix": "code_block_executable",
+		"body": [
+			"```{python}",
+			"#| echo: true",
+			"${0:code}",
+			"```"
+		],
+		"description": "Code Block for revealjs"
+	},
+	"revealjs-br": {
+		"prefix": "br",
+		"body": [
+			"<br>"
+		],
+		"description": "<br>"
+	},
+	"revealjs-p": {
+		"prefix": "<p",
+		"body": [
+			"<p align=\"center\" style=\"font-size: ${2:24}px;\">",
+			"\t${1:content}",
+			"</p>"
+		],
+		"description": "Center-aligned paragraph with font size"
+	},
+	"revealjs-front-matter": {
+		"prefix": "---",
+		"body": [
+			"---",
+			"$0",
+			"---"
+		],
+		"description": "Front matter"
+	},
+	"revealjs-eq-inline": {
+		"prefix": "eq_inline",
+		"body": [
+			"$$0$"
+		],
+		"description": "Inline Equation"
+	},
+	"revealjs-eq": {
+		"prefix": "eq",
+		"body": [
+			"$$",
+			"$0",
+			"$$"
+		],
+		"description": "Latex Equation"
+	},
+	"revealjs-item": {
+		"prefix": "item",
+		"body": [
+			"- ${0}"
+		],
+		"description": "Item"
+	},
+	"revealjs-tag-xml": {
+		"prefix": "tag_xml",
+		"body": [
+			"<${0}>",
+			"\t${1}",
+			"</${0}>"
+		],
+		"description": "XML tag"
+	},
+	"revealjs-toc": {
+		"prefix": "toc",
+		"body": [
+			"[TOC]"
+		],
+		"description": "Table of Contents"
+	},
+	"revealjs-todo": {
+		"prefix": "todo",
+		"body": [
+			"- [ ] ${0:content}"
+		],
+		"description": "Todo Check Box"
+	},
+	"revealjs-background-color": {
+		"prefix": "background_color",
+		"body": [
+			"{background-color=\"#7F7F7F\"}"
+		],
+		"description": "Todo Check Box"
+	},
+	"revealjs-center": {
+		"prefix": "center_layout",
+		"body": [
+			"::: {layout-align=\"center\"}",
+			"${0:content}",
+			":::"
+		],
+		"description": "Center Layout"
+	},
+	"revealjs-centered-text": {
+		"prefix": "centered_text",
+		"body": [
+			"::: {.r-stack}",
+			"${0:content}",
+			":::"
+		],
+		"description": "Center Layout"
+	},
+	"revealjs-img": {
+		"prefix": "img",
+		"body": [
+			"::: {#fig${3:fig-label}}",
+			"![${1:caption}](${2:image_url}){fig-align=\"left\" width=\"400px\"}",
+			":::"
+		],
+		"description": "Image"
+	},
+	"revealjs-figure": {
+		"prefix": "figure",
+		"body": [
+			"::: {#fig${3:fig-label}}",
+			"![${1:caption}](${2:image_url}){fig-align=\"left\" width=\"400px\"}",
+			":::"
+		],
+		"description": "Image"
+	},
+	"revealjs-subfigures": {
+		"prefix": "subfigures",
+		"body": [
+			"::: {#fig-label layout-ncol=2}",
+			"",
+			"![${1:caption}](${2:image_url}){${3:#subfig-label}}",
+			"",
+			"![${4:caption}](${5:image_url}){${6:#subfig-label}}",
+			"",
+			"${7:Figure Caption}",
+			":::"
+		],
+		"description": "Insert subfigures layout"
+	},
+	"revealjs-video": {
+		"prefix": "video",
+		"body": [
+			"{{< video ${1:video_url} title=\"${2:video_title}\" width=\"400\" >}}"
+		],
+		"description": "Video"
+	},
+	"revealjs-html": {
+		"prefix": "html",
+		"body": [
+			"```{=html}",
+			"<iframe width=\"880\" height=\"500\" src=\"${0:url}\" ></iframe>",
+			"```"
+		],
+		"description": "HTML iframe"
+	},
+	"revealjs-youtube": {
+		"prefix": "youtube",
+		"body": [
+			"{% youtube ${0:video_id} %}"
+		],
+		"description": "YouTube embed"
+	},
+	"revealjs-alert": {
+		"prefix": "alert_text",
+		"body": [
+			"[${0:alert_text}]{.alert}"
+		],
+		"description": "YouTube embed"
+	},
+	"revealjs-alert-custom-fg": {
+		"prefix": "alert_custom_fg",
+		"body": [
+			"[${0:alert_text}]{.fg style=\"--col: #e64173\"}."
+		],
+		"description": "alert text custom fg"
+	},
+	"revealjs-alert-alert-custom-bg": {
+		"prefix": "alert_custom_bg",
+		"body": [
+			"[${0:alert_text}]{.bg style=\"--col: #e64173\"}."
+		],
+		"description": "alert text custom bg"
+	},
+	"revealjs-tb": {
+		"prefix": "tb",
+		"body": [
+			"|  ${0:factors}      |    ${1:a}       |  ${2:b}    |",
+			"| ------------- | -------------  | ------- |",
+			"|    ${3:f1}    |    Y          | N       |",
+			"|    ${4:f2}    |    Y          | N       |"
+		],
+		"description": "Basic table"
+	},
+	"latex-ddt": {
+		"prefix": "ddt",
+		"body": [
+			"\\frac{d}{dt} {$1} {$0}"
+		],
+		"description": "time derivative"
+	},
+	"latex-lim": {
+		"prefix": "lim",
+		"body": [
+			"\\lim_{{$1}} {{$2}} {$0}"
+		],
+		"description": "limit"
+	},
+	"latex-pdv": {
+		"prefix": "pdv",
+		"body": [
+			"\\frac{\\partial {$1}}{\\partial {$2}} {$0}"
+		],
+		"description": "partial derivation"
+	},
+	"latex-ppdv": {
+		"prefix": "ppdv",
+		"body": [
+			"\\frac{\\partial^2 {$1}}{\\partial {$2} \\partial {$3}} {$0}"
+		],
+		"description": "second partial derivation"
+	},
+	"latex-dv": {
+		"prefix": "dv",
+		"body": [
+			"\\frac{d {$1}}{d {$2}} {$0}"
+		],
+		"description": "derivative"
+	},
+	"latex-sum": {
+		"prefix": "sum",
+		"body": [
+			"\\sum_{$1} {$0}"
+		],
+		"description": "summation"
+	},
+	"latex-dot": {
+		"prefix": "dot",
+		"body": [
+			"\\dot{$1} {$0}"
+		],
+		"description": "dot"
+	},
+	"latex-ddot": {
+		"prefix": "ddot",
+		"body": [
+			"\\ddot{$1} {$0}"
+		],
+		"description": "ddot"
+	},
+	"latex-vec": {
+		"prefix": "vec",
+		"body": [
+			"\\vec{$1} {$0}"
+		],
+		"description": "vector"
+	},
+	"latex-vec-arrow-above": {
+		"prefix": "vec_arrow_above",
+		"body": [
+			"\\overrightarrow{$1} {$0}"
+		],
+		"description": "vector_arrow"
+	},
+	"latex-bar": {
+		"prefix": "bar",
+		"body": [
+			"\\bar{$1} {$0}"
+		],
+		"description": "bar"
+	},
+	"latex-times": {
+		"prefix": "times",
+		"body": [
+			"\\times $0"
+		],
+		"description": "cross product"
+	},
+	"latex-cdot": {
+		"prefix": "cdot",
+		"body": [
+			"\\cdot $0"
+		],
+		"description": "dot product"
+	},
+	"latex-int": {
+		"prefix": "int",
+		"body": [
+			"\\int_{$1}^{$2} {$3} \\: d{$4} {$0}"
+		],
+		"description": "integral"
+	},
+	"latex-rightarrow": {
+		"prefix": "rightarrow",
+		"body": [
+			"\\rightarrow $0"
+		],
+		"description": "rightarrow"
+	},
+	"latex-longrightarrow": {
+		"prefix": "longrightarrow",
+		"body": [
+			"\\longrightarrow {$0}"
+		],
+		"description": "longrightarrow"
+	},
+	"latex-alpha": {
+		"prefix": "alpha",
+		"body": [
+			"\\alpha"
+		],
+		"description": "alpha"
+	},
+	"latex-beta": {
+		"prefix": "beta",
+		"body": [
+			"\\beta"
+		],
+		"description": "beta"
+	},
+	"latex-gamma": {
+		"prefix": "gamma",
+		"body": [
+			"\\gamma"
+		],
+		"description": "gamma"
+	},
+	"latex-delta": {
+		"prefix": "delta",
+		"body": [
+			"\\delta"
+		],
+		"description": "delta"
+	},
+	"latex-epsilon": {
+		"prefix": "epsilon",
+		"body": [
+			"\\epsilon"
+		],
+		"description": "epsilon"
+	},
+	"latex-varepsilon": {
+		"prefix": "varepsilon",
+		"body": [
+			"\\varepsilon"
+		],
+		"description": "varepsilon"
+	},
+	"latex-zeta": {
+		"prefix": "zeta",
+		"body": [
+			"\\zeta"
+		],
+		"description": "zeta"
+	},
+	"latex-eta": {
+		"prefix": "eta",
+		"body": [
+			"\\eta"
+		],
+		"description": "eta"
+	},
+	"latex-theta": {
+		"prefix": "theta",
+		"body": [
+			"\\theta"
+		],
+		"description": "theta"
+	},
+	"latex-vartheta": {
+		"prefix": "vartheta",
+		"body": [
+			"\\vartheta"
+		],
+		"description": "vartheta"
+	},
+	"latex-iota": {
+		"prefix": "iota",
+		"body": [
+			"\\iota"
+		],
+		"description": "iota"
+	},
+	"latex-kappa": {
+		"prefix": "kappa",
+		"body": [
+			"\\kappa"
+		],
+		"description": "kappa"
+	},
+	"latex-lambda": {
+		"prefix": "lambda",
+		"body": [
+			"\\lambda"
+		],
+		"description": "lambda"
+	},
+	"latex-mu": {
+		"prefix": "mu",
+		"body": [
+			"\\mu"
+		],
+		"description": "mu"
+	},
+	"latex-nu": {
+		"prefix": "nu",
+		"body": [
+			"\\nu"
+		],
+		"description": "nu"
+	},
+	"latex-xi": {
+		"prefix": "xi",
+		"body": [
+			"\\xi"
+		],
+		"description": "xi"
+	},
+	"latex-omicron": {
+		"prefix": "omicron",
+		"body": [
+			"\\omicron"
+		],
+		"description": "omicron"
+	},
+	"latex-pi": {
+		"prefix": "pi",
+		"body": [
+			"\\pi"
+		],
+		"description": "pi"
+	},
+	"latex-rho": {
+		"prefix": "rho",
+		"body": [
+			"\\rho"
+		],
+		"description": "rho"
+	},
+	"latex-varrho": {
+		"prefix": "varrho",
+		"body": [
+			"\\varrho"
+		],
+		"description": "varrho"
+	},
+	"latex-sigma": {
+		"prefix": "sigma",
+		"body": [
+			"\\sigma"
+		],
+		"description": "sigma"
+	},
+	"latex-varsigma": {
+		"prefix": "varsigma",
+		"body": [
+			"\\varsigma"
+		],
+		"description": "varsigma"
+	},
+	"latex-tau": {
+		"prefix": "tau",
+		"body": [
+			"\\tau"
+		],
+		"description": "tau"
+	},
+	"latex-upsilon": {
+		"prefix": "upsilon",
+		"body": [
+			"\\upsilon"
+		],
+		"description": "upsilon"
+	},
+	"latex-phi": {
+		"prefix": "phi",
+		"body": [
+			"\\phi"
+		],
+		"description": "phi"
+	},
+	"latex-varphi": {
+		"prefix": "varphi",
+		"body": [
+			"\\varphi"
+		],
+		"description": "varphi"
+	},
+	"latex-chi": {
+		"prefix": "chi",
+		"body": [
+			"\\chi"
+		],
+		"description": "chi"
+	},
+	"latex-psi": {
+		"prefix": "psi",
+		"body": [
+			"\\psi"
+		],
+		"description": "psi"
+	},
+	"latex-omega": {
+		"prefix": "omega",
+		"body": [
+			"\\omega"
+		],
+		"description": "omega"
+	},
+	"latex-matrix": {
+		"prefix": "matrix",
+		"body": [
+			"\\begin{matrix}",
+			"a & b  \\\\",
+			"c & d  \\\\",
+			"\\end{matrix}"
+		],
+		"description": "matrix (no brackets)"
+	},
+	"latex-pmatrix": {
+		"prefix": "pmatrix",
+		"body": [
+			"\\begin{pmatrix}",
+			"a & b  \\\\",
+			"c & d  \\\\",
+			"\\end{pmatrix}"
+		],
+		"description": "matrix with parentheses"
+	},
+	"latex-bmatrix": {
+		"prefix": "bmatrix",
+		"body": [
+			"\\begin{bmatrix}",
+			"a & b  \\\\",
+			"c & d  \\\\",
+			"\\end{bmatrix}"
+		],
+		"description": "matrix with square brackets"
+	},
+	"latex-Bmatrix": {
+		"prefix": "Bmatrix",
+		"body": [
+			"\\begin{Bmatrix}",
+			"a & b  \\\\",
+			"c & d  \\\\",
+			"\\end{Bmatrix}"
+		],
+		"description": "matrix with curly braces"
+	},
+	"latex-vmatrix": {
+		"prefix": "vmatrix",
+		"body": [
+			"\\begin{vmatrix}",
+			"a & b  \\\\",
+			"c & d  \\\\",
+			"\\end{vmatrix}"
+		],
+		"description": "matrix with vertical bars"
+	},
+	"latex-Vmatrix": {
+		"prefix": "Vmatrix",
+		"body": [
+			"\\begin{Vmatrix}",
+			"a & b  \\\\",
+			"c & d  \\\\",
+			"\\end{Vmatrix}"
+		],
+		"description": "matrix with double vertical bars"
+	},
+	"latex-text": {
+		"prefix": "text",
+		"body": [
+			"\\text{$0}"
+		],
+		"description": "\\text{}"
+	},
+	"latex-times": {
+		"prefix": "times",
+		"body": [
+			"\\times"
+		],
+		"description": "times"
+	},
+	"latex-tilde": {
+		"prefix": "tilde",
+		"body": [
+			"\\tilde{$0}"
+		],
+		"description": "tilde"
+	},
+	"latex-mathbb": {
+		"prefix": "mathbb",
+		"body": [
+			"\\mathbb{}"
+		],
+		"description": "mathbb"
+	},
+	"latex-mathbf": {
+		"prefix": "mathbf",
+		"body": [
+			"\\mathbf{}"
+		],
+		"description": "mathbf"
+	}
+}

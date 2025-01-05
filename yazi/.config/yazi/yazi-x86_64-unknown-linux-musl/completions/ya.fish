@@ -35,18 +35,19 @@ complete -c ya -n "__fish_ya_needs_command" -f -a "sub" -d 'Subscribe to message
 complete -c ya -n "__fish_ya_needs_command" -f -a "help" -d 'Print this message or the help of the given subcommand(s)'
 complete -c ya -n "__fish_ya_using_subcommand emit" -s h -l help -d 'Print help'
 complete -c ya -n "__fish_ya_using_subcommand emit-to" -s h -l help -d 'Print help'
-complete -c ya -n "__fish_ya_using_subcommand pack" -s a -l add -d 'Add a package' -r
+complete -c ya -n "__fish_ya_using_subcommand pack" -s a -l add -d 'Add packages' -r
+complete -c ya -n "__fish_ya_using_subcommand pack" -s d -l delete -d 'Delete packages' -r
 complete -c ya -n "__fish_ya_using_subcommand pack" -s i -l install -d 'Install all packages'
 complete -c ya -n "__fish_ya_using_subcommand pack" -s l -l list -d 'List all packages'
 complete -c ya -n "__fish_ya_using_subcommand pack" -s u -l upgrade -d 'Upgrade all packages'
 complete -c ya -n "__fish_ya_using_subcommand pack" -s h -l help -d 'Print help'
 complete -c ya -n "__fish_ya_using_subcommand pub" -l str -d 'Send the message with a string body' -r
 complete -c ya -n "__fish_ya_using_subcommand pub" -l json -d 'Send the message with a JSON body' -r
-complete -c ya -n "__fish_ya_using_subcommand pub" -l list -d 'Send the message as string of list' -r
+complete -c ya -n "__fish_ya_using_subcommand pub" -l list -d 'Send the message as a list of strings' -r
 complete -c ya -n "__fish_ya_using_subcommand pub" -s h -l help -d 'Print help'
 complete -c ya -n "__fish_ya_using_subcommand pub-to" -l str -d 'Send the message with a string body' -r
 complete -c ya -n "__fish_ya_using_subcommand pub-to" -l json -d 'Send the message with a JSON body' -r
-complete -c ya -n "__fish_ya_using_subcommand pub-to" -l list -d 'Send the message as string of list' -r
+complete -c ya -n "__fish_ya_using_subcommand pub-to" -l list -d 'Send the message as a list of strings' -r
 complete -c ya -n "__fish_ya_using_subcommand pub-to" -s h -l help -d 'Print help'
 complete -c ya -n "__fish_ya_using_subcommand sub" -s h -l help -d 'Print help'
 complete -c ya -n "__fish_ya_using_subcommand help; and not __fish_seen_subcommand_from emit emit-to pack pub pub-to sub help" -f -a "emit" -d 'Emit a command to be executed by the current instance'

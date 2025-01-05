@@ -215,7 +215,7 @@ _ya() {
             return 0
             ;;
         ya__pack)
-            opts="-a -i -l -u -h --add --install --list --upgrade --help"
+            opts="-a -d -i -l -u -h --add --delete --install --list --upgrade --help"
             if [[ ${cur} == -* || ${COMP_CWORD} -eq 2 ]] ; then
                 COMPREPLY=( $(compgen -W "${opts}" -- "${cur}") )
                 return 0
@@ -226,6 +226,14 @@ _ya() {
                     return 0
                     ;;
                 -a)
+                    COMPREPLY=($(compgen -f "${cur}"))
+                    return 0
+                    ;;
+                --delete)
+                    COMPREPLY=($(compgen -f "${cur}"))
+                    return 0
+                    ;;
+                -d)
                     COMPREPLY=($(compgen -f "${cur}"))
                     return 0
                     ;;

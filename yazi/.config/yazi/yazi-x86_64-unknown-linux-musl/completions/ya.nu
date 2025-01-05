@@ -23,7 +23,8 @@ module completions {
 
   # Manage packages
   export extern "ya pack" [
-    --add(-a): string         # Add a package
+    --add(-a): string         # Add packages
+    --delete(-d): string      # Delete packages
     --install(-i)             # Install all packages
     --list(-l)                # List all packages
     --upgrade(-u)             # Upgrade all packages
@@ -35,7 +36,7 @@ module completions {
     kind: string              # The kind of message
     --str: string             # Send the message with a string body
     --json: string            # Send the message with a JSON body
-    --list: string            # Send the message as string of list
+    --list: string            # Send the message as a list of strings
     --help(-h)                # Print help
   ]
 
@@ -45,7 +46,7 @@ module completions {
     kind: string              # The kind of message
     --str: string             # Send the message with a string body
     --json: string            # Send the message with a JSON body
-    --list: string            # Send the message as string of list
+    --list: string            # Send the message as a list of strings
     --help(-h)                # Print help
   ]
 

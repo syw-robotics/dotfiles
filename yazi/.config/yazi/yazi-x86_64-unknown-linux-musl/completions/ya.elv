@@ -39,8 +39,10 @@ set edit:completion:arg-completer[ya] = {|@words|
             cand --help 'Print help'
         }
         &'ya;pack'= {
-            cand -a 'Add a package'
-            cand --add 'Add a package'
+            cand -a 'Add packages'
+            cand --add 'Add packages'
+            cand -d 'Delete packages'
+            cand --delete 'Delete packages'
             cand -i 'Install all packages'
             cand --install 'Install all packages'
             cand -l 'List all packages'
@@ -53,14 +55,14 @@ set edit:completion:arg-completer[ya] = {|@words|
         &'ya;pub'= {
             cand --str 'Send the message with a string body'
             cand --json 'Send the message with a JSON body'
-            cand --list 'Send the message as string of list'
+            cand --list 'Send the message as a list of strings'
             cand -h 'Print help'
             cand --help 'Print help'
         }
         &'ya;pub-to'= {
             cand --str 'Send the message with a string body'
             cand --json 'Send the message with a JSON body'
-            cand --list 'Send the message as string of list'
+            cand --list 'Send the message as a list of strings'
             cand -h 'Print help'
             cand --help 'Print help'
         }

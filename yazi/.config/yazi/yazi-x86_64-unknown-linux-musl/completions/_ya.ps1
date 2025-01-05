@@ -45,8 +45,10 @@ Register-ArgumentCompleter -Native -CommandName 'ya' -ScriptBlock {
             break
         }
         'ya;pack' {
-            [CompletionResult]::new('-a', '-a', [CompletionResultType]::ParameterName, 'Add a package')
-            [CompletionResult]::new('--add', '--add', [CompletionResultType]::ParameterName, 'Add a package')
+            [CompletionResult]::new('-a', '-a', [CompletionResultType]::ParameterName, 'Add packages')
+            [CompletionResult]::new('--add', '--add', [CompletionResultType]::ParameterName, 'Add packages')
+            [CompletionResult]::new('-d', '-d', [CompletionResultType]::ParameterName, 'Delete packages')
+            [CompletionResult]::new('--delete', '--delete', [CompletionResultType]::ParameterName, 'Delete packages')
             [CompletionResult]::new('-i', '-i', [CompletionResultType]::ParameterName, 'Install all packages')
             [CompletionResult]::new('--install', '--install', [CompletionResultType]::ParameterName, 'Install all packages')
             [CompletionResult]::new('-l', '-l', [CompletionResultType]::ParameterName, 'List all packages')
@@ -60,7 +62,7 @@ Register-ArgumentCompleter -Native -CommandName 'ya' -ScriptBlock {
         'ya;pub' {
             [CompletionResult]::new('--str', '--str', [CompletionResultType]::ParameterName, 'Send the message with a string body')
             [CompletionResult]::new('--json', '--json', [CompletionResultType]::ParameterName, 'Send the message with a JSON body')
-            [CompletionResult]::new('--list', '--list', [CompletionResultType]::ParameterName, 'Send the message as string of list')
+            [CompletionResult]::new('--list', '--list', [CompletionResultType]::ParameterName, 'Send the message as a list of strings')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help')
             break
@@ -68,7 +70,7 @@ Register-ArgumentCompleter -Native -CommandName 'ya' -ScriptBlock {
         'ya;pub-to' {
             [CompletionResult]::new('--str', '--str', [CompletionResultType]::ParameterName, 'Send the message with a string body')
             [CompletionResult]::new('--json', '--json', [CompletionResultType]::ParameterName, 'Send the message with a JSON body')
-            [CompletionResult]::new('--list', '--list', [CompletionResultType]::ParameterName, 'Send the message as string of list')
+            [CompletionResult]::new('--list', '--list', [CompletionResultType]::ParameterName, 'Send the message as a list of strings')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help')
             break

@@ -1,0 +1,436 @@
+// Place your key bindings in this file to override the defaults
+// Dirsctory: ~/.config/Code/User/keybindings.json
+[
+    // __     ___              ____             __ _       
+    // \ \   / (_)_ __ ___    / ___|___  _ __  / _(_) __ _ 
+    //  \ \ / /| | '_ ` _ \  | |   / _ \| '_ \| |_| |/ _` |
+    //   \ V / | | | | | | | | |__| (_) | | | |  _| | (_| |
+    //    \_/  |_|_| |_| |_|  \____\___/|_| |_|_| |_|\__, |
+    //                                               |___/ 
+    // 
+    // ========== VIM CINFIGURATION START ========== //
+    // ===== File Explorer VIM Keybinds Start ===== //
+    {
+        "key": "ctrl+l",
+        "command": "workbench.view.explorer",
+        "when": "filesExplorerFocus && vim.mode == 'Normal' || vim.mode == 'Visual'"
+    },
+    // 新建一个文件
+    {
+        "key": "a",
+        "command": "explorer.newFile",
+        "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    },
+    // 新建一个文件夹
+    {
+        "key": "shift+a",
+        "command": "explorer.newFolder",
+        "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    },
+    // 给文件重命名
+    {
+        "key": "r",
+        "command": "renameFile",
+        "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    },
+    // 删除文件
+    {
+        "key": "d",
+        "command": "deleteFile",
+        "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    },
+    // Open Editor Menu
+    {
+        "key": "d",
+        "command": "workbench.action.closeActiveEditor",
+        "when": "openEditorsFocus"
+    },
+    // Insert Mode
+    {
+        "key": "ctrl+e",
+        "command": "cursorEnd",
+        "when": "editorTextFocus && vim.active && vim.mode == 'Insert'"
+    },
+    {
+        "key": "ctrl+a",
+        "command": "cursorLineStart",
+        "when": "editorTextFocus && vim.active && vim.mode == 'Insert'"
+    },
+    {
+        "key": "alt+j",
+        "command": "cursorDown",
+        "when": "editorTextFocus && vim.active && vim.mode == 'Insert'"
+    },
+    {
+        "key": "alt+k",
+        "command": "cursorUp",
+        "when": "editorTextFocus && vim.active && vim.mode == 'Insert'"
+    },
+    { // Conflict with VS Code Help Menu!
+        "key": "alt+h",
+        "command": "cursorLeft",
+        "when": "editorTextFocuos && vim.active && vim.mode == 'Insert'"
+    },
+    {
+        "key": "alt+l",
+        "command": "cursorRight",
+        "when": "editorTextFocus && vim.active && vim.mode == 'Insert'"
+    },
+    // Collapse All
+    {
+        "key": "ctrl+.",
+        "command": "workbench.files.action.collapseExplorerFolders",
+        "when": "filesExplorerFocus && vim.mode == 'Normal' || vim.mode == 'Visual'"
+    },
+    // Search in Explorer
+    {
+        "key": "/",
+        "command": "list.find",
+        "when": "listFocus && listSupportsFind && !inputFocus"
+    },
+    // ===== File Explorer VIM Keybinds End ===== //
+    // 
+    // ===== Other VIM Keybinds ===== //
+    // 窗口移动
+    {
+        "key": "ctrl+h",
+        "command": "workbench.action.navigateLeft",
+        "when": "editorFocus && vim.mode == 'Normal' || vim.mode == 'Visual' && !inDiffEditor"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "workbench.action.navigateRight",
+        "when": "editorFocus && vim.mode == 'Normal' || vim.mode == 'Visual' && !inDiffEditor"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.navigateDown",
+        "when": "editorFocus && vim.mode == 'Normal' || vim.mode == 'Visual' "
+    },
+    {
+        "key": "ctrl+k",
+        "command": "workbench.action.navigateUp",
+        "when": "editorFocus && vim.mode == 'Normal' || vim.mode == 'Visual' || terminalFocus"
+    },
+    {
+        "key": "ctrl+h",
+        "command": "diffEditor.switchSide",
+        "when": "inDiffEditor && vim.mode == 'Normal' || vim.mode == 'Visual' "
+    },
+    {
+        "key": "ctrl+l",
+        "command": "diffEditor.switchSide",
+        "when": "inDiffEditor && vim.mode == 'Normal' || vim.mode == 'Visual' "
+    },
+    // from Open Editor Menu to Editor
+    {
+        "key": "ctrl+l",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "openEditorsFocus"
+    },
+    // from Open Editor Menu to Explorer
+    {
+        "key": "ctrl+j",
+        "command": "workbench.files.action.focusFilesExplorer",
+        "when": "openEditorsFocus"
+    },
+    // from Explorer to Open Editor
+    {
+        "key": "ctrl+k",
+        "command": "workbench.files.action.focusOpenEditorsView",
+        "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    },
+    // from Mars Code Menu to Editor
+    {
+        "key": "ctrl+l",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "MarsCodeChatView.active && view.MarsCodeChatView.visible"
+    },
+    // 整行移动
+    {
+        "key": "alt+j",
+        "command": "editor.action.moveLinesDownAction",
+        "when": "editorTextFocus && !editorReadonly && vim.active && vim.mode == 'Normal' || vim.mode == 'Visual' "
+    },
+    {
+        "key": "alt+k",
+        "command": "editor.action.moveLinesUpAction",
+        "when": "editorTextFocus && !editorReadonly && vim.active && vim.mode == 'Normal' || vim.mode == 'Visual' "
+    },
+    // 编写代码时的智能提示框的上下选择
+    {
+        "key": "ctrl+j",
+        "command": "selectNextSuggestion",
+        "when": "vim.active && suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "selectPrevSuggestion",
+        "when": "vim.active && suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+    },
+    // 在 quickOpen 的对话框中上下跳转
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.quickOpenSelectNext",
+        "when": "vim.active && inQuickOpen"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "workbench.action.quickOpenSelectPrevious",
+        "when": "vim.active && inQuickOpen"
+    },
+    // codeAction 上下选择
+    {
+        "key": "j",
+        "command": "selectNextCodeAction",
+        "when": "codeActionMenuVisible"
+    },
+    {
+        "key": "k",
+        "command": "selectPrevCodeAction",
+        "when": "codeActionMenuVisible"
+    },
+    // terminal 中上下滚动
+    {
+        "key": "alt+j",
+        "command": "workbench.action.terminal.scrollDown",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "alt+k",
+        "command": "workbench.action.terminal.scrollUp",
+        "when": "terminalFocus"
+    },
+    // 关闭 terminal
+    {
+        "key": "ctrl+w",
+        "command": "workbench.action.terminal.kill",
+        "when": "terminalFocus"
+    },
+    // ========== VIM CINFIGURATION END ========== //
+    //
+    //  _   _ _____ _____     ___              ____             __ _       
+    // | \ | | ____/ _ \ \   / (_)_ __ ___    / ___|___  _ __  / _(_) __ _ 
+    // |  \| |  _|| | | \ \ / /| | '_ ` _ \  | |   / _ \| '_ \| |_| |/ _` |
+    // | |\  | |__| |_| |\ V / | | | | | | | | |__| (_) | | | |  _| | (_| |
+    // |_| \_|_____\___/  \_/  |_|_| |_| |_|  \____\___/|_| |_|_| |_|\__, |
+    //                                                               |___/ 
+    //
+    // ========== NEOVIM CINFIGURATION START ========== //
+    // no neovim keybinds here
+    // ========== NEOVIM CINFIGURATION END ========== //
+    //
+    //
+    // ========== Copilot CINFIGURATION START ========== //
+    // Copilot inline chat
+    {
+        "key": "ctrl+shift+i",
+        "command": "inlineChat.start",
+    },
+    // Copilot toggle & hide chat
+    {
+        "key": "ctrl+space",
+        "command": "workbench.panel.chat",
+        "when": "workbench.panel.chat.view.copilot.active && workbench.panel.chat.view.copilot.visible && vim.mode == 'Normal' || vim.mode == 'Visual'"
+    },
+    {
+        "key": "ctrl+space",
+        "command": "workbench.action.closeAuxiliaryBar",
+        "when": "view.workbench.panel.chat.view.copilot.visible && vim.mode == 'Normal' || vim.mode == 'Visual' && editorFocus"
+    },
+    {
+        "key": "escape",
+        "command": "workbench.panel.chat",
+        "when": "workbench.panel.chat.view.copilot.visible && !editorFocus && !filesExplorerFocus && !inlineChatFocused"
+    },
+    // Copilot focus editor when in chat
+    {
+        "key": "ctrl+h",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "view.workbench.panel.chat.view.copilot.visible && !editorFocus"
+    },
+    // Copilot switch between edit and chat
+    {
+        "key": "ctrl+tab",
+        "command": "workbench.panel.chatEditing",
+        "when": "view.workbench.panel.chat.view.copilot.visible && !editorFocus"
+    },
+    {
+        "key": "ctrl+tab",
+        "command": "workbench.panel.chat",
+        "when": "view.workbench.panel.chat.view.edits.visible && !editorFocus"
+    },
+    // ========== Copilot CINFIGURATION END ========== //
+    // 
+    //
+    // // ========== Trae CINFIGURATION START ========== //
+    // // Trae toggle & hide chat
+    // {
+    //     "key": "ctrl+space",
+    //     "command": "trae.createNewChat",
+    //     "when": "editorFocus && vim.mode == 'Normal' || vim.mode == 'Visual'"
+    // },
+    // // Trae focus editor when in chat
+    // {
+    //     "key": "ctrl+l",
+    //     "command": "workbench.action.focusActiveEditorGroup",
+    //     "when": "TraeChatView.visible"
+    // },
+    // // ========== Trae CINFIGURATION END ========== //
+    //
+    //
+    // ========== Other Keybinds ========== //
+    {
+        "key": "tab",
+        "command": "selectNextSuggestion",
+        "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
+    },
+    {
+        "key": "shift+tab",
+        "command": "selectPrevSuggestion",
+        "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
+    },
+    {
+        "key": "tab",
+        "command": "workbench.action.quickOpenNavigateNext",
+        "when": "inQuickOpen"
+    },
+    {
+        "key": "ctrl+tab",
+        "command": "workbench.action.quickOpenNavigatePrevious",
+        "when": "inQuickOpen"
+    },
+    // New terminal
+    {
+        "key": "ctrl+shift+t",
+        "command": "workbench.action.terminal.new",
+        "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+    },
+    // Kill terminal
+    {
+        "key": "ctrl+shift+w",
+        "command": "workbench.action.terminal.killEditor",
+        "when": "terminalEditorFocus && terminalFocus && terminalHasBeenCreated || terminalEditorFocus && terminalFocus && terminalProcessSupported"
+    },
+    {
+        "key": "ctrl+shift+o",
+        "command": "-editor.action.accessibleViewGoToSymbol",
+        "when": "accessibilityHelpIsShown && accessibleViewGoToSymbolSupported || accessibleViewGoToSymbolSupported && accessibleViewIsShown"
+    },
+    // Hide suggest widget
+    {
+        "key": "ctrl+e",
+        "command": "hideSuggestWidget",
+        "when": "suggestWidgetVisible && textInputFocus && vim.mode == 'Insert'"
+    },
+    {
+        "key": "shift+escape",
+        "command": "-hideSuggestWidget",
+        "when": "suggestWidgetVisible && textInputFocus"
+    },
+    // Complete when suggest widget is on
+    {
+        "key": "ctrl+/",
+        "command": "-editor.action.accessibleViewAcceptInlineCompletion",
+        "when": "accessibleViewIsShown && accessibleViewCurrentProviderId == 'inlineCompletions'"
+    },
+    // Toggle terminal
+    {
+        "key": "ctrl+\\",
+        "command": "workbench.action.terminal.toggleTerminal",
+        "when": "terminalFocus || editorFocus && vim.mode == 'Normal' || vim.mode == 'Visual' || vim.mode == 'Insert'"
+    },
+    // Hide terminal
+    {
+        "key": "ctrl+w",
+        "command": "workbench.action.terminal.toggleTerminal",
+        "when": "terminalFocusInAny"
+    },
+    // Naviagte between references
+    {
+        "key": "tab",
+        "command": "goToNextReference",
+        "when": "!editorFocus && inReferenceSearchEditor || referenceSearchVisible"
+    },
+    {
+        "key": "f12",
+        "command": "-goToNextReference",
+        "when": "inReferenceSearchEditor || referenceSearchVisible"
+    },
+    {
+        "key": "shift+tab",
+        "command": "goToPreviousReference",
+        "when": "!editorFocus && inReferenceSearchEditor || referenceSearchVisible"
+    },
+    {
+        "key": "shift+f12",
+        "command": "-goToPreviousReference",
+        "when": "inReferenceSearchEditor || referenceSearchVisible"
+    },
+    // Select all
+    {
+        "key": "alt+a",
+        "command": "editor.action.selectAll",
+        "when": "editorTextFocus"
+    },
+    // Open file explorer
+    {
+        "key": "ctrl+e",
+        "command": "workbench.view.explorer",
+        "when": "viewContainer.workbench.view.explorer.enabled && vim.mode == 'Normal' || vim.mode == 'Visual'"
+    },
+    // Preview markdown
+    {
+        "key": "ctrl+shift+r",
+        "command": "markdown-preview-enhanced.openPreviewToTheSide",
+        "when": "editorLangId == 'markdown' && vim.mode == 'Normal' "
+    },
+    // Compare Files
+    {
+        "key": "ctrl+c",
+        "command": "workbench.files.action.compareFileWith",
+        "when": "openEditorsFocus"
+    },
+    // Doc string when filetype is python
+    {
+        "key": "ctrl+shift+d",
+        "command": "autoDocstring.generateDocstring",
+        "when": "editorTextFocus && editorLangId == 'python'"
+    },
+    // Close bottom panel when focused
+    {
+        "key": "ctrl+w",
+        "command": "workbench.action.togglePanel",
+        "when": "panelFocus"
+    },
+    // Resize window
+    {
+        "key": "shift+up",
+        "command": "workbench.action.terminal.resizePaneUp",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "shift+down",
+        "command": "workbench.action.terminal.resizePaneDown",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "shift+right",
+        "command": "workbench.action.increaseViewSize",
+        "when": "!isAuxiliaryWindowFocusedContext"
+    },
+    {
+        "key": "shift+left",
+        "command": "workbench.action.decreaseViewSize",
+        "when": "!isAuxiliaryWindowFocusedContext"
+    },
+    // Others
+    {
+        "key": "ctrl+r",
+        "command": "-workbench.action.openRecent"
+    },
+    {
+        "key": "ctrl+k ctrl+f",
+        "command": "workbench.action.openRecent"
+    },
+]
