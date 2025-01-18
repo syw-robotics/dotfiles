@@ -138,6 +138,7 @@ source ~/.rvm/scripts/rvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export LD_LIBRARY_PATH=/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH
 # export GEM_HOME=$HOME/.gems
 # export PATH=$HOME/.gems/bin:$PATH
 # ===== misc ===== #
@@ -163,3 +164,5 @@ bindkey '^[k'     kill-line            # Alt + k
 # Ctrl + w    backward-delete-word 
 # Ctrl + k    delete to the end of line
 # ========== My bindkey Configuration ========== #
+
+[ ! -f "$HOME/.x-cmd.root/X" ] || . "$HOME/.x-cmd.root/X" # boot up x-cmd.

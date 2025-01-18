@@ -1,0 +1,27 @@
+=========================
+Fcitx 5.0.14 -- Get Signal No.: 6
+Date: try "date -d @1737697201" if you are using GNU date ***
+ProcessID: 4707
+/usr/bin/fcitx5(+0xf9cd)[0x61eaa3f2e9cd]
+/lib/x86_64-linux-gnu/libc.so.6(+0x42520)[0x7456a1a42520]
+/lib/x86_64-linux-gnu/libc.so.6(pthread_kill+0x12c)[0x7456a1a969fc]
+/lib/x86_64-linux-gnu/libc.so.6(raise+0x16)[0x7456a1a42476]
+/lib/x86_64-linux-gnu/libc.so.6(abort+0xd3)[0x7456a1a287f3]
+/lib/x86_64-linux-gnu/libstdc++.so.6(+0xa2b9e)[0x7456a1ea2b9e]
+/lib/x86_64-linux-gnu/libstdc++.so.6(+0xae20c)[0x7456a1eae20c]
+/lib/x86_64-linux-gnu/libstdc++.so.6(+0xad1e9)[0x7456a1ead1e9]
+/lib/x86_64-linux-gnu/libstdc++.so.6(__gxx_personality_v0+0x99)[0x7456a1ead959]
+/lib/x86_64-linux-gnu/libgcc_s.so.1(+0x16884)[0x7456a2134884]
+/lib/x86_64-linux-gnu/libgcc_s.so.1(_Unwind_Resume+0x12d)[0x7456a21352dd]
+/lib/x86_64-linux-gnu/libFcitx5Core.so.7(+0x25793)[0x7456a2263793]
+/lib/x86_64-linux-gnu/libFcitx5Core.so.7(_ZN5fcitx10FocusGroup22setFocusedInputContextEPNS_12InputContextE+0xa7)[0x7456a2295da7]
+/lib/x86_64-linux-gnu/libFcitx5Core.so.7(_ZN5fcitx10FocusGroup18removeInputContextEPNS_12InputContextE+0x8f)[0x7456a2295eef]
+/lib/x86_64-linux-gnu/libFcitx5Core.so.7(_ZN5fcitx12InputContext7destroyEv+0x41)[0x7456a2295f61]
+/usr/lib/x86_64-linux-gnu/fcitx5/libdbusfrontend.so(+0x11308)[0x7456a0637308]
+/usr/lib/x86_64-linux-gnu/fcitx5/libdbusfrontend.so(+0x1159d)[0x7456a063759d]
+/lib/x86_64-linux-gnu/libFcitx5Core.so.7(_ZN5fcitx19InputContextManager8finalizeEv+0x46)[0x7456a2292546]
+/lib/x86_64-linux-gnu/libFcitx5Core.so.7(_ZN5fcitx8InstanceD1Ev+0x2c)[0x7456a227424c]
+/usr/bin/fcitx5(+0xdef2)[0x61eaa3f2cef2]
+/lib/x86_64-linux-gnu/libc.so.6(+0x29d90)[0x7456a1a29d90]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80)[0x7456a1a29e40]
+/usr/bin/fcitx5(+0xeef5)[0x61eaa3f2def5]

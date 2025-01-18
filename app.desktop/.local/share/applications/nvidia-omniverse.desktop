@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=omniverse-launcher
+Exec="/home/syw/toolkits/isaac_related/isaac_sim/omniverse-launcher-linux.AppImage"  %u
+Type=Application
+Terminal=false
+MimeType=x-scheme-handler/omniverse

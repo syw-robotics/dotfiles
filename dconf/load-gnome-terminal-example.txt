@@ -1,0 +1,1 @@
+dconf load /org/gnome/terminal/legacy/profiles:/:74de863a-4ca9-4b66-8f75-f9c6541e20b7/ < everforest-theme-profile.dconf

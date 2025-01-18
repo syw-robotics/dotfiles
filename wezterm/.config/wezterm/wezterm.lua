@@ -8,8 +8,8 @@ local config = {
         "SimHei"
     },
     -- color_scheme = "Catppuccin Frappe",
-    color_scheme = 'Everforest Dark Soft (Gogh)',
-    -- color_scheme = 'nordfox',
+    -- color_scheme = 'Everforest Dark Soft (Gogh)',
+    color_scheme = 'nordfox',
 
     enable_scroll_bar = false,
     -- enable_scroll_bar = true,
@@ -20,7 +20,7 @@ local config = {
     show_new_tab_button_in_tab_bar = false,
     switch_to_last_active_tab_when_closing_tab = true,
 
-    -- window_background_opacity = 0.9,
+    window_background_opacity = 0.75,
 
     text_background_opacity = 0.9,
     adjust_window_size_when_changing_font_size = false,
@@ -94,7 +94,11 @@ local config = {
             mods = 'CTRL|SHIFT',
             action = wezterm.action { ActivatePaneDirection = 'Next' },
         },
-
+        {
+            key = 'c',
+            mods = 'CMD|SHIFT',
+            action = wezterm.action.ReloadConfiguration,  -- Actually I found that wezterm will auto-reload its config
+        },
     }
 }
 

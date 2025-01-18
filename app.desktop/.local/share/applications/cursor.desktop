@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Cursor
+GenericName=Editor
+Comment=AI empowered Editor, based on VScode
+StartupNotify=true
+Exec=/home/syw/.config/Cursor/cursor-0.45.11-build-250207y6nbaw5qc-x86_64.AppImage
+Icon=/home/syw/Pictures/Icon-Repositroy/svg&png/cursor.png
+Categories=System;TerminalEmulator;

@@ -16,7 +16,7 @@ alias psa='ps -aux'
 alias c.='code . '
 alias ppt='code ~/Desktop/nabo_pointfoot_related/nabopointfootnewestversion/MyResources/ppt/ '
 alias claude="edge https://claude.ai/ "
-alias qwen="edge https://tongyi.aliyun.com/qianwen/"
+# alias qwen="edge https://tongyi.aliyun.com/qianwen/"
 alias fy="edge https://cn.bing.com/translator/"
 alias simpletex="edge https://simpletex.cn/ai/latex_ocr "
 alias canva="edge https://www.canva.cn/ "
@@ -40,6 +40,9 @@ alias nvllm='cd ~/.local/state/nvim/llm-history/'
 alias my_config_push='bash /home/syw/toolkits/my_config_files_on_ubuntu/update_config_push.sh'
 alias my_config_status='bash /home/syw/toolkits/my_config_files_on_ubuntu/update_config_status.sh'
 alias edge='microsoft-edge'
+alias cursor='/home/syw/.config/Cursor/cursor-0.45.11-build-250207y6nbaw5qc-x86_64.AppImage'
+alias code_cursor_align_settings='code ~/.config/Cursor/User/settings.json ~/.config/Code/User/settings.json'
+alias code_cursor_align_keybindings='code ~/.config/Cursor/User/keybindings.json ~/.config/Code/User/keybindings.json'
 # alias b="batcat"
 # alias bat="batcat" # do `ln -s /usr/bin/batcat ~/.local/bin/bat`
 alias ..='cd ..'
@@ -50,8 +53,6 @@ alias inkscape='/home/syw/.inkscape/Inkscape-091e20e-x86_64.AppImage'
 alias change_default_terminal='sudo update-alternatives --config x-terminal-emulator'
 alias skillsheet='nv /home/syw/toolkits/my_scripts/MySkillSheets.md'
 alias cmake_export_cimpile_commands="cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 "
-alias kitty_config='nv ~/.config/kitty/kitty.conf'
-alias kitty_themes='kitty +kitten themes'
 alias gt='gnome-terminal &'
 # alias yazi="/home/syw/.config/yazi/yazi-x86_64-unknown-linux-musl/yazi"
 # alias ya="/home/syw/.config/yazi/yazi-x86_64-unknown-linux-musl/ya"
@@ -63,7 +64,12 @@ alias lg='lazygit'
 alias docker_start='sudo systemctl start docker.service'
 alias mx='tmux'
 alias ns='nvidia-smi'
-########## Folers ##########
+########## X-cmd Start ##########
+alias emoji="x emoji"
+alias tldr-fz="x tldr --fz"
+alias tldr="x tldr"
+########## X-cmd End ##########
+########## Folders Start ##########
 alias 24fall='cd ~/Desktop/24Fall/'
 alias vim-snippets='cd /home/syw/.vim/snippets'
 alias highvim='cd ~/.vim/'
@@ -81,16 +87,43 @@ alias ros_related='cd /home/syw/toolkits/ros_related/'
 alias nvp='cd  ~/.config/nvim/lua/plugins'
 alias nvc='cd  ~/.config/nvim/lua/core'
 alias my_config='cd ~/toolkits/my_config_files_on_ubuntu'
+alias fonts='cd ~/.local/share/fonts/'
 alias dotf='cd ~/.dotfiles/'
 alias nabopointfoot='cd ~/Desktop/nabo_pointfoot_related/Nabo_Pointfoot_Bipedal_Robot_Github/'
 alias isaac_related='cd ~/toolkits/isaac_related/'
-alias isaacsim='cd ~/toolkits/isaac_related/isaac_sim/'
 alias raisim='cd ~/toolkits/raisim_related/raisimLib/'
-########## Folers ##########
-########## SSH ##########
-alias Lab433-server='ssh Lab433-server-admin'
-alias Lab433-server-frp-auth-connect='/home/syw/toolkits/auth-guest_linux_amd64-18854248.auth-guest_linux_amd64-18854248 ; ssh Lab433-server-admin-frp'
-########## SSH ##########
+alias gaitex='cd ~/Desktop/GaitExplorer/ ; nvim'
+alias repos='cd ~/.gitrepos/'
+########## Folders End ##########
+########## SSH Start ##########
+alias Lab433-server='ssh_kitty_or_normal Lab433-server-admin'
+alias Lab433-server-frp-auth-connect='/home/syw/toolkits/auth-guest_linux_amd64-18854248.auth-guest_linux_amd64-18854248 ; ssh_kitty_or_normal Lab433-server-admin-frp'
+ssh_kitty_or_normal() {
+    if [ "$TERM" = "xterm-kitty" ]; then
+        kitten ssh $1
+    else
+        ssh $1
+    fi
+}
+########## SSH End##########
+########## Kitty Start ##########
+alias k-icat="kitty icat"
+alias k-diff="kitten diff"
+alias k-config='nv ~/.config/kitty/kitty.conf'
+alias k-themes='kitty +kitten themes'
+alias k-fonts='kitty list-fonts --psnames'
+export PATH="$HOME/.local/kitty.app/bin/:$PATH"
+########## Kitty End ##########
+########## Ghostty Start ##########
+alias g-themes="ghostty +list-themes"
+########## Ghostty End ##########
+########## Input-Method Start ##########
+export XMODIFIERS=@im=fcitx
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx5
+export GLFW_IM_MODULE=ibus
+alias fcitx5_quick_config='bash ~/.local/share/fcitx5/fcitx5_customizer.sh recommend'
+########## Input-Method End ##########
 source ~/.frpc_aliases
 alias fzfcd='cd_fzf'
 alias fzfbat='bat_fzf'
@@ -124,7 +157,7 @@ export LS_COLORS=$LS_COLORS:'di=35:'
 
 ################### cpp -- START -- ####################
 alias cmm="cmake .. && make -j8"
-#################### cpp -- START -- ####################
+#################### cpp -- END -- ####################
 
 
 #################### conda&python -- START -- ####################
@@ -184,7 +217,7 @@ alias cfw='~/toolkits/Clash/cfw &'
 
 
 #################### git related -- START -- ####################
-alias gs='git status'
+# alias gs='git status'
 alias gro='git remote show origin'
 alias ga='git add'
 alias gb='git branch'
@@ -205,7 +238,10 @@ alias kgz='pkill -f gzclient ; pkill -f gzclient'
   alias spark='python3 ~/toolkits/my_scripts/python_scripts/spark_script.py'
   alias kimi='python3 ~/toolkits/my_scripts/python_scripts/kimi_script.py'
   alias grok='python3 ~/toolkits/my_scripts/python_scripts/grok_script.py'
-  alias deepseek='python3 ~/toolkits/my_scripts/python_scripts/deepseek_script.py'
+  alias deepseek='python3 ~/toolkits/my_scripts/python_scripts/deepseek_script_2.py'
+  alias chat='python3 ~/toolkits/my_scripts/python_scripts/chatanywhere_script.py'
+  alias qwen='python3 ~/toolkits/my_scripts/python_scripts/qwen_script.py'
+  alias doubao='python3 ~/toolkits/my_scripts/python_scripts/doubao_script.py'
   #################### LLM API -- END -- ####################
 alias mypythonscripts='cd ~/toolkits/my_scripts/python_scripts/'
 alias myscripts='cd ~/toolkits/my_scripts'
@@ -253,7 +289,8 @@ alias dpkgi="sudo dpkg -i"
 
 #################### MuJoCo -- START -- ####################
 alias mjc="uc ; conda activate mjc"
-alias mjviewer="~/toolkits/mujoco-3.1.5/bin/simulate"
+alias mjviewer="~/toolkits/mujoco_related/mujoco-3.1.5/bin/simulate"
+alias mujoco_related="~/toolkits/mujoco_related/"
   #################### MuJoCo210 -- START -- ####################
   # export LD_LIBRARY_PATH=~/.mujoco/mujoco210/bin
   # export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/nvidia
@@ -371,6 +408,8 @@ alias noetic_stop_container='docker container stop docker-noetic'
 # alias noetic="docker exec --user syw -it docker-noetic /usr/bin/zsh"
 alias noetic="docker exec -it docker-noetic /usr/bin/zsh" # 直接exec指定进入syw用户打不开gazebo，在root用户可以，先进入root然后su syw实测可以正常运行gazebo
 alias noetic_one_start="noetic_start_container; noetic"
+alias open-webui-start="docker container start open-webui"
+alias open-webui-stop="docker container stop open-webui"
 ####################  docker config --- END ---  ####################
 
 
@@ -399,17 +438,19 @@ export CUDA_HOME=/usr/local/cuda
 
 ####################  isaac-sim --- START ---  ####################
 # Isaac Sim root directory
-export ISAACSIM_PATH="${HOME}/.local/share/ov/pkg/isaac-sim-4.2.0"
+# export ISAACSIM_PATH="${HOME}/.local/share/ov/pkg/isaac-sim-4.2.0"
 # Isaac Sim python executable
-export ISAACSIM_PYTHON_EXE="${ISAACSIM_PATH}/python.sh"
-alias omniverse-launcher='/home/syw/toolkits/isaac_related/isaac_sim/omniverse-launcher-linux.AppImage &'
-alias isaacsim-app='${ISAACSIM_PATH}/isaac-sim.sh'
-alias isaacsim-python='${ISAACSIM_PYTHON_EXE}'
-alias isaaclab='cd ~/toolkits/isaac_related/IsaacLab/'
-alias ispy='isaacsim-python'
-alias islab-sh='./isaaclab.sh'
-alias islab-sh-python='./isaaclab.sh -p'
-alias isaacgym='cd ~/toolkits/isaac_related/isaacgym'
+# export ISAACSIM_PYTHON_EXE="${ISAACSIM_PATH}/python.sh"
+# alias omniverse-launcher='/home/syw/toolkits/isaac_related/isaac_sim/omniverse-launcher-linux.AppImage &'
+# alias isaacsim-app='${ISAACSIM_PATH}/isaac-sim.sh'
+# alias isaacsim-python='${ISAACSIM_PYTHON_EXE}'
+# alias isaaclab='cd ~/toolkits/isaac_related/IsaacLab/'
+# alias ispy='isaacsim-python'
+# alias islab-sh='./isaaclab.sh'
+# alias islab-sh-python='./isaaclab.sh -p'
+# alias isaacgym='cd ~/toolkits/isaac_related/isaacgym'
+alias doc_isaaclab='edge file:///home/syw/toolkits/isaac_related/IsaacLab/docs/_build/current/index.html'
+alias doc_isaacgym='edge file:///home/syw/toolkits/isaac_related/isaacgym/docs/index.html'
 ####################  isaac-sim --- END ---  ####################
 
 
