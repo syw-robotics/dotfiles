@@ -1,0 +1,7 @@
+[Desktop Entry]
+Version=1.0
+Name=Isaac Sim
+Icon=/home/syw/toolkits/isaac_related/isaac-sim-4.5.0/exts/isaacsim.app.setup/data/omni.isaac.sim.png
+Terminal=false
+Type=Application
+StartupWMClass=IsaacSim

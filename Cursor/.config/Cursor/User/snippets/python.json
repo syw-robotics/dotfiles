@@ -1,0 +1,107 @@
+{
+	// Place your snippets for python here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"snippet_main": {
+		"prefix": "main",
+		"body": [
+			"if __name__ == \"__main__\":",
+			"",
+		],
+		"description": "python main"
+	},
+	"Python Custom Header": {
+		"prefix": "header",
+		"body": [
+			"\"\"\"",
+			"@$TM_FILENAME",
+			"    Version: 0.1",
+			" ",
+			"Description: ",
+			"    $1",
+			"Author: ",
+			"    SeaHI-Robot: https://github.com/SeaHI-Robot",
+			"    Contact: seahirobot@gmail.com",
+			" ",
+			"For learning purposes only, do not spread without authorization.",
+			"\"\"\""
+		],
+		"description": "Add a custom header to a Python file"
+	},
+	"Python Interpreter": {
+		"prefix": "#!",
+		"body": [
+			"#!/usr/bin/env python3",
+		],
+		"description": "Interpreter"
+	},
+	"fori": {
+		"prefix": "fori",
+		"body": [
+			"for i in range(${1:10}):",
+			"${0}"
+		],
+		"description": "For i"
+	},
+	"prred": {
+		"prefix": "prred",
+		"body": [],
+		"description": "print("
+	},
+	"prgreen": {
+		"prefix": "prgreen",
+		"body": [],
+		"description": "print("
+	},
+	"pryellow": {
+		"prefix": "pryellow",
+		"body": [],
+		"description": "print("
+	},
+	"prblue": {
+		"prefix": "prblue",
+		"body": [],
+		"description": "print("
+	},
+	"prmagenta": {
+		"prefix": "prmagenta",
+		"body": [],
+		"description": "print("
+	},
+	"prcyan": {
+		"prefix": "prcyan",
+		"body": [],
+		"description": "print("
+	},
+	"import_numpy": {
+		"prefix": "import_numpy",
+		"body": [
+			"import numpy as np"
+		],
+		"description": ""
+	},
+	"import_plt": {
+		"prefix": "import_plt",
+		"body": [
+			"import matplotlib.pyplot as plt"
+		],
+		"description": ""
+	},
+	"import_pandas": {
+		"prefix": "import_pandas",
+		"body": [
+			"import pandas as pd"
+		],
+		"description": ""
+	},
+}

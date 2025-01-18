@@ -109,12 +109,12 @@ ZSH_THEME="my"
 
 plugins=(
     git
-    zsh-autosuggestions
-    # zsh-syntax-highlighting
-    # z
-    zsh-z
+    zsh-autosuggestions # git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+    # zsh-syntax-highlighting  # git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+    zsh-z  # git clone https://github.com/agkozak/zsh-z.git $ZSH_CUSTOM/plugins/zsh-z
     web-search
     # zsh-vi-mode  # git clone https://github.com/jeffreytse/zsh-vi-mode $ZSH_CUSTOM/plugins/zsh-vi-mode
+    omz-translator  # git clone https://github.com/syw-robotics/omz-translator.git $ZSH_CUSTOM/plugins/omz-translator
 )
 
 # setopt CORRECT_ALL
@@ -138,6 +138,7 @@ source ~/.rvm/scripts/rvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export LD_LIBRARY_PATH=/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH
 # export GEM_HOME=$HOME/.gems
 # export PATH=$HOME/.gems/bin:$PATH
 # ===== misc ===== #
@@ -163,3 +164,5 @@ bindkey '^[k'     kill-line            # Alt + k
 # Ctrl + w    backward-delete-word 
 # Ctrl + k    delete to the end of line
 # ========== My bindkey Configuration ========== #
+
+[ ! -f "$HOME/.x-cmd.root/X" ] || . "$HOME/.x-cmd.root/X" # boot up x-cmd.

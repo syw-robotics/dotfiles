@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=omniverse-launcher
+Exec="/home/syw/Downloads/omniverse-launcher-linux (1).AppImage"  %u
+Type=Application
+Terminal=false
+MimeType=x-scheme-handler/omniverse
