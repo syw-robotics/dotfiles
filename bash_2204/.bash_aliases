@@ -1,7 +1,8 @@
 ##################### user alias -- START -- ####################
 alias sb="clear; source ~/.bashrc"
 alias sz="clear; source ~/.zshrc"
-alias na='nautilus .'
+alias ssz="source ./install/setup.zsh"
+alias na='nautilus . &'
 alias ra='ranger'
 # alias pv='xdg-open'
 alias pdf='zathura'
@@ -61,6 +62,7 @@ export EDITOR=nvim
 export GIT_EDITOR=nvim
 export VISUAL=nvim
 alias lg='lazygit'
+alias ldocker='lazydocker'
 alias docker_start='sudo systemctl start docker.service'
 alias mx='tmux'
 alias ns='nvidia-smi'
@@ -93,15 +95,25 @@ alias dotf='cd ~/.dotfiles/'
 alias nabopointfoot='cd ~/Desktop/nabo_pointfoot_related/Nabo_Pointfoot_Bipedal_Robot_Github/'
 alias isaac_related='cd ~/toolkits/isaac_related/'
 alias raisim='cd ~/toolkits/raisim_related/raisimLib/'
-alias gaitex='cd ~/Desktop/GaitExplorer/ ; code . ; exit'
-alias gaitex_path='cd ~/Desktop/GaitExplorer/'
+# alias gaitex='cd ~/Desktop/GaitExplorer/ ; code . ; exit'
+alias gaitex_prop='cd ~/Desktop/GaitExplorer_prop/'
 alias repos='cd ~/.gitrepos/'
-diff_gaitex_extremeparkour(){
-    code --diff ~/Desktop/GaitExplorer/$1 ~/.gitrepos/extreme-parkour/$1 
+# diff_gaitex_extremeparkour(){
+#     code --diff ~/Desktop/GaitExplorer/$1 ~/.gitrepos/extreme-parkour/$1
+# }
+# diff_gaitex_with_backup(){
+#     code --diff ~/Desktop/GaitExplorer/$1 ~/Desktop/GaitExplorer_BAK/$1
+# }
+# diff_walk_a1(){
+#     code --diff ~/.gitrepos/walk-these-ways-fanziqi/a1_gym/$1 ~/.gitrepos/walk-these-ways/wtw_gym/$1
+# }
+diff_ts(){
+    code --diff ~/.gitrepos/TS_template_codebase/$1 ~/.gitrepos/AMP_A1/$1
 }
-diff_gaitex_with_backup(){
-    code --diff ~/Desktop/GaitExplorer/$1 ~/Desktop/GaitExplorer_BAK/$1 
+diff_amp(){
+    code --diff ~/.gitrepos/AMP_A1/$1 ~/.gitrepos/AMP_A1_dev/$1
 }
+
 ########## Folders End ##########
 ########## SSH Start ##########
 alias Lab433-server='ssh_kitty_or_normal Lab433-server-admin'
@@ -286,6 +298,11 @@ eval $(thefuck --alias FUCK)
 #################### thefuck configuration -- END -- ####################
 
 
+#################### direnv -- START -- ####################
+eval "$(direnv hook zsh)"
+#################### direnv -- END -- ####################
+
+
 #################### apt -- START -- ####################
 alias aud='sudo apt update'
 alias aug='sudo apt upgrade'
@@ -298,7 +315,7 @@ alias dpkgi="sudo dpkg -i"
 
 #################### MuJoCo -- START -- ####################
 alias mjc="uc ; conda activate mjc"
-alias mjviewer="~/toolkits/mujoco_related/mujoco-3.1.5/bin/simulate"
+alias mjviewer="~/toolkits/mujoco_related/mujoco/build/bin/simulate" # v3.2.7
 alias mujoco_related="~/toolkits/mujoco_related/"
   #################### MuJoCo210 -- START -- ####################
   # export LD_LIBRARY_PATH=~/.mujoco/mujoco210/bin
@@ -313,11 +330,11 @@ alias mujoco_related="~/toolkits/mujoco_related/"
 
 
 ####################  Pinocchio Config --- START ---  ####################
-# export PATH=/opt/openrobots/bin:$PATH
-# export PKG_CONFIG_PATH=/opt/openrobots/lib/pkgconfig:$PKG_CONFIG_PATH
-# export LD_LIBRARY_PATH=/opt/openrobots/lib:$LD_LIBRARY_PATH
-# export ROS_PACKAGE_PATH=/opt/openrobots/share
-# export PYTHONPATH=$PYTHONPATH:/opt/openrobots/lib/python3.8/site-packages
+export PATH=/opt/openrobots/bin:$PATH
+export PKG_CONFIG_PATH=/opt/openrobots/lib/pkgconfig:$PKG_CONFIG_PATH
+export LD_LIBRARY_PATH=/opt/openrobots/lib:$LD_LIBRARY_PATH
+export PYTHONPATH=/opt/openrobots/lib/python3.10/site-packages:$PYTHONPATH # Adapt your desired python version here
+export CMAKE_PREFIX_PATH=/opt/openrobots:$CMAKE_PREFIX_PATH
 ####################  Pinocchio Config --- END ---  ####################
 
 
@@ -412,11 +429,18 @@ export NVM_DIR="$HOME/.nvm"
 ####################  docker config --- START ---  ####################
 alias docker_start='sudo systemctl start docker.service'
 alias docker_restart='sudo systemctl restart docker'
+
 alias noetic_start_container='docker container start docker-noetic'
 alias noetic_stop_container='docker container stop docker-noetic'
 # alias noetic="docker exec --user syw -it docker-noetic /usr/bin/zsh"
 alias noetic="docker exec -it docker-noetic /usr/bin/zsh" # 直接exec指定进入syw用户打不开gazebo，在root用户可以，先进入root然后su syw实测可以正常运行gazebo
 alias noetic_one_start="noetic_start_container; noetic"
+
+alias noetic_base_start_container='docker container start docker-noetic-base'
+alias noetic_base_stop_container='docker container stop docker-noetic-base'
+alias noetic_base="docker exec --user syw -it docker-noetic-base /bin/bash"
+# alias noetic_base="docker exec -it docker-noetic-base /bin/bash" # 直接exec指定进入syw用户打不开gazebo，在root用户可以，先进入root然后su syw实测可以正常运行gazebo
+alias noetic_base_one_start="noetic_base_start_container; noetic_base"
 ####################  docker config --- END ---  ####################
 
 
@@ -437,10 +461,10 @@ export PATH="$HOME/.config/nvim/nvim-linux64/bin:$PATH"
 ####################  nvim path --- END ---  ####################
 
 ####################  cuda path --- START ---  ####################
-# export PATH=/usr/local/cuda-12.4/bin:$PATH  
-# export LD_LIBRARY_PATH=/usr/local/cuda-12.4/lib64:$LD_LIBRARY_PATH
-export PATH=/usr/local/cuda-11.7/bin:$PATH  
-export LD_LIBRARY_PATH=/usr/local/cuda-11.7/lib64:$LD_LIBRARY_PATH
+export PATH=/usr/local/cuda-12.4/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda-12.4/lib64:$LD_LIBRARY_PATH
+# export PATH=/usr/local/cuda-11.7/bin:$PATH
+# export LD_LIBRARY_PATH=/usr/local/cuda-11.7/lib64:$LD_LIBRARY_PATH
 export CUDA_HOME=/usr/local/cuda
 ####################  cuda path --- END ---  ####################
 
@@ -475,6 +499,13 @@ export ACADOS_SOURCE_DIR="/home/syw/.gitrepos/Quadruped-PyMPC/quadruped_pympc/ac
 ####################  acados --- END ---  ####################
 
 ####################  USD --- START ---  ####################
-export PATH="/home/syw/toolkits/usd_related/usd.py310.linux-x86_64.usdview.release-0.25.02-ba8aaf1f/scripts:$PATH"
+# export PATH="/home/syw/toolkits/usd_related/usd.py310.linux-x86_64.usdview.release-0.25.02-ba8aaf1f/scripts:$PATH"
+alias usdview="/home/syw/toolkits/usd_related/usd.py310.linux-x86_64.usdview.release-0.25.02-ba8aaf1f/scripts/usdview_gui.sh"
+export PATH="/home/syw/toolkits/blender-4.4.0/:$PATH"
 ####################  USD --- END ---  ####################
 
+
+####################  ml_logger --- START ---  ####################
+export ML_LOGGER_ROOT=http://localhost:8080 
+export ML_LOGGER_USER=syw-ml # make sure it is the same on the cluster.
+####################  ml_logger --- END ---  ####################

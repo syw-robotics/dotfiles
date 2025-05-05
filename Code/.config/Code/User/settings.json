@@ -849,7 +849,7 @@
             ],
             "commands": [
                 // "codegeex.askcodegeex"
-                // "marscode.explainCode"
+                // "trae.explainCode"
                 "github.copilot.chat.explain.palette"
             ]
         },
@@ -867,23 +867,21 @@
         {
             "before": [
                 "<leader>",
-                "a",
-                "a"
-            ],
-            "commands": [
-                "github.copilot.chat.attachSelection",
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
                 "t",
                 "c"
             ],
             "commands": [
                 "extension.translateLinesUnderCursorPreferred"
             ]
-        }
+        },
+        {
+            "before": [
+                "z",
+            ],
+            "commands": [
+                "editor.createFoldingRangeFromSelection",
+            ]
+        },
     ],
     // 取消Vim的键位映射，使用VSCode原生的键位功能
     "vim.handleKeys": {
@@ -941,9 +939,11 @@
     // ],
     // ========== NEOVIDE CURSOREFFECT & CUSTOM STARTUP PAGE START ========== //
     "github.copilot.enable": {
+        "*": false,
         "plaintext": false,
+        "markdown": true,
         "scminput": false,
-        "markdown": true
+        "jsonc": false
     },
     "Codegeex.Privacy": true,
     "Codegeex.OnlyKeyControl": false,
@@ -969,7 +969,6 @@
         "syw-sustech.high-ros2-snippets"
     ],
     "cmake.configureOnOpen": false,
-    "python.defaultInterpreterPath": "/home/syw/toolkits/miniconda3/envs/warp",
     "remote.SSH.remotePlatform": {
         "172.18.34.25": "linux",
         "cs405-server": "linux",
@@ -995,7 +994,6 @@
     "material-icon-theme.folders.theme": "specific",
     "material-icon-theme.files.color": "#42a5f5",
     "material-icon-theme.folders.color": "#81b6c6",
-    "notebook.lineNumbers": "on",
     "terminal.integrated.inheritEnv": false,
     "jupyter.askForKernelRestart": false,
     "Lingma.cloudModelAutoTriggerGenerateLength": "disable",
@@ -1154,8 +1152,7 @@
     "vscode-neovim.neovimInitVimPaths.linux": "/home/syw/.config/nvim_vscode/init.lua",
     // ========== Font CONFIGURATION START ========== //
     "editor.fontFamily": "'JetBrainsMono Nerd Font Mono', 'MiSans Regular'",
-    "editor.fontLigatures": false, // 开启编辑器的连字符设置
-    "editor.fontSize": 18,
+    "editor.fontLigatures": false,
     "window.zoomLevel": 2.0,
     "editor.minimap.sectionHeaderFontSize": 15,
     "terminal.integrated.fontSize": 18,
@@ -1168,7 +1165,6 @@
     "[typst-code]": {
         "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?"
     },
-    "editor.formatOnSave": true,
     "editor.formatOnSaveMode": "modificationsIfAvailable",
     "black-formatter.args": [
         "--line-length 120 --preview"
@@ -1198,7 +1194,7 @@
     },
     "github.copilot.advanced": {},
     "github.copilot.chat.localeOverride": "zh-CN",
-    "workbench.colorTheme": "everforest-moist-light",
+    "workbench.colorTheme": "everforest-moist-dark",
     "vscodeGoogleTranslate.preferredLanguage": "Chinese (Simplified)",
     "flake8.args": [
         "--disable=E266"
@@ -1212,7 +1208,20 @@
     "path-autocomplete.enableFolderTrailingSlash": true,
     "workbench.editor.editorActionsLocation": "titleBar",
     "window.customTitleBarVisibility": "never",
-    "editor.minimap.enabled": false
+    "editor.minimap.enabled": false,
+    "C_Cpp.intelliSenseEngine": "disabled",
+    "remote.autoForwardPortsSource": "hybrid",
+    "python.defaultInterpreterPath": "/home/syw/toolkits/miniconda3/envs/amp_hw",
+    "codegeex.codeLens.enableCodeLens": "disable",
+    "trae.enableCodelens": {
+        "enableInlineDocumentation": false,
+        "enableInlineUnitTest": false,
+        "enableInlineExplain": false
+    },
+    "trae.chatLanguage": "cn",
+    "trae.enableInlineCommand": true,
+    "github.copilot.nextEditSuggestions.enabled": false,
+    "editor.fontSize": 15
     // ========== Font CONFIGURATION START ========== //
     // 光标的动画效果
     // "editor.cursorBlinking": "smooth",

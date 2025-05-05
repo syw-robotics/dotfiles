@@ -35,7 +35,6 @@
     icon_bell = False
     background_color = "#2e3440"
     background_darkness = 0.75
-    background_type = transparent
     cursor_color = "#D8DEE9"
     font = Hack Nerd Font Mono 14
     foreground_color = "#d8dee9"

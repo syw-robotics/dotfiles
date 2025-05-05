@@ -110,7 +110,7 @@
     {
         "key": "ctrl+k",
         "command": "workbench.action.navigateUp",
-        "when": "editorFocus && vim.mode == 'Normal' || vim.mode == 'Visual' "
+        "when": "editorFocus && vim.mode == 'Normal' || vim.mode == 'Visual' || terminalFocus"
     },
     {
         "key": "ctrl+h",
@@ -239,45 +239,10 @@
         "when": "view.workbench.panel.chat.view.copilot.visible && vim.mode == 'Normal' || vim.mode == 'Visual' && editorFocus"
     },
     {
-        "key": "ctrl+c",
-        "command": "workbench.panel.chat",
-        "when": "workbench.panel.chat.view.copilot.visible && !editorFocus && !filesExplorerFocus"
-    },
-    // {
-    //     "key": "ctrl+c",
-    //     "command": "workbench.panel.chatEditing",
-    //     "when": "workbench.panel.chat.view.edits.visible && !editorFocus && !filesExplorerFocus"
-    // },
-    // {
-    //     "key": "ctrl+c",
-    //     "command": "workbench.action.quickchat.close",
-    //     "when": "quickChatHasFocus && !editorFocus && !filesExplorerFocus"
-    // },
-    // {
-    //     "key": "ctrl+c",
-    //     "command": "inlineChat.close",
-    //     "when": "inlineChatFocused"
-    // },
-    {
         "key": "escape",
         "command": "workbench.panel.chat",
-        "when": "workbench.panel.chat.view.copilot.visible && !editorFocus && !filesExplorerFocus"
+        "when": "workbench.panel.chat.view.copilot.visible && !editorFocus && !filesExplorerFocus && !inlineChatFocused"
     },
-    // {
-    //     "key": "escape",
-    //     "command": "workbench.action.quickchat.close",
-    //     "when": "quickChatHasFocus && !editorFocus && !filesExplorerFocus "
-    // },
-    // {
-    //     "key": "escape",
-    //     "command": "workbench.panel.chatEditing",
-    //     "when": "workbench.panel.chat.view.edits.visible && !editorFocus && !filesExplorerFocus "
-    // },
-    // {
-    //     "key": "escape",
-    //     "command": "inlineChat.close",
-    //     "when": "inlineChatFocused && !filesExplorerFocus "
-    // },
     // Copilot focus editor when in chat
     {
         "key": "ctrl+h",
@@ -298,20 +263,23 @@
     // ========== Copilot CINFIGURATION END ========== //
     // 
     //
+    // // ========== Trae CINFIGURATION START ========== //
+    // // Trae toggle & hide chat
+    // {
+    //     "key": "ctrl+space",
+    //     "command": "trae.createNewChat",
+    //     "when": "editorFocus && vim.mode == 'Normal' || vim.mode == 'Visual'"
+    // },
+    // // Trae focus editor when in chat
+    // {
+    //     "key": "ctrl+l",
+    //     "command": "workbench.action.focusActiveEditorGroup",
+    //     "when": "TraeChatView.visible"
+    // },
+    // // ========== Trae CINFIGURATION END ========== //
     //
     //
     // ========== Other Keybinds ========== //
-    // Super Tab
-    // {
-    //     "key": "tab",
-    //     "command": "acceptSelectedSuggestion",
-    //     "when": "suggestWidgetVisible && textInputFocus"
-    // },
-    // {
-    //     "key": "shift+tab",
-    //     "command": "acceptSelectedSuggestion",
-    //     "when": "suggestWidgetVisible && textInputFocus"
-    // },
     {
         "key": "tab",
         "command": "selectNextSuggestion",
@@ -369,16 +337,12 @@
     // Toggle terminal
     {
         "key": "ctrl+\\",
-        "command": "workbench.action.terminal.toggleTerminal"
+        "command": "workbench.action.terminal.toggleTerminal",
+        "when": "terminalFocus || editorFocus && vim.mode == 'Normal' || vim.mode == 'Visual' || vim.mode == 'Insert'"
     },
     // Hide terminal
     {
         "key": "ctrl+w",
-        "command": "workbench.action.terminal.toggleTerminal",
-        "when": "terminalFocusInAny"
-    },
-    {
-        "key": "ctrl+d",
         "command": "workbench.action.terminal.toggleTerminal",
         "when": "terminalFocusInAny"
     },
@@ -420,11 +384,6 @@
         "key": "ctrl+shift+r",
         "command": "markdown-preview-enhanced.openPreviewToTheSide",
         "when": "editorLangId == 'markdown' && vim.mode == 'Normal' "
-    },
-    {
-        "key": "ctrl+k v",
-        "command": "-markdown-preview-enhanced.openPreviewToTheSide",
-        "when": "editorLangId == 'markdown' && editorFocus"
     },
     // Compare Files
     {
