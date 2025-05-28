@@ -1,0 +1,55 @@
+[manager]
+append_keymap = [
+    { on = [ "g", "D" ],       run = "cd ~/Desktop",   desc = "Goto ~/Desktop" },
+    { on = [ "g", "G" ],       run = "cd ~/.gitrepos/",   desc = "Goto ~/.gitrepos" },
+    { on = [ "g", "T" ],       run = "cd ~/toolkits/" ,   desc = "Goto Toolkits" },
+    { on = [ "g", "S" ],       run = "cd ~/Desktop/24Spring/" ,   desc = "Goto 25Spring" },
+]
+
+# Close input by one `esc` press
+[[input.prepend_keymap]]
+on   = "<Esc>"
+run  = "close"
+desc = "Cancel input"
+
+# Dropping to the shell
+[[manager.prepend_keymap]]
+on   = "!"
+for  = "unix"
+run  = 'shell "$SHELL" --block'
+desc = "Open $SHELL here"
+
+# ===== plugin =====
+# relative-motions
+[[manager.prepend_keymap]]
+on = [ "m" ]
+run = "plugin relative-motions"
+desc = "Trigger a new relative motion"
+
+# smart-enter: open files or enter directories all in one key
+[[manager.prepend_keymap]]
+on   = "l"
+run  = "plugin smart-enter"
+desc = "Enter the child directory, or open the file"
+
+# smart-paste: paste files without entering the directory
+[[manager.prepend_keymap]]
+on   = "p"
+run  = "plugin smart-paste"
+desc = "Paste into the hovered directory or CWD"
+
+# smart-tab: create a tab and enter the hovered directory
+[[manager.prepend_keymap]]
+on   = "t"
+run  = "plugin smart-tab"
+desc = "Create a tab and enter the hovered directory"
+
+# smart-switch: create tab if the tab being switched to does not exist
+[[manager.prepend_keymap]]
+on   = "2"
+run  = "plugin smart-switch 1"
+desc = "Switch or create tab 2"
+[[manager.prepend_keymap]]
+on   = "3"
+run  = "plugin smart-switch 2"
+desc = "Switch or create tab 3"
