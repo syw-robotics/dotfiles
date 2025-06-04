@@ -29,6 +29,7 @@ alias ob='/home/syw/Documents/Obsidian/resources/Obsidian-1.5.12.AppImage ; exit
 alias zo='/opt/Zotero_linux-x86_64/zotero'
 alias vv='vi ~/.vim/highvim/local-version/.vimrc'
 alias nv='nvim'
+alias n='nvim'
 alias neovide='/home/syw/.config/nvim/neovide.AppImage'
 alias vide='/home/syw/.config/nvim/neovide.AppImage'
 alias nvk='nv  ~/.config/nvim/lua/core/keymaps.lua'
@@ -57,14 +58,9 @@ alias docker_start='sudo systemctl start docker.service'
 alias mx='tmux'
 alias octave-gui='octave --gui'
 alias ollama-qwen2.5-code='ollama run qwen2.5-coder:3b'
-alias sync_to_yilong='sync_folder_through_ssh Papers /home/syw/Documents/RL-Papers-2024 yilong /home/syw/Documents/;
-                      sync_folder_through_ssh benzi /home/syw/Documents/benzi yilong /home/syw/Documents/;
-                      sync_folder_through_ssh 24Fall /home/syw/Desktop/24Fall yilong /home/syw/Desktop/;
-                      sync_folder_through_ssh Others /home/syw/toolkits/mujoco_related yilong /home/syw/toolkits/; '
-alias sync_to_yilong_423='sync_folder_through_ssh Papers /home/syw/Documents/RL-Papers-2024 yilong_423 /home/syw/Documents/;
-                      sync_folder_through_ssh benzi /home/syw/Documents/benzi yilong_423 /home/syw/Documents/;
-                      sync_folder_through_ssh 24Fall /home/syw/Desktop/24Fall yilong_423 /home/syw/Desktop;
-                      sync_folder_through_ssh Others /home/syw/toolkits/mujoco_related yilong_423 /home/syw/toolkits/; '
+alias sync_to_yilong='sync_folder_through_ssh 25Spring /home/syw/Desktop/25Spring/ yilong /home/syw/Desktop/;'
+alias sync_to_yilong_423='sync_folder_through_ssh 25Spring /home/syw/Desktop/25Spring/ yilong_423 /home/syw/Desktop/25Spring;'
+alias sync_to_yilong_423test='sync_folder_through_ssh Test /home/syw/Desktop/test/ yilong_423 /home/syw/Desktop/test;'
 sync_folder_through_ssh() {
     if [ "$#" -ne 4 ]; then
         echo "Usage: sync_folder_through_ssh <description> <source_path> <user@host> <target_path>"
@@ -376,7 +372,7 @@ export LESS_TERMCAP_us=$'\e[1;4;32m'
 
 
 ####################  nvim path --- START ---  ####################
-export PATH="$HOME/.config/nvim/nvim-linux64/bin:$PATH"
+export PATH="$HOME/.config/nvim/nvim-linux-x86_64/bin:$PATH"
 ####################  nvim path --- END ---  ####################
 
 
