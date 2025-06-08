@@ -7,9 +7,10 @@ local config = {
         -- "Noto Sans Mono CJK"
         "SimHei"
     },
-    -- color_scheme = "Catppuccin Frappe",
+    color_scheme = "Catppuccin Frappe",
+    color_scheme = 'Catppuccin Mocha',
     -- color_scheme = 'Everforest Dark Soft (Gogh)',
-    color_scheme = 'nordfox',
+    -- color_scheme = 'nordfox',
 
     enable_scroll_bar = false,
     -- enable_scroll_bar = true,

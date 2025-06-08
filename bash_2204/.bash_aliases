@@ -44,7 +44,7 @@ alias edge='microsoft-edge'
 alias cursor='/home/syw/.config/Cursor/cursor-0.45.11-build-250207y6nbaw5qc-x86_64.AppImage'
 alias code_cursor_align_settings='code ~/.config/Cursor/User/settings.json ~/.config/Code/User/settings.json'
 alias code_cursor_align_keybindings='code ~/.config/Cursor/User/keybindings.json ~/.config/Code/User/keybindings.json'
-alias cat="batcat"
+# alias cat="batcat"
 alias bat="batcat"
 alias b="batcat"
 alias ..='cd ..'
@@ -221,12 +221,8 @@ alias amp='uc ; ca amp_hw ; cd ~/.gitrepos/AMP_A1/'
 alias openwebui='uc ; ca openwebui; open-webui serve &; edge http://localhost:8080'
 alias tensorboard="python3 -m tensorboard.main"
 alias tensorboard-logdir="python3 -m tensorboard.main --logdir"
-alias sync_to_xiaoxin='sync_folder_through_ssh Papers /home/syw/Documents/RL-Papers-2024 xiaoxin /home/syw/Documents/;
-                      sync_folder_through_ssh 24Fall /home/syw/Desktop/24Fall xiaoxin /home/syw/Desktop/;
-                      sync_folder_through_ssh Others /home/syw/toolkits/mujoco_related xiaoxin /home/syw/toolkits/; '
-alias sync_to_xiaoxin_423='sync_folder_through_ssh Papers /home/syw/Documents/RL-Papers-2024 xiaoxin_423 /home/syw/Documents/;
-                      sync_folder_through_ssh 24Fall /home/syw/Desktop/24Fall xiaoxin_423 /home/syw/Desktop;
-                      sync_folder_through_ssh Others /home/syw/toolkits/mujoco_related xiaoxin_423 /home/syw/toolkits/; '
+alias sync_to_xiaoxin='sync_folder_through_ssh 25Spring /home/syw/Desktop/25Spring/ xiaoxin/home/syw/Desktop/25Spring;'
+alias sync_to_xiaoxin_423='sync_folder_through_ssh 25Spring /home/syw/Desktop/25Spring/ xiaoxin_423 /home/syw/Desktop/25Spring;'
 sync_folder_through_ssh() {
     if [ "$#" -ne 4 ]; then
         echo "Usage: sync_folder_through_ssh <description> <source_path> <user@host> <target_path>"
@@ -477,12 +473,12 @@ export LESS_TERMCAP_us=$'\e[1;4;32m'
 
 
 ####################  nvim path --- START ---  ####################
-export PATH="$HOME/.config/nvim/nvim-linux64/bin:$PATH"
+export PATH="$HOME/.config/nvim/nvim-linux-x86_64/bin:$PATH"
 ####################  nvim path --- END ---  ####################
 
 ####################  cuda path --- START ---  ####################
-export PATH=/usr/local/cuda-12.4/bin:$PATH
-export LD_LIBRARY_PATH=/usr/local/cuda-12.4/lib64:$LD_LIBRARY_PATH
+export PATH=/usr/local/cuda-12.8/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda-12.8/lib64:$LD_LIBRARY_PATH
 # export PATH=/usr/local/cuda-11.7/bin:$PATH
 # export LD_LIBRARY_PATH=/usr/local/cuda-11.7/lib64:$LD_LIBRARY_PATH
 export CUDA_HOME=/usr/local/cuda
