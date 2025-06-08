@@ -3,7 +3,7 @@ append_keymap = [
     { on = [ "g", "D" ],       run = "cd ~/Desktop",   desc = "Goto ~/Desktop" },
     { on = [ "g", "G" ],       run = "cd ~/.gitrepos/",   desc = "Goto ~/.gitrepos" },
     { on = [ "g", "T" ],       run = "cd ~/toolkits/" ,   desc = "Goto Toolkits" },
-    { on = [ "g", "S" ],       run = "cd ~/Desktop/24Spring/" ,   desc = "Goto 25Spring" },
+    { on = [ "g", "S" ],       run = "cd ~/Desktop/25Spring/" ,   desc = "Goto 25Spring" },
 ]
 
 # Close input by one `esc` press

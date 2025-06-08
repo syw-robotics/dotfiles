@@ -295,7 +295,7 @@
 	"revealjs-video": {
 		"prefix": "video",
 		"body": [
-			"{{< video ${1:video_url} title=\"${2:video_title}\" width=\"400\" >}}"
+			"<video src=\"${1:video_url}\" width=\"600\" controls style=\"display: block; margin-top: auto; margin-bottom: auto; margin-left: auto; margin-right: auto;\"></video>"
 		],
 		"description": "Video"
 	},

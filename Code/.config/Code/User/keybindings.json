@@ -88,6 +88,12 @@
         "command": "list.find",
         "when": "listFocus && listSupportsFind && !inputFocus"
     },
+    // Collapse All
+    {
+        "key": "ctrl+\\",
+        "command": "workbench.action.terminal.toggleTerminal",
+        "when": "filesExplorerFocus && vim.mode == 'Normal' || vim.mode == 'Visual'"
+    },
     // ===== File Explorer VIM Keybinds End ===== //
     // 
     // ===== Other VIM Keybinds ===== //
