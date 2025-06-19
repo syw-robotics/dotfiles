@@ -131,6 +131,10 @@ bindkey '^[' up-line-or-history
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 
+# Atuin configuration
+. "$HOME/.atuin/bin/env"
+eval "$(atuin init zsh --disable-up-arrow)"  # only use ctrl-r to activate atuin
+
 source ~/.bash_aliases
 source ~/.zsh_ros
 source ~/.zsh_aliases

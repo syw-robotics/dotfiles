@@ -38,6 +38,7 @@ alias my_config_push='bash /home/syw/toolkits/my_config_files_on_ubuntu/update_c
 alias my_config_status='bash /home/syw/toolkits/my_config_files_on_ubuntu/update_config_status.sh'
 alias edge='microsoft-edge'
 alias b="batcat"
+# alias cat="batcat"
 alias ..='cd ..'
 alias ..2='cd ../..'
 alias ..3='cd ../../..'
@@ -60,7 +61,6 @@ alias octave-gui='octave --gui'
 alias ollama-qwen2.5-code='ollama run qwen2.5-coder:3b'
 alias sync_to_yilong='sync_folder_through_ssh 25Spring /home/syw/Desktop/25Spring/ yilong /home/syw/Desktop/;'
 alias sync_to_yilong_423='sync_folder_through_ssh 25Spring /home/syw/Desktop/25Spring/ yilong_423 /home/syw/Desktop/25Spring;'
-alias sync_to_yilong_423test='sync_folder_through_ssh Test /home/syw/Desktop/test/ yilong_423 /home/syw/Desktop/test;'
 sync_folder_through_ssh() {
     if [ "$#" -ne 4 ]; then
         echo "Usage: sync_folder_through_ssh <description> <source_path> <user@host> <target_path>"
