@@ -1229,7 +1229,6 @@
     },
     "path-autocomplete.enableFolderTrailingSlash": true,
     "workbench.editor.editorActionsLocation": "titleBar",
-    "window.customTitleBarVisibility": "auto",
     "editor.minimap.enabled": false,
     "C_Cpp.intelliSenseEngine": "disabled",
     "remote.autoForwardPortsSource": "hybrid",
@@ -1249,7 +1248,8 @@
     },
     "texpresso.command": "/home/syw/.local/bin/texpresso",
     "texpresso.useEditorTheme": true,
-    "diffEditor.maxComputationTime": 0
+    "diffEditor.maxComputationTime": 0,
+    "workbench.activityBar.location": "top"
     // ========== Font CONFIGURATION START ========== //
     // 光标的动画效果
     // "editor.cursorBlinking": "smooth",
