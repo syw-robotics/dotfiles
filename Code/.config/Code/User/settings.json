@@ -532,6 +532,16 @@
             "before": [
                 "<leader>",
                 "g",
+                "e"
+            ],
+            "commands": [
+                "workbench.view.scm"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "g",
                 "r"
             ],
             "commands": [
@@ -605,6 +615,24 @@
             ],
             "commands": [
                 "editor.action.goToReferences"
+            ]
+        },
+        {
+            "before": [
+                "]",
+                "c"
+            ],
+            "commands": [
+                "workbench.action.compareEditor.nextChange"
+            ]
+        },
+        {
+            "before": [
+                "[",
+                "c"
+            ],
+            "commands": [
+                "workbench.action.compareEditor.previousChange"
             ]
         },
         {
@@ -1216,7 +1244,7 @@
     },
     "github.copilot.advanced": {},
     "github.copilot.chat.localeOverride": "zh-CN",
-    "workbench.colorTheme": "Catppuccin Latte",
+    "workbench.colorTheme": "Everforest Light",
     "vscodeGoogleTranslate.preferredLanguage": "Chinese (Simplified)",
     "flake8.args": [
         "--disable=E266"
@@ -1229,7 +1257,6 @@
     },
     "path-autocomplete.enableFolderTrailingSlash": true,
     "workbench.editor.editorActionsLocation": "titleBar",
-    "editor.minimap.enabled": false,
     "C_Cpp.intelliSenseEngine": "disabled",
     "remote.autoForwardPortsSource": "hybrid",
     "codegeex.codeLens.enableCodeLens": "disable",
@@ -1249,7 +1276,8 @@
     "texpresso.command": "/home/syw/.local/bin/texpresso",
     "texpresso.useEditorTheme": true,
     "diffEditor.maxComputationTime": 0,
-    "workbench.activityBar.location": "top"
+    "workbench.activityBar.location": "top",
+    "editor.minimap.enabled": false
     // ========== Font CONFIGURATION START ========== //
     // 光标的动画效果
     // "editor.cursorBlinking": "smooth",

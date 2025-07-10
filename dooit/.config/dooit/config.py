@@ -147,7 +147,7 @@ def key_setup(api: DooitAPI, _):
     api.keys.set("xx", api.no_op)
     api.keys.set("e", api.edit_effort, "Edit Effort")
     api.keys.set(["c", " "], api.toggle_complete, "Toggle Complete")
-    api.keys.set(["x", "D"], api.remove_node, "Delete")
+    api.keys.set(["X", "D"], api.remove_node, "Delete")
     api.keys.set(["g", "gg"], api.go_to_top, "Move to Top")
     api.keys.set(["G"], api.go_to_bottom, "Move to Bottom")
     api.keys.set(["h", "l", "<tab>"], api.switch_focus, "Switch Focus")

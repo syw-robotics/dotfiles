@@ -270,18 +270,18 @@
     // 
     //
     // // ========== Trae CINFIGURATION START ========== //
-    // // Trae toggle & hide chat
-    // {
-    //     "key": "ctrl+space",
-    //     "command": "trae.createNewChat",
-    //     "when": "editorFocus && vim.mode == 'Normal' || vim.mode == 'Visual'"
-    // },
-    // // Trae focus editor when in chat
-    // {
-    //     "key": "ctrl+l",
-    //     "command": "workbench.action.focusActiveEditorGroup",
-    //     "when": "TraeChatView.visible"
-    // },
+    // Trae toggle & hide chat
+    {
+        "key": "ctrl+space",
+        "command": "trae.createNewChat",
+        "when": "editorFocus && vim.mode == 'Normal' || vim.mode == 'Visual'"
+    },
+    // Trae focus editor when in chat
+    {
+        "key": "ctrl+l",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "TraeChatView.visible"
+    },
     // // ========== Trae CINFIGURATION END ========== //
     //
     //
