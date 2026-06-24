@@ -2,18 +2,13 @@ git:
   paging:
     colorArg: always
     pager: delta --dark --paging=never
-
 os:
   edit: "nvim {{filename}}"
-
-
 keybinding:
   universal:
     openFile: e
     edit: o
-
 promptToReturnFromSubprocess: false
-
 gui:
   theme:
     activeBorderColor:
@@ -35,6 +30,5 @@ gui:
       - '#cdd6f4'
     searchingActiveBorderColor:
       - '#f9e2af'
-
   authorColors:
     '*': '#b4befe'

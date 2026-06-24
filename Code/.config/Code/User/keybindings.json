@@ -439,4 +439,14 @@
         "key": "ctrl+k ctrl+f",
         "command": "workbench.action.openRecent"
     },
+    {
+        "key": "ctrl+space",
+        "command": "trae.add.context.menu",
+        "when": "trae.enableChatCommand && !editorReadonly"
+    },
+    {
+        "key": "ctrl+u",
+        "command": "-trae.add.context.menu",
+        "when": "trae.enableChatCommand && !editorReadonly"
+    },
 ]

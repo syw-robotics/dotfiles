@@ -22,9 +22,6 @@
     "vim.highlightedyank.duration": 300,
     "vim.enableNeovim": true,
     "vim.neovimPath": "/home/syw/.config/nvim/nvim-linux64/bin/nvim",
-    "extensions.experimental.affinity": {
-        "asvetliakov.vscode-neovim": 1
-    },
     "vim.insertModeKeyBindingsNonRecursive": [
         {
             "before": [
@@ -661,6 +658,16 @@
             "before": [
                 "<leader>",
                 "f",
+                "w"
+            ],
+            "commands": [
+                "workbench.action.findInFiles"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "f",
                 "g"
             ],
             "commands": [
@@ -1139,7 +1146,7 @@
     ],
     "editor.lineNumbers": "relative",
     "security.workspace.trust.untrustedFiles": "open",
-    "python.languageServer": "Jedi",
+    "python.languageServer": "None",
     "Codegeex.License": "",
     "vscode-neovim.neovimExecutablePaths.linux": "/home/syw/.config/nvim/nvim-linux64/bin/nvim",
     "vscode-neovim.neovimInitVimPaths.linux": "/home/syw/.config/nvim_vscode/init.lua",
@@ -1225,5 +1232,14 @@
         "scminput",
         "jsonc"
     ],
-    "git.ignoreRebaseWarning": true
+    "git.ignoreRebaseWarning": true,
+    "python.createEnvironment.trigger": "off",
+    "clangd.path": "/home/syw/.config/Cursor/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/20.1.8/clangd_20.1.8/bin/clangd",
+    "remote.SSH.defaultExtensions": [
+        "ms-python.python",
+        "ms-toolsai.jupyter-renderers",
+        "ms-toolsai.jupyter-keymap",
+        "ms-toolsai.jupyter"
+    ],
+    "python.defaultInterpreterPath": "/home/syw/toolkits/isaac_related/isaaclab_uv_envs/AA/.venv"
 }

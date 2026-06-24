@@ -1,19 +1,20 @@
 ####################  ROS Config --- START ---  ####################
+source /opt/ros/humble/setup.zsh
 ########## ros2 aliases ##########
 alias ssz="source install/setup.zsh"
-alias cb='colcon build --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=ON'
+alias cb='colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=ON'
 alias ssz='source install/setup.zsh'
 ########## ros2 aliases ##########
 
 ########## ros2 humble ##########
-source /opt/ros/humble/setup.zsh
+export ROS_DOMAIN_ID=91
+
+source ~/toolkits/unitree_related/unitree_ros2/cyclonedds_ws/install/setup.zsh
+
 # argcomplete for ros2 & colcon
-eval "$(register-python-argcomplete3 ros2)"
-eval "$(register-python-argcomplete3 colcon)"
-export ROS_DOMAIN_ID=101
+source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.zsh
 source /usr/share/colcon_cd/function/colcon_cd.sh
 export _colcon_cd_root=/opt/ros/humble/
-source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.zsh
 eval "$(register-python-argcomplete3 ros2)"
 eval "$(register-python-argcomplete3 colcon)"
 ########## ros2 humble ##########

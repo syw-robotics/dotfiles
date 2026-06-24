@@ -1,4 +1,5 @@
 [[index]]
-url = "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple/"
-# url = "https://mirrors.sustech.edu.cn/pypi/web/simple"
+# url = "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple/"
+url = "https://mirrors.sustech.edu.cn/pypi/web/simple"
+# url = "https://mirrors.ustc.edu.cn/pypi/simple"
 default = true

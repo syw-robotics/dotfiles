@@ -5,6 +5,6 @@ Name=Cursor
 GenericName=Editor
 Comment=AI empowered Editor, based on VScode
 StartupNotify=true
-Exec=/home/syw/.config/Cursor/Cursor-1.2.2-x86_64.AppImage
+Exec=/usr/bin/cursor
 Icon=/home/syw/Pictures/Icon-Repositroy/svg&png/cursor.png
 Categories=System;TerminalEmulator;

@@ -978,9 +978,8 @@
     // ========== NEOVIDE CURSOREFFECT & CUSTOM STARTUP PAGE START ========== //
     "github.copilot.enable": {
         "quarto": false,
-        "*": false,
+        "*": true,
         "plaintext": false,
-        "markdown": true,
         "scminput": false,
         "jsonc": false,
         "python": true
@@ -1268,7 +1267,7 @@
     },
     "trae.chatLanguage": "cn",
     "trae.enableInlineCommand": false,
-    "github.copilot.nextEditSuggestions.enabled": false,
+    "github.copilot.nextEditSuggestions.enabled": true,
     "editor.fontSize": 15,
     "[typescriptreact]": {
         "editor.defaultFormatter": "vscode.typescript-language-features"
@@ -1277,7 +1276,8 @@
     "texpresso.useEditorTheme": true,
     "diffEditor.maxComputationTime": 0,
     "workbench.activityBar.location": "top",
-    "editor.minimap.enabled": false
+    "editor.minimap.enabled": false,
+    "python.defaultInterpreterPath": "/home/syw/toolkits/isaac_related/isaaclab_uv_envs/IsaacSim-5.1/.venv"
     // ========== Font CONFIGURATION START ========== //
     // 光标的动画效果
     // "editor.cursorBlinking": "smooth",

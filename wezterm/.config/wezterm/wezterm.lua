@@ -22,7 +22,7 @@ local config = {
     switch_to_last_active_tab_when_closing_tab = true,
 
     -- window_background_opacity = 0.75,
-    window_background_opacity = 0.90,
+    -- window_background_opacity = 0.90,
 
     text_background_opacity = 0.9,
     adjust_window_size_when_changing_font_size = false,
