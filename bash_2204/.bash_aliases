@@ -16,8 +16,9 @@ alias llg='ll | grep'
 alias psa='ps -aux'
 alias c.='code . '
 alias ppt='code ~/Desktop/nabo_pointfoot_related/nabopointfootnewestversion/MyResources/ppt/ '
-alias claude="edge https://claude.ai/ "
+# alias claude="edge https://claude.ai/ "
 # alias qwen="edge https://tongyi.aliyun.com/qianwen/"
+# alias oc="openclaw"
 alias fy="edge https://cn.bing.com/translator/"
 alias simpletex="edge https://simpletex.cn/ai/latex_ocr "
 alias canva="edge https://www.canva.cn/ "
@@ -37,11 +38,13 @@ alias neovide='/home/syw/.config/nvim/neovide.AppImage'
 alias vide='/home/syw/.config/nvim/neovide.AppImage'
 alias nvk='nv  ~/.config/nvim/lua/core/keymaps.lua'
 alias nvo='nv  ~/.config/nvim/lua/core/options.lua'
+alias helix="hx"
 alias nvllm='cd ~/.local/state/nvim/llm-history/'
 alias my_config_push='bash /home/syw/toolkits/my_config_files_on_ubuntu/update_config_push.sh'
 alias my_config_status='bash /home/syw/toolkits/my_config_files_on_ubuntu/update_config_status.sh'
 alias edge='microsoft-edge'
-alias cursor='/home/syw/.config/Cursor/cursor-0.45.11-build-250207y6nbaw5qc-x86_64.AppImage'
+# alias cursor='/home/syw/.config/Cursor/Cursor-1.2.2-x86_64.AppImage'
+# alias cursor='/home/syw/.config/Cursor/Cursor-1.1.7-x86_64.AppImage'
 alias code_cursor_align_settings='code ~/.config/Cursor/User/settings.json ~/.config/Code/User/settings.json'
 alias code_cursor_align_keybindings='code ~/.config/Cursor/User/keybindings.json ~/.config/Code/User/keybindings.json'
 # alias cat="batcat"
@@ -66,8 +69,11 @@ alias lg='lazygit'
 alias ldocker='lazydocker'
 alias docker_start='sudo systemctl start docker.service'
 alias mx='tmux'
+# alias mx='rmux'
 alias ns='nvidia-smi'
 alias todesk_refresh='sudo systemctl stop todeskd.service ; sudo mv /opt/todesk/config/config.ini /opt/todesk/config/config.ini.bak ; sudo systemctl start todeskd.service'
+alias markit="python3 ~/toolkits/markit/preview.py"
+alias markit-no="python3 ~/toolkits/markit/preview.py -n"
 ########## X-cmd Start ##########
 alias emoji="x emoji"
 alias tldr-fz="x tldr --fz"
@@ -114,17 +120,25 @@ alias repos='cd ~/.gitrepos/'
 # diff_amp(){
 #     code --diff ~/.gitrepos/AMP_A1/$1 ~/.gitrepos/AMP_A1_dev/$1
 # }
-diff_rsl_rl(){
-    code --diff ~/.gitrepos/rsl_rl/$1 ~/.gitrepos/rsl_rl_v1-0-2/$1
-}
-diff_rsl_rl_edit_new(){
-    code --diff ~/.gitrepos/rsl_rl/$1 ~/.gitrepos/rsl_rl_new_for_legged_gym/$1
+# diff_rsl_rl(){
+#     code --diff ~/.gitrepos/rsl_rl/$1 ~/.gitrepos/rsl_rl_v1-0-2/$1
+# }
+# diff_rsl_rl_edit_new(){
+#     code --diff ~/.gitrepos/rsl_rl/$1 ~/.gitrepos/rsl_rl_new_for_legged_gym/$1
+# }
+# diff_np30(){
+#     code --diff ~/.gitrepos/LocomotionWithNP3O-ori/$1 ~/.gitrepos/LocomotionWithNP3O/$1
+# }
+diff_lts(){
+    code --diff ~/.gitrepos/lts_gym/lts_gym/$1 ~/.gitrepos/lts_gym_818/lts_gym/$1
 }
 
 ########## Folders End ##########
 ########## SSH Start ##########
+alias 4090*4='ssh_kitty_or_normal Lab423-4090'
+alias 4090*4-wireguard='ssh_kitty_or_normal Lab423-4090-wireguard'
 alias Lab433-server='ssh_kitty_or_normal Lab433-server-admin'
-alias Lab433-server-frp-auth-connect='/home/syw/toolkits/auth-guest_linux_amd64-18854248.auth-guest_linux_amd64-18854248 ; ssh_kitty_or_normal Lab433-server-admin-frp'
+alias Lab433-server-frp-auth-connect='/home/syw/toolkits/auth-guest_linux_amd64-18854248 ; ssh_kitty_or_normal Lab433-server-admin-frp'
 ssh_kitty_or_normal() {
     if [ "$TERM" = "xterm-kitty" ]; then
         kitten ssh $1
@@ -133,6 +147,29 @@ ssh_kitty_or_normal() {
     fi
 }
 ########## SSH End##########
+########## Screen Start##########
+screen_new() {
+    if [ "$#" -ne 1 ]; then
+        echo "Usage: screen_new <session_name>"
+        return 1
+    else
+        # echo "Creating session \"$1\""
+        # echo "Ctrl + A , D to detach"
+        screen -S $1
+    fi
+}
+screen_attach() {
+    if [ "$#" -ne 1 ]; then
+        echo "Usage: screen_attach <session_name>"
+        return 1
+    else
+        # echo "Creating session \"$1\""
+        # echo "Ctrl + A , D to detach"
+        screen -R $1
+    fi
+}
+alias screen_ls="screen -ls"
+########## Screen End##########
 ########## Kitty Start ##########
 alias k-icat="kitty icat"
 alias k-diff="kitten diff"
@@ -215,7 +252,7 @@ alias qc='conda deactivate'
 alias ca='conda activate'
 alias cel='conda env list'
 alias motion_imitation='uc ; ca motion_imitation ; cd ~/.gitrepos/motion_imitation/'
-alias spinningup='uc ; ca spinningup ; cd ~/.gitrepos/spinningup/ ; export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/syw/.mujoco/mujoco210/bin ; export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/nvidia ; '
+# alias spinningup='uc ; ca spinningup ; cd ~/.gitrepos/spinningup/ ; export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/syw/.mujoco/mujoco210/bin ; export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/nvidia ; '
 # alias spinningup='uc ; ca spinningup ; cd ~/.gitrepos/spinningup/ ; export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/syw/.mujoco/mjpro150/bin ; export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libGLEW.so'
 alias amp='uc ; ca amp_hw ; cd ~/.gitrepos/AMP_A1/'
 alias openwebui='uc ; ca openwebui; open-webui serve &; edge http://localhost:8080'
@@ -346,11 +383,11 @@ alias mujoco_related="~/toolkits/mujoco_related/"
 
 
 ####################  Pinocchio Config --- START ---  ####################
-export PATH=/opt/openrobots/bin:$PATH
-export PKG_CONFIG_PATH=/opt/openrobots/lib/pkgconfig:$PKG_CONFIG_PATH
-export LD_LIBRARY_PATH=/opt/openrobots/lib:$LD_LIBRARY_PATH
-export PYTHONPATH=/opt/openrobots/lib/python3.10/site-packages:$PYTHONPATH # Adapt your desired python version here
-export CMAKE_PREFIX_PATH=/opt/openrobots:$CMAKE_PREFIX_PATH
+# export PATH=/opt/openrobots/bin:$PATH
+# export PKG_CONFIG_PATH=/opt/openrobots/lib/pkgconfig:$PKG_CONFIG_PATH
+# export LD_LIBRARY_PATH=/opt/openrobots/lib:$LD_LIBRARY_PATH
+# export PYTHONPATH=/opt/openrobots/lib/python3.10/site-packages:$PYTHONPATH # Adapt your desired python version here
+# export CMAKE_PREFIX_PATH=/opt/openrobots:$CMAKE_PREFIX_PATH
 ####################  Pinocchio Config --- END ---  ####################
 
 
@@ -457,6 +494,20 @@ alias noetic_base_stop_container='docker container stop docker-noetic-base'
 alias noetic_base="docker exec --user syw -it docker-noetic-base /bin/bash"
 # alias noetic_base="docker exec -it docker-noetic-base /bin/bash" # 直接exec指定进入syw用户打不开gazebo，在root用户可以，先进入root然后su syw实测可以正常运行gazebo
 alias noetic_base_one_start="noetic_base_start_container; noetic_base"
+
+
+alias demo_2204_start_container='docker container start demo-2204'
+alias demo_2204_stop_container='docker container stop demo-2204'
+alias demo_2204="docker exec --user syw -it demo-2204 /bin/bash"
+# alias noetic_base="docker exec -it docker-noetic-base /bin/bash" # 直接exec指定进入syw用户打不开gazebo，在root用户可以，先进入root然后su syw实测可以正常运行gazebo
+alias demo_2204_one_start="demo_2204_start_container; demo_2204"
+
+alias jazzy_start_container='docker container start docker-ros2-jazzy'
+alias jazzy_stop_container='docker container stop docker-ros2-jazzy'
+alias jazzy="docker exec --user syw -it docker-ros2-jazzy /usr/bin/zsh"
+# alias jazzy="docker exec -it docker-ros2-jazzy /bin/bash"
+# alias noetic_base="docker exec -it docker-noetic-base /bin/bash" # 直接exec指定进入syw用户打不开gazebo，在root用户可以，先进入root然后su syw实测可以正常运行gazebo
+alias jazzy_one_start="jazzy_start_container; jazzy"
 ####################  docker config --- END ---  ####################
 
 
@@ -486,8 +537,12 @@ export CUDA_HOME=/usr/local/cuda
 
 
 ####################  isaac-sim --- START ---  ####################
-# Isaac Sim root directory
-# export ISAACSIM_PATH="${HOME}/.local/share/ov/pkg/isaac-sim-4.2.0"
+# Isaac Sim 5.0
+alias isaacsim-5.1-env='source /home/syw/toolkits/isaac_related/isaaclab_uv_envs/IsaacSim-5.1/.venv/bin/activate'
+alias isaaclab-3.0-env='source /home/syw/toolkits/isaac_related/isaaclab_uv_envs/IsaacLab-3.0/.venv/bin/activate'
+# alias active-adaptation-env='source /home/syw/toolkits/isaac_related/isaaclab_uv_envs/AA/.venv/bin/activate'
+alias aa-082-env='source /home/syw/.gitrepos/active-adaptation-btx/venv/isaac51/.venv/bin/activate'
+alias mjlab-env='source /home/syw/toolkits/isaac_related/mjlab/.venv/bin/activate'
 # Isaac Sim python executable
 # export ISAACSIM_PYTHON_EXE="${ISAACSIM_PATH}/python.sh"
 # alias omniverse-launcher='/home/syw/toolkits/isaac_related/isaac_sim/omniverse-launcher-linux.AppImage &'
@@ -510,18 +565,38 @@ alias mxf='tmuxifier'
 ####################  tmuxifier --- END ---  ####################
 
 ####################  acados --- START ---  ####################
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:"/home/syw/.gitrepos/Quadruped-PyMPC/quadruped_pympc/acados/lib"
-export ACADOS_SOURCE_DIR="/home/syw/.gitrepos/Quadruped-PyMPC/quadruped_pympc/acados"
+# export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:"/home/syw/.gitrepos/Quadruped-PyMPC/quadruped_pympc/acados/lib"
+# export ACADOS_SOURCE_DIR="/home/syw/.gitrepos/Quadruped-PyMPC/quadruped_pympc/acados"
 ####################  acados --- END ---  ####################
 
 ####################  USD --- START ---  ####################
 # export PATH="/home/syw/toolkits/usd_related/usd.py310.linux-x86_64.usdview.release-0.25.02-ba8aaf1f/scripts:$PATH"
 alias usdview="/home/syw/toolkits/usd_related/usd.py310.linux-x86_64.usdview.release-0.25.02-ba8aaf1f/scripts/usdview_gui.sh"
-export PATH="/home/syw/toolkits/blender-4.4.0/:$PATH"
+# export PATH="/home/syw/toolkits/blender-4.4.0/:$PATH"
 ####################  USD --- END ---  ####################
 
 
+####################  Blender --- START ---  ####################
+alias blender="/home/syw/toolkits/blender-5.1.2-linux-x64/blender-launcher"
+####################  Blender --- END ---  ####################
+
+
 ####################  ml_logger --- START ---  ####################
-export ML_LOGGER_ROOT=http://localhost:8080 
-export ML_LOGGER_USER=syw-ml # make sure it is the same on the cluster.
+# export ML_LOGGER_ROOT=http://localhost:8080
+# export ML_LOGGER_USER=syw-ml # make sure it is the same on the cluster.
 ####################  ml_logger --- END ---  ####################
+
+# export ROBOT_TYPE=PF_TRON1A
+# export RL_TYPE=isaacgym
+# export TERRAIN_EXIST=1
+
+####################  Unitree --- START ---  ####################
+alias go2_mujoco="~/toolkits/unitree_related/unitree_mujoco/simulate/build/unitree_mujoco"
+alias go2_mujoco_config="n ~/toolkits/unitree_related/unitree_mujoco/simulate/config.yaml"
+alias go2_rl="~/toolkits/unitree_related/go2_isaaclab_deploy/go2/build/go2_ctrl --network lo"
+alias go2_config="n ~/toolkits/unitree_related/go2_isaaclab_deploy/go2/config/config.yaml"
+export UNITREE_MODEL_DIR="/home/syw/toolkits/unitree_related/unitree_model/"
+# export LD_PRELOAD="/opt/unitree_robotics/lib/libddsc.so.0"
+# export LD_LIBRARY_PATH="/opt/unitree_robotics/lib:${LD_LIBRARY_PATH}"
+####################  Unitree --- END ---  ####################
+

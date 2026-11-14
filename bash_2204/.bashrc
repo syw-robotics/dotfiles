@@ -161,3 +161,4 @@ export PATH="$PATH:$HOME/.rvm/bin"
 
 [[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
 eval "$(atuin init bash)"
+# source /opt/ros/humble/setup.sh

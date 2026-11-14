@@ -1,5 +1,6 @@
 PROMPT="%(?:%{$fg_bold[white]%}%1{➜%} :%{$fg_bold[red]%}%1{➜%} ) %{$fg[cyan]%}%c%{$reset_color%}"
 # ==Server== PROMPT="%(?:%{$fg_bold[green]%}%1{%} :%{$fg_bold[red]%}%1{%} ) %{$fg[cyan]%}%c%{$reset_color%}"
+# ==Server 4090== PROMPT='%(?:%{$fg_bold[green]%}%1{%} 4090 :%{$fg_bold[red]%}%1{%} 4090 ) %{$fg[cyan]%}%c%{$reset_color%}'
 # ==Docker== PROMPT="%(?:%{$fg_bold[green]%}%1{%} :%{$fg_bold[red]%}%1{%} ) %{$fg[cyan]%}%c%{$reset_color%}"
 PROMPT+=' $(git_prompt_info)'
 

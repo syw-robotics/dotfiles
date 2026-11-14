@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -128,6 +128,7 @@ export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 source ~/.bash_aliases
 # source ~/.zsh_ros2
+alias ros2_activate='source ~/.zsh_ros2'
 source ~/.zsh_aliases
 source $ZSH/oh-my-zsh.sh
 source ~/.llm_api_keys
@@ -165,7 +166,7 @@ bindkey '^[k'     kill-line            # Alt + k
 # Ctrl + k    delete to the end of line
 # ========== My bindkey Configuration ========== #
 
-[ ! -f "$HOME/.x-cmd.root/X" ] || . "$HOME/.x-cmd.root/X" # boot up x-cmd.
+# [ ! -f "$HOME/.x-cmd.root/X" ] || . "$HOME/.x-cmd.root/X" # boot up x-cmd.
 
 # ===== uv ===== #
 eval "$(uv generate-shell-completion zsh)"
@@ -173,6 +174,19 @@ eval "$(uvx --generate-shell-completion zsh)"
 # ===== uv ===== #
 
 # ===== atuin ===== #
-. "$HOME/.atuin/bin/env"
-eval "$(atuin init zsh --disable-up-arrow)"
+# . "$HOME/.atuin/bin/env"
+# eval "$(atuin init zsh --disable-up-arrow)"
 # =====atuinv ===== #
+
+# OpenClaw Completion
+# source "/home/syw/.openclaw/completions/openclaw.zsh"
+
+# opencode
+# export PATH=/home/syw/.opencode/bin:$PATH
+
+# export PATH="/home/syw/.pixi/bin:$PATH"
+
+
+
+export OMNICLIENT_HUB_MODE=disabled
+export OMNICLIENT_USE_HUB=0
